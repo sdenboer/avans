@@ -4,14 +4,10 @@ import java.util.Random;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.FlowPane;
-import java.util.Random;
 
 
 public class Vb0210 {
-    private final Button animalA;
-    private final Button animalB;
-    private final Button animalC;
-    private final Button clear;
+    private final Button animalA, animalB, animalC, clear;
     private final TextField textField;  
     
     
