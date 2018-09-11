@@ -14,7 +14,7 @@ public class Vb0302 {
         negMax = Integer.MIN_VALUE;
         positive = negMax -1 ;
        
-        res = new Text(50, 120, "Java logic: " + negMax + " - 1 = " + positive);
+        res = new Text(50, 120, "Some Java logic: " + negMax + " - 1 = " + positive);
         
         p.getChildren().add(res);
     }
