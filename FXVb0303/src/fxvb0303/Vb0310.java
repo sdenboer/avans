@@ -15,15 +15,15 @@ public class Vb0310 {
         playBoard.setStroke(Color.BLACK);
         playBoard.setStrokeWidth(1);
         
-        ws1 = new Rectangle (60, 60);
+        ws1 = new Rectangle (20, 60);
         ws1.setFill(Color.WHITE);
         ws1.relocate(60, 0);
         
-        ws2 = new Rectangle (60, 60);
+        ws2 = new Rectangle (20, 60);
         ws2.setFill(Color.WHITE);
         ws2.relocate(0, 60);
         
-        ws3 = new Rectangle (60, 60);
+        ws3 = new Rectangle (20, 60);
         ws3.setFill(Color.WHITE);
         ws3.relocate(120, 60);
         
