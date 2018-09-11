@@ -16,9 +16,10 @@ public class FXVb0303 extends Application {
         primaryStage.setTitle("FXVv0303");
         primaryStage.setScene(scene);
         primaryStage.show();
-        
-        new Vb0307(root);
-        new Vb0308(root);
+//        
+//        new Vb0307(root);
+//        new Vb0308(root);
+        new Vb0309(root);
     }
 
     
