@@ -32,11 +32,11 @@ public class Vb0312 {
         circle.setFill(Color.RED);
         
         moveLeft.setOnAction( e-> {
-            x++;
+            x--;
             circle.setCenterX(x);
         });
         moveRight.setOnAction( e-> {
-            x--;
+            x++;
             circle.setCenterX(x);
         });
         increase.setOnAction( e-> {
