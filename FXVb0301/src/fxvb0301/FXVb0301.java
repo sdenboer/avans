@@ -5,7 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-    public class FXVb03 extends Application {
+    public class FXVb0301 extends Application {
         
         @Override
         public void start(Stage primaryStage) {
