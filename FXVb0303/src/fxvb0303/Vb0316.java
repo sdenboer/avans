@@ -5,8 +5,8 @@ import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 
 public class Vb0316 {
-    private final Button m, f;
-    private final Text mC, fC;
+    private final Button m, f, t;
+    private final Text mC, fC, tC;
     int fI;
     int mI;
     
@@ -16,14 +16,19 @@ public class Vb0316 {
     
     public Vb0316 (Pane p) {
         m = new Button("male");
-        f = new Button ("female");
-        m.relocate(30, 200);
-        f.relocate(200, 200);
+        m.relocate(30, 200);        
+        f = new Button("female");
+        f.relocate(200, 200);        
+        t = new Button("total");
+        t.relocate(100, 200);
+
                 
         mC = new Text("0");
         mC.relocate(30, 100);
         fC = new Text("0");
         fC.relocate(200, 100);
+        tC = new Text("");
+        tC.relocate(100, 100);
         
         m.setOnAction(e-> {
             mI++;
@@ -35,7 +40,11 @@ public class Vb0316 {
             increment(fI, fC);
         });
         
+        t.setOnAction(e-> {
+            tC.setText("" + (mI + fI));
+        });
         
-        p.getChildren().addAll(m, f, mC, fC);
+        
+        p.getChildren().addAll(m, f, t, mC, fC, tC);
     }
 }
