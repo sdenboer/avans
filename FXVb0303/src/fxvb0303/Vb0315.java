@@ -95,13 +95,13 @@ public class Vb0315 {
         dice.setArcHeight(20);
         dice.relocate(100, 70);
         
-        player1 = new Text("" + p1);
+        player1 = new Text(String.valueOf(p1));
         player1.relocate(10, 30);
         
-        player2 = new Text("" + p2);
+        player2 = new Text(String.valueOf(p2));
         player2.relocate(280, 30);
         
-        winner = new Text("");
+        winner = new Text();
         winner.relocate(100, 190);
         winner.setFill(Color.GREEN);
         
@@ -172,8 +172,8 @@ public class Vb0315 {
         reset.setOnAction(e -> {
             p1 = 0;
             p2 = 0;
-            player2.setText(""+ p2);
-            player1.setText(""+ p1);
+            player2.setText(String.valueOf(p2));
+            player1.setText(String.valueOf(p1));
             winner.setText("");
             roll1.setDisable(false);
             ok1.setDisable(false);
