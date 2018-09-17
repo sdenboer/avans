@@ -17,7 +17,8 @@ public class FX0401 extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
         
-        new FxEx0401(root);
+//        new FXEx0401(root);
+        new FXEx0402(root);
     }
 
     public static void main(String[] args) {
