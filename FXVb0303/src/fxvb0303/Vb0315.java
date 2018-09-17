@@ -12,10 +12,10 @@ import javafx.scene.text.Text;
 public class Vb0315 {
     private final Button roll1, roll2, reset, ok1, ok2;
     private final Rectangle dice;
-    private final Circle eye1, eye2, eye3, eye4, eye5, eye6, eye7, eye8, eye9;
+    private final Circle eye1, eye2, eye3, eye5, eye7, eye8, eye9;
     private final Text player1, player2, winner, game;
-        int p1;
-        int p2;
+        int p1; //total score for player 1
+        int p2; //total score for player 2
   
     
     public void setCircleColor(Circle[] crArr) { //resets color of eyes after rolling
@@ -35,37 +35,37 @@ public class Vb0315 {
           int y = random2.nextInt(7-1)+1; //random number between 1 and 6 (eyes on the dice)
           t.setText(String.valueOf(p+y));
           switch(y) {
-                case 1: a[4].setFill(Color.BLACK);
+                case 1: a[3].setFill(Color.BLACK);
                         p += 1;
                         break;
                 case 2: a[2].setFill(Color.BLACK);
-                        a[6].setFill(Color.BLACK);
+                        a[4].setFill(Color.BLACK);
                         p += 2;
                         break;
                 case 3: a[2].setFill(Color.BLACK);
+                        a[3].setFill(Color.BLACK);
                         a[4].setFill(Color.BLACK);
-                        a[6].setFill(Color.BLACK);
                         p += 3;
                         break;
                 case 4: a[0].setFill(Color.BLACK);
                         a[2].setFill(Color.BLACK);
+                        a[4].setFill(Color.BLACK);
                         a[6].setFill(Color.BLACK);
-                        a[8].setFill(Color.BLACK);
                         p += 4;
                         break;
                 case 5: a[0].setFill(Color.BLACK);
                         a[2].setFill(Color.BLACK);
-                        a[6].setFill(Color.BLACK);
-                        a[8].setFill(Color.BLACK);
+                        a[3].setFill(Color.BLACK);
                         a[4].setFill(Color.BLACK);
+                        a[6].setFill(Color.BLACK);
                         p += 5;
                         break;
                 case 6: a[0].setFill(Color.BLACK);
                         a[1].setFill(Color.BLACK);
                         a[2].setFill(Color.BLACK);
+                        a[4].setFill(Color.BLACK);
+                        a[5].setFill(Color.BLACK);
                         a[6].setFill(Color.BLACK);
-                        a[7].setFill(Color.BLACK);
-                        a[8].setFill(Color.BLACK);
                         p += 6;                    
             }
           return p;
@@ -79,13 +79,11 @@ public class Vb0315 {
         eye1 = new Circle(120, 90, 9);
         eye2 = new Circle(120, 120, 9);
         eye3 = new Circle(120, 150, 9);
-        eye4 = new Circle(150, 90, 9);
         eye5 = new Circle(150, 120, 9);
-        eye6 = new Circle(150, 150, 9);
         eye7 = new Circle(180, 90, 9);
         eye8 = new Circle(180, 120, 9);
         eye9 = new Circle(180, 150, 9);
-        Circle[] crArr = {eye1, eye2, eye3, eye4, eye5, eye6, eye7, eye8, eye9};
+        Circle[] crArr = {eye1, eye2, eye3, eye5, eye7, eye8, eye9};
         setCircleColor(crArr);
         
         dice = new Rectangle(100, 100, Color.WHITE);
@@ -182,6 +180,6 @@ public class Vb0315 {
 
             
         });
-        p.getChildren().addAll(dice, roll1, roll2, eye1, eye2, eye3, eye4, eye5, eye6, eye7, eye8, eye9, player1, player2, winner, ok1, ok2, reset, game);  
+        p.getChildren().addAll(dice, roll1, roll2, eye1, eye2, eye3, eye5, eye7, eye8, eye9, player1, player2, winner, ok1, ok2, reset, game);  
     }
 }
