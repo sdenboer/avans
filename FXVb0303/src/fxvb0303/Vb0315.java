@@ -18,22 +18,22 @@ public class Vb0315 {
         int p2;
   
     
-    public void setCircleColor(Circle[] crArr) {
+    public void setCircleColor(Circle[] crArr) { //resets color of eyes after rolling
          for (Circle a : crArr) {
               a.setFill(Color.WHITE);
         }
     }
       
-    public void finished(Button r1, Button r2, Button r) {
+    public void finished(Button r1, Button r2, Button r) { //resets buttons after finishing the game
       r1.setDisable(true);
       r2.setDisable(true);
       r.setDisable(false);
     }
       
-      public int assignColors(Text t, int p, Circle[] a) {
+      public int assignColors(Text t, int p, Circle[] a) {  //assigns black color to eyes
           Random random2 = new Random();
-          int y = random2.nextInt(7-1)+1;
-          t.setText(""+ (p + y));
+          int y = random2.nextInt(7-1)+1; //random number between 1 and 6 (eyes on the dice)
+          t.setText(String.valueOf(p+y));
           switch(y) {
                 case 1: a[4].setFill(Color.BLACK);
                         p += 1;
