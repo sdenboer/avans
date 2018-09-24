@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="FX0401.jnlp">
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="FX0501.jnlp">
   <information>
-    <title>FX0401</title>
+    <title>FX0501</title>
     <vendor>sven</vendor>
     <description>null</description>
     <offline-allowed/>
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="FX0401.jar" size="8183" download="eager" />
+    <jar href="FX0501.jar" size="4256" download="eager" />
   </resources>
-  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="FX0401" >
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="FX0501" >
     <param name="requiredFXVersion" value="8.0+"/>
   </applet-desc>
-  <jfx:javafx-desc  width="800" height="600" main-class="fx0401.FX0401"  name="FX0401" />
+  <jfx:javafx-desc  width="800" height="600" main-class="fx0501.FX0501"  name="FX0501" />
   <update check="always"/>
 </jnlp>
