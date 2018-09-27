@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Feedback">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Prof/Feedback/dist/Feedback.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

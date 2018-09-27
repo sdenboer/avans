@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/FX0201/FX0201.iml" filepath="$PROJECT_DIR$/FX0201/FX0201.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FX0202/FX0202.iml" filepath="$PROJECT_DIR$/FX0202/FX0202.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FX0301/FX0301.iml" filepath="$PROJECT_DIR$/FX0301/FX0301.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FX0302/FX0302.iml" filepath="$PROJECT_DIR$/FX0302/FX0302.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FX0303/FX0303.iml" filepath="$PROJECT_DIR$/FX0303/FX0303.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FX0401/FX0401.iml" filepath="$PROJECT_DIR$/FX0401/FX0401.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FX0501/FX0501.iml" filepath="$PROJECT_DIR$/FX0501/FX0501.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Prof/Feedback/Feedback.iml" filepath="$PROJECT_DIR$/Prof/Feedback/Feedback.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Prof/FixedGrowth/FixedGrowth.iml" filepath="$PROJECT_DIR$/Prof/FixedGrowth/FixedGrowth.iml" />
+    </modules>
+  </component>
+</project>

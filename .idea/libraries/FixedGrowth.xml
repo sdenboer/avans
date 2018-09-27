@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="FixedGrowth">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Prof/FixedGrowth/dist/FixedGrowth.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
