@@ -9,8 +9,6 @@ public class FXEx0503 {
     private final TextField input;
     private final Button check;
     private final Text outcome;
-    @org.jetbrains.annotations.NotNull
-    private final GridPane p;
     private Double dblPrice;
 
 
@@ -27,7 +25,6 @@ public class FXEx0503 {
     }
 
     public FXEx0503 (GridPane p) {
-        this.p = p;
         input = new TextField();
         check = new Button("check price");
         outcome = new Text();
