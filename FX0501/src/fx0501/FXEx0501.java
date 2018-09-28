@@ -21,7 +21,7 @@ public class FXEx0501 {
         //set action on button
         button.setOnAction(event -> {
 
-            if (value1.getText().equals("") || value2.getText().equals("")) {
+            if (value1.getText().isEmpty() || value2.getText().isEmpty()) {
                 message.setText("Please enter a number");
             } else {
                 if (Integer.parseInt(value1.getText()) > Integer.parseInt(value2.getText())) {

@@ -19,7 +19,8 @@ public class FX0501 extends Application {
         primaryStage.show();
         
 //        new FXExtraPane(root);
-        new FXEx0501(root);
+//        new FXEx0501(root);
+        new FXEx0502(root);
     }
 
     public static void main(String[] args) {
