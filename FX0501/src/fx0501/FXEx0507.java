@@ -25,15 +25,15 @@ public class FXEx0507 {
         hbox.setAlignment(Pos.BASELINE_CENTER);
         hbox.getChildren().addAll(label, input);
 
-        canvas = new Canvas(250, 250);
+        canvas = new Canvas(800, 800);
         gc = canvas.getGraphicsContext2D();
         p.getChildren().addAll(hbox, canvas);
 
         input.setOnAction(event -> {
             int intInput = Integer.parseInt(input.getText());
             gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
-            for (int i = 0; i < intInput; i++) {
-                gc.strokeRect(20, 20, 20+5*i, 20+5*i);
+            for (int i = 1; i <= intInput; i++) {
+                gc.strokeRect(410-10*i, 410-10*i, 20*i, 20*i);
             }
         });
     }
