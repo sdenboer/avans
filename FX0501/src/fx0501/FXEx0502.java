@@ -19,13 +19,14 @@ public class FXEx0502 {
             int[] intValues = Arrays.stream(value.getText().split(", ")).mapToInt(Integer::parseInt).toArray();
             int temp;
 
-            for (int i = 0; i < intValues.length -1; i++) {
-                for (int x = 0; x < ((intValues.length -1) -i); x++) {
-                    if (intValues[x] > intValues[x + 1]) {
-                        temp = intValues[x];
-                        intValues[x] = intValues[x + 1];
-                        intValues[x+1] = temp;
-                    }
+            for (int i = 1; i < intValues.length; i++) {
+                int key = intValues[i];
+                int j = i -1;
+                while (j >= 0 && key < intValues[j]) {
+                    temp = intValues[j];
+                    intValues[j] = intValues[j + 1];
+                    intValues[j+1] = temp;
+                    j--;
                 }
             }
             StringBuilder str = new StringBuilder();
