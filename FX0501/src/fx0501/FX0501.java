@@ -25,7 +25,8 @@ public class FX0501 extends Application {
 //        new FXEx0502(root);
 //        new FXEx0503(root);
 //          new FXEx0504(rootVBox);
-          new FXEx0505(root);
+//          new FXEx0505(root);
+        new FXEx0506(root);
     }
 
     public static void main(String[] args) {
