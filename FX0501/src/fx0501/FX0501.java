@@ -4,6 +4,7 @@ import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class FX0501 extends Application {
@@ -11,7 +12,8 @@ public class FX0501 extends Application {
     @Override
     public void start(Stage primaryStage) {
         
-        GridPane root = new GridPane();
+//        GridPane root = new GridPane();
+        VBox root = new VBox();
         Scene scene = new Scene(root, 800, 800);
         
         primaryStage.setTitle("FX0501");
