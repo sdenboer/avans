@@ -39,7 +39,7 @@ public final class FXExtraMain extends GridPane {
             int x = Integer.parseInt(inputA.getText()); 
             int y = Integer.parseInt(inputB.getText());
             for(int i = 1; i <= x; i++) {
-                labels.add(new Text(i + " x " + y + " = " + String.format("%2d", i * y)));
+                labels.add(new Text(String.format("%2d * %3d = %4d", i, y, (i * y))));
             } 
             labels.forEach((_item) -> {
                 grid.add(_item, 0, labels.indexOf(_item) + 1);
