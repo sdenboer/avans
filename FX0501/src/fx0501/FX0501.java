@@ -24,13 +24,15 @@ public class FX0501 extends Application {
 //        new FXEx0501(root);
 //        new FXEx0502(root);
 //        new FXEx0503(root);
-//          new FXEx0504(rootVBox);
-//          new FXEx0505(root);
+//        new FXEx0504(rootVBox);
+//        new FXEx0505(root);
 //        new FXEx0506(root);
 //        new FXEx0507(rootVBox);
 //        new FXEx0508(root);
 //        new FXEx0509(root);
-        new FXEx0510(root);
+//        new FXEx0510(root);
+        new FXEx0511(root);
+
     }
 
     public static void main(String[] args) {
