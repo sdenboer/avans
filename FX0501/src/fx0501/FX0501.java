@@ -12,9 +12,11 @@ public class FX0501 extends Application {
     @Override
     public void start(Stage primaryStage) {
         
-        GridPane root = new GridPane();
-//        VBox rootVBox = new VBox();
+
+        VBox root = new VBox();
         Scene scene = new Scene(root, 800, 800);
+//        GridPane root = new GridPane();
+//        Scene scene = new Scene(root, 800, 800);
         
         primaryStage.setTitle("FX0501");
         primaryStage.setScene(scene);
@@ -31,7 +33,8 @@ public class FX0501 extends Application {
 //        new FXEx0508(root);
 //        new FXEx0509(root);
 //        new FXEx0510(root);
-        new FXEx0511(root);
+//        new FXEx0511(root);
+        new FXEx0512(root);
 
     }
 
