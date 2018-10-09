@@ -1,6 +1,7 @@
 package fx0501;
 
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Label;
@@ -8,7 +9,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
-public class FXEx0507 {
+public class FXEx0507  {
     private final Label label;
     private final TextField input;
     private final Canvas canvas;

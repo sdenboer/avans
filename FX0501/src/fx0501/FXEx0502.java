@@ -2,17 +2,17 @@ package fx0501;
 
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import java.util.Arrays;
 
-public class FXEx0502 {
+public class FXEx0502 extends VBox {
     private final TextField value;
     private final Text outcome;
 
-    public FXEx0502(GridPane p) {
+    public FXEx0502(HBox h) {
         value = new TextField();
-//        value2 = new TextField();
-//        value3 = new TextField();
         outcome = new Text();
 
         value.setOnAction(event -> {
@@ -37,8 +37,11 @@ public class FXEx0502 {
             outcome.setText(str.toString());
         });
 
+        GridPane p = new GridPane();
         p.add(value, 0, 0);
         p.add(outcome, 1, 0);
+
+        h.getChildren().add(p);
     }
 
 }
