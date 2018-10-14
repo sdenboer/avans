@@ -1,24 +1,22 @@
 package techpal;
 
 
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.scene.layout.GridPane;
+import techpal.Models.Device;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class RegStuView extends GridPane {
-    private Text lblUserName, lblPassword, lblName, lblZipCode, lblNumber, lblLevel, lblError;
+    private Text lblUserName, lblPassword, lblName, lblZipCode, lblNumber, lblLevel, lblError, lblDevices;
     private TextField tfdUserName, tfdName, tfdZipCode, tfdNumber;
     private PasswordField pwfPassword;
     private Button btnRegister;
-    private ComboBox<String> cbxLevel;
+    private ComboBox<String> cbxLvl;
     private DbConnector conn;
+    private ArrayList<CheckBox> listCheckbox;
 
     public RegStuView(Pane body) {
 
@@ -38,18 +36,26 @@ public class RegStuView extends GridPane {
         btnRegister = new Button("Registeren");
         lblError = new Text("");
         lblLevel = new Text("Niveau: ");
+        lblDevices = new Text("Ik bezit deze toestellen: ");
+        listCheckbox = new ArrayList<>();
 
         //Fill the combobox with data from the database
-        cbxLevel = new ComboBox<>();
-        String sqlLevel = "SELECT nivOm FROM niveaus";
-        ResultSet resLevel = conn.getData(sqlLevel);
-        try {
-            while (resLevel.next()) {
-                String strLevel = resLevel.getString("nivOm");
-                cbxLevel.getItems().add(strLevel);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
+        cbxLvl = new ComboBox<>();
+        Session.listLevels.forEach(level -> {
+            cbxLvl.getItems().add(level.getLvl());
+        });
+        cbxLvl.getSelectionModel().selectFirst();
+
+        for (int i = 0; i < Session.listDevices.size(); i++) {
+            String tstl = Session.listDevices.get(i).getTstl();
+            CheckBox checkBox = new CheckBox(tstl);
+            add(checkBox, i+1, 5); //adds a new device and checkbox to the grid
+            listCheckbox.add(checkBox);
+            Session.hasDevices.forEach(device -> {
+                if (device.getTstl().equals(tstl)) {
+                    checkBox.setSelected(true); //loops through the devices owned by the current user and checks them
+                }
+            });
         }
 
         btnRegister.setOnAction(event -> {
@@ -63,11 +69,24 @@ public class RegStuView extends GridPane {
                 Session.currentUser.setNm(tfdName.getText());
                 Session.currentUser.setPc(tfdZipCode.getText());
                 Session.currentStudent.setHnr(tfdNumber.getText());
-                Session.currentStudent.setNiveau(cbxLevel.getSelectionModel().getSelectedItem());
+                Session.currentStudent.setNiveau(cbxLvl.getSelectionModel().getSelectedItem());
+                Session.currentUser.setRol("student");
 
-                String sqlRegisterStudent = "INSERT INTO personen VALUES ('"+Session.currentUser.getUserNm()+"','"+Session.currentUser.getPw()+"','"+Session.currentUser.getNm()+"'," +
-                        "'"+Session.currentUser.getPc()+"','"+Session.currentStudent.getHnr()+"','"+Session.currentStudent.getNiveau()+"', 'Session.currentUser')";
+                String sqlRegisterStudent = "INSERT INTO personen VALUES (UPPER('"+Session.currentUser.getUserNm()+"'),'"+Session.currentUser.getPw()+"','"+Session.currentUser.getNm()+"'," +
+                        "'"+Session.currentUser.getPc()+"','"+Session.currentStudent.getHnr()+"','"+Session.currentStudent.getNiveau()+"', '"+Session.currentUser.getRol()+"')";
                 int result = conn.executeDML(sqlRegisterStudent);
+                listCheckbox.forEach(checkBox -> {
+                    if (checkBox.isSelected()) {
+                        Device device = new Device();
+                        device.setTstl(checkBox.getText());
+                        Session.hasDevices.add(device);
+                        String sqlAddHasDevice = "INSERT INTO heeftToestellen VALUES (UPPER('"+Session.currentUser.getUserNm()+"'), " +
+                                "'"+device.getTstl()+"')";
+                        int resultAddHasDevice = conn.executeDML(sqlAddHasDevice);
+                    }
+                });
+                this.getChildren().clear();
+                body.getChildren().add(new StuMainView(this)); //opens the Student pane
             } else {
                 lblError.setText("Er is een probleem met de invoergegevens");
             }
@@ -83,10 +102,11 @@ public class RegStuView extends GridPane {
         add(tfdZipCode, 1, 3);
         add(lblNumber, 0, 4);
         add(tfdNumber, 1, 4);
-        add(lblLevel, 0, 5);
-        add(cbxLevel, 1, 5);
-        add(btnRegister, 0, 6);
-        add(lblError, 0, 7);
+        add(lblDevices, 0, 5);
+        add(lblLevel, 0, 6);
+        add(cbxLvl, 1, 6);
+        add(btnRegister, 0, 7);
+        add(lblError, 0, 8);
 
         body.getChildren().add(this);
     }

@@ -2,19 +2,24 @@ package techpal;
 
 
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.scene.layout.GridPane;
+import techpal.Models.Device;
 import techpal.Models.Person;
+
+import java.util.ArrayList;
 
 
 public class RegTtrView extends GridPane {
-    private Text lblUserName, lblPassword, lblName, lblZipCode, lblError;
+    private Text lblUserName, lblPassword, lblName, lblZipCode, lblDevices, lblError;
     private TextField tfdUserName, tfdName, tfdZipCode;
     private PasswordField pwfPassword;
     private Button btnRegister;
+    private ArrayList<CheckBox> listCheckbox;
     private DbConnector conn;
 
     public RegTtrView(Pane body) {
@@ -29,23 +34,47 @@ public class RegTtrView extends GridPane {
         tfdName = new TextField();
         lblZipCode = new Text("Postcode: ");
         tfdZipCode = new TextField();
+        lblDevices = new Text("Ik ben gespecialiseerd in deze toestellen: ");
+        listCheckbox = new ArrayList<>();
         btnRegister = new Button("Registeren");
         lblError = new Text("");
 
-        btnRegister.setOnAction(event -> {
-            if (tfdZipCode.getText().toUpperCase().matches("(\\d{4})\\s*([A-Z]{2})")) {
-                lblError.setText("");
-                Person newTutor = new Person();
-                newTutor.setUserNm(tfdUserName.getText());
-                newTutor.setPw(pwfPassword.getText());
-                newTutor.setNm(tfdName.getText());
-                newTutor.setPc(tfdZipCode.getText());
+        for (int i = 0; i < Session.listDevices.size(); i++) {
+            String tstl = Session.listDevices.get(i).getTstl();
+            CheckBox checkBox = new CheckBox(tstl);
+            add(checkBox, i+1, 5); //adds a new device and checkbox to the grid
+            listCheckbox.add(checkBox);
+            Session.hasDevices.forEach(device -> {
+                if (device.getTstl().equals(tstl)) {
+                    checkBox.setSelected(true); //loops through the devices owned by the current user and checks them
+                }
+            });
+        }
 
-                String sqlRegisterTutor = "INSERT INTO personen (userNm, pw, nm, pc, rollen_rol)VALUES ('" + newTutor.getUserNm() + "','" + newTutor.getPw() + "','" + newTutor.getNm() + "'," +
-                        "'" + newTutor.getPc() + "','tutor')";
-                int result = conn.executeDML(sqlRegisterTutor);
-//                this.getChildren().clear();
-//                body.getChildren().add(new LoginView(this));
+        btnRegister.setOnAction(event -> {
+            if (tfdZipCode.getText().toUpperCase().matches("(\\d{4})\\s*([A-Z]{2})")
+                    && tfdName.getText().matches("^[a-zA-ZàáâäãåąčćęèéêëėįìíîïńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇČŠŽ ,.'-]+$")) {
+                lblError.setText("");
+                Session.currentUser.setUserNm(tfdUserName.getText());
+                Session.currentUser.setPw(pwfPassword.getText());
+                Session.currentUser.setNm(tfdName.getText());
+                Session.currentUser.setPc(tfdZipCode.getText());
+                Session.currentUser.setRol("tutor");
+
+                String sqlRegisterTutor = "INSERT INTO personen (userNm, pw, nm, pc, rollen_rol)" +
+                        "VALUES (UPPER('"+Session.currentUser.getUserNm()+"'), '"+Session.currentUser.getPw()+"', " +
+                        "'" +Session.currentUser.getNm()+ "', '"+Session.currentUser.getPc()+ "', 'tutor')";
+
+                listCheckbox.forEach(checkBox -> {
+                    if (checkBox.isSelected()) {
+                        Device device = new Device();
+                        device.setTstl(checkBox.getText());
+                        Session.hasDevices.add(device);
+                        String sqlAddHasDevice = "INSERT INTO heeftToestellen VALUES (UPPER('"+Session.currentUser.getUserNm()+"'), " +
+                                "'"+device.getTstl()+"')";
+                        int resultAddHasDevice = conn.executeDML(sqlAddHasDevice);
+                    }
+                });
             } else {
                 lblError.setText("Er is een probleem met de invoergegevens");
             }
@@ -64,5 +93,4 @@ public class RegTtrView extends GridPane {
 
         body.getChildren().add(this);
     }
-
 }

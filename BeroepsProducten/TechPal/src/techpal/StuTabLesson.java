@@ -1,8 +1,6 @@
 package techpal;
 
 import javafx.beans.binding.Bindings;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Tab;
@@ -15,14 +13,12 @@ import javafx.scene.text.Text;
 import techpal.Models.Lesson;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 public class StuTabLesson extends Tab {
     private TableView<Lesson> tblLessons;
     private Text label;
     private VBox vbox;
     private Button delete;
-    private ObservableList<Lesson> oblLessons;
     private DbConnector conn;
 
     public StuTabLesson() {
@@ -35,7 +31,6 @@ public class StuTabLesson extends Tab {
         label = new Text("Mijn lessen: ");
         label.setFont(new Font("Arial", 20));
 
-        oblLessons = FXCollections.observableArrayList(Session.listLessons);
         tblLessons = new TableView<>();
         TableColumn colDate = new TableColumn("datum");
         colDate.setCellValueFactory(new PropertyValueFactory<Lesson, LocalDate>("dtm"));
@@ -47,28 +42,27 @@ public class StuTabLesson extends Tab {
         colTstl.setCellValueFactory(new PropertyValueFactory<Lesson, String>("tstl"));
         TableColumn colTtr = new TableColumn("tutor");
         colTtr.setCellValueFactory(new PropertyValueFactory<Lesson, String>("ttrNm"));
-        tblLessons.setItems(oblLessons);
+        tblLessons.setItems(Session.oblLessons);
         tblLessons.getColumns().addAll(colDate, colPer, colProg, colTstl, colTtr);
         tblLessons.setPlaceholder(new Text("U heeft nog geen lessen"));
         tblLessons.setPrefHeight(300);
         tblLessons.setPrefWidth(500);
 
         delete = new Button("Verwijder les");
-        delete.disableProperty().bind(Bindings.size(oblLessons).isEqualTo(0)); //disables button when the arraylist & tableview is empty
+        delete.disableProperty().bind(Bindings.size(Session.oblLessons).isEqualTo(0)); //disables button when the arraylist & tableview is empty
+        delete.disableProperty().bind(Bindings.isEmpty(tblLessons.getSelectionModel().getSelectedItems()));
 
         delete.setOnAction(event -> {
             LocalDate pkDtm = tblLessons.getSelectionModel().getSelectedItem().getDtm();
             String pkStu = Session.currentUser.getUserNm();
             String pkPer = tblLessons.getSelectionModel().getSelectedItem().getPer();
-            Session.listLessons.remove(tblLessons.getSelectionModel().getSelectedIndex());
-            tblLessons.getItems().remove(tblLessons.getSelectionModel().getSelectedIndex());
+            Session.oblLessons.remove(tblLessons.getSelectionModel().getSelectedIndex());
             String sqlDelete = "DELETE FROM lessen " +
-                    "WHERE dtm = '"+pkDtm.format(DateTimeFormatter.ofPattern("MM/dd/yyyy"))+"' " +
-                    "AND stu = '"+pkStu+"' " +
+                    "WHERE dtm = to_date('"+pkDtm+"', 'yyyy/mm/dd') " +
+                    "AND stu = UPPER('"+pkStu+"') " +
                     "AND periode_per = '"+pkPer+"' ";
             System.out.println(sqlDelete);
             int result = conn.executeDML(sqlDelete);
-
         });
 
         vbox.getChildren().addAll(label, tblLessons, delete);

@@ -25,7 +25,8 @@ public class TechPalNavBar extends GridPane {
             btnBackToLogin.setText("Home");
             Session.currentUser = new Person(); //resets the current user
             Session.currentStudent = new Student(); //resets the current user if he or she is a student
-            Session.listLessons.clear(); // clear all the lessons of the previous user in the session
+            Session.oblLessons.clear(); // clear all the lessons of the previous user in the session
+            Session.hasDevices.clear();
         });
 
 

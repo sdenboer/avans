@@ -19,7 +19,11 @@ public class TechPal extends Application {
         TechPalNavBar navBar = new TechPalNavBar(body);
         VBox root = new VBox(navBar, body);
         Scene scene = new Scene(root, 1000, 800);
-        scene.getStylesheets().add("techpal/style.css");
+//        scene.getStylesheets().add("techpal/style.css");
+        initStage.setPeriods(); //the initStage class sets all static values from the database.
+        initStage.setLevels();
+        initStage.setPrograms();
+        initStage.setDevices();
         new LoginView(body, navBar);
         primaryStage.setTitle("TechPal");
         primaryStage.setScene(scene);

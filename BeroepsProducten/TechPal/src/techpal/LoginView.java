@@ -7,10 +7,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.scene.layout.GridPane;
-import techpal.Models.Device;
-import techpal.Models.Lesson;
-import techpal.Models.Period;
-import techpal.Models.Program;
+import techpal.Models.*;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -23,7 +20,6 @@ public class LoginView extends GridPane {
     private DbConnector conn;
 
     public LoginView(AnchorPane body, TechPalNavBar navBar) {
-
         conn = new DbConnector();
         logo = new Text("TechPal");
         lblUserName = new Text("Gebruikersnaam");
@@ -38,7 +34,8 @@ public class LoginView extends GridPane {
         btnOk.setOnAction(event -> {
             Session.currentUser.setUserNm(tdfUserName.getText());
             Session.currentUser.setPw(pwfPassword.getText());
-            String sql = "SELECT * FROM personen WHERE userNm = '"+Session.currentUser.getUserNm()+"' AND pw = '"+Session.currentUser.getPw()+"'";
+            String sql = "SELECT * FROM personen WHERE userNm = UPPER('"+Session.currentUser.getUserNm()+"') AND pw = '"+Session.currentUser.getPw()+"'";
+            System.out.println(sql);
             ResultSet res = conn.getData(sql);
             lblSignUp.setText("");
             try {
@@ -48,12 +45,10 @@ public class LoginView extends GridPane {
                     Session.currentUser.setRol(res.getString("rollen_rol"));
                     Session.currentStudent.setHnr(res.getString("hnr"));
                     Session.currentStudent.setNiveau(res.getString("niveau_nivom"));
-                    System.out.println(Session.currentUser.getRol());
                     navBar.loginSuccess();
                     setLessons(); //method call to get all lessons from database and add them to an ArrayList in the Session class
-                    setPrograms(); //method call to get all available programs from the database and add them to an ArrayList in the Session class
-                    setHasDevices(); //method call to get all devices owned by the current user.
-                    setPeriods(); //method call to get all available class terms in String format.
+                    initStage.setHasDevices(); //method call to get all devices owned by the current user.
+
                     if (Session.currentUser.getRol().equals("student")) {
                         this.getChildren().clear();
                         body.getChildren().add(new StuMainView(this)); //opens the Student pane
@@ -86,7 +81,7 @@ public class LoginView extends GridPane {
 
     //This method sets the user specific lessons in the Lesson and Session classes. Session is an arrayList of Lesson instances.
     private void setLessons() {
-        String role = Session.currentUser.getRol().equals("student") ? "stu" : "ttr";
+        String role = Session.currentUser.getRol().equals("student") ? "stu" : "ttr"; //checks whether the user is a student or a tutor
         //The following sql query joins the person table twice,
         // as I want to show the name of the tutor in the lesson tab view,
         // and not just the tutor's username. PS stands for PersoonStudent and PT means PersoonTutor
@@ -110,53 +105,10 @@ public class LoginView extends GridPane {
                 lesson.setTtr(res.getString("ttr"));
                 lesson.setStuNiv(res.getString("niveau_nivOm"));
                 lesson.setTtrNm((res.getString("ttrNm")));
-                Session.listLessons.add(lesson);
+                Session.oblLessons.add(lesson);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    private void setPrograms() {
-        String sqlProg = "SELECT progNm FROM programmas";
-        ResultSet resProg = conn.getData(sqlProg);
-        try {
-            while (resProg.next()) {
-                Program program = new Program();
-                program.setProgNm(resProg.getString("progNm"));
-                Session.listPrograms.add(program);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void setHasDevices() {
-        String sqlDev = "SELECT toestel_tstl FROM heeftToestellen WHERE Persoon_user = '"+Session.currentUser.getUserNm()+"'";
-        ResultSet resDev = conn.getData(sqlDev);
-        try {
-            while (resDev.next()) {
-                Device device = new Device();
-                device.setTstl(resDev.getString("toestel_tstl"));
-                Session.hasDevices.add(device);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void setPeriods() {
-        String sqlPer = "SELECT per FROM periodes";
-        ResultSet resPer = conn.getData(sqlPer);
-        try {
-            while (resPer.next()) {
-                Period period = new Period();
-                period.setPer(resPer.getString("per"));
-                Session.listPeriods.add(period);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
     }
 }

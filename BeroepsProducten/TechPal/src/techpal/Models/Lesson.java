@@ -1,7 +1,6 @@
 package techpal.Models;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public class Lesson {
 

@@ -3,24 +3,24 @@ package techpal;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import javafx.scene.layout.GridPane;
-import javafx.util.Callback;
+import javafx.util.StringConverter;
+import techpal.Models.Device;
 import techpal.Models.Lesson;
-
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 
 public class StuTabAdd extends Tab {
     private DatePicker dpDate;
-    private ComboBox<String> cbxProg, cbxDev, cbxPer;
+    private ComboBox<String> cbxProg, cbxPer;
+    private ComboBox<Device> cbxDev;
     private Text lblTitle, lblDate, lblProg, lblDev, lblPer;
     private Button btn;
     private DbConnector conn;
 
-    public StuTabAdd() {
+    public StuTabAdd(StuMainView tabPane) {
+        this.setText("Les Toevoegen");
         GridPane grid = new GridPane();
         conn = new DbConnector();
-        this.setText("Les Toevoegen");
         lblTitle = new Text("Voeg een les toe");
         lblDate = new Text("Datum: ");
         lblDev = new Text("Toestel: ");
@@ -33,12 +33,12 @@ public class StuTabAdd extends Tab {
         btn = new Button("Plan de les");
 
         dpDate.setValue(LocalDate.now());
-        dpDate.setDayCellFactory(callback -> new DateCell() {
+        dpDate.setDayCellFactory(callback -> new DateCell() { //disabling all dates before today
             @Override
             public void updateItem(LocalDate item, boolean empty) {
                 super.updateItem(item, empty);
                 setDisable(item.compareTo(LocalDate.now()) < 0);
-                long x = ChronoUnit.DAYS.between(
+                long x = ChronoUnit.DAYS.between( //hovering the mouse counts the days between today and the selected date
                         dpDate.getValue(), item
                 );
                 setTooltip(new Tooltip(
@@ -52,8 +52,12 @@ public class StuTabAdd extends Tab {
             cbxProg.getItems().add(program.getProgNm());
         });
 
-        Session.hasDevices.forEach(device -> {
-            cbxDev.getItems().add(device.getTstl());
+        cbxDev.setItems(Session.hasDevices);
+        cbxDev.setConverter(new StringConverter<Device>() {
+            @Override
+            public String toString(Device object) { return object.getTstl(); }
+            @Override
+            public Device fromString(String string) { return null; }
         });
 
         Session.listPeriods.forEach(period -> {
@@ -67,13 +71,22 @@ public class StuTabAdd extends Tab {
             lesson.setPer(cbxPer.getSelectionModel().getSelectedItem());
             lesson.setProg((cbxProg.getSelectionModel().getSelectedItem()));
             lesson.setIsFin(0);
-            lesson.setTstl(cbxDev.getSelectionModel().getSelectedItem());
-            Session.listLessons.add(lesson);
+            lesson.setTstl(cbxDev.getValue().getTstl());
             String sqlAdd = "INSERT INTO lessen (stu, dtm, periode_per, programma_prognm, isFin, tstl) " +
-                    "VALUES ('"+lesson.getStu()+"', to_date('"+lesson.getDtm()+"', 'yyyy/mm/dd')" +
+                    "VALUES (UPPER('"+lesson.getStu()+"'), to_date('"+lesson.getDtm()+"', 'yyyy/mm/dd')" +
                     ", '"+lesson.getPer()+"', '"+lesson.getProg()+"', "+lesson.getIsFin()+", '"+lesson.getTstl()+"')";
             System.out.println(sqlAdd);
+            Session.oblLessons.add(lesson);
             int result = conn.executeDML(sqlAdd);
+            if (result == 0) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("TechPal");
+                alert.setHeaderText(null);
+                alert.setContentText("Er is iets fout gegaan met de invoer");
+                alert.showAndWait();
+            } else {
+                tabPane.getSelectionModel().select(0);
+            }
         });
 
 
