@@ -53,7 +53,9 @@ public class LoginView extends GridPane {
                         this.getChildren().clear();
                         body.getChildren().add(new StuMainView(this)); //opens the Student pane
                     } else {
-                        System.out.println("GO TO TUTORVIEW"); //opens the Tutor pane
+                        initStage.setAvailableLessons();
+                        this.getChildren().clear();
+                        body.getChildren().add(new TtrMainView(this)); //opens the Tutor pane
                     }
                 } else {
                     lblSignUp.setText("Uw gebruikersnaam/wachtwoord combinatie klopt niet. Als u geen account heeft kunt u registeren");
@@ -90,8 +92,9 @@ public class LoginView extends GridPane {
                 "FROM personen ps " +
                 "INNER JOIN lessen l ON(l.stu = ps.userNm) " +
                 "LEFT OUTER JOIN personen pt ON(l.ttr = pt.usernm) " +
-                "WHERE "+role+" = '"+Session.currentUser.getUserNm()+"'";
+                "WHERE "+role+" = UPPER('"+Session.currentUser.getUserNm()+"')";
         ResultSet res = conn.getData(sqlLessen);
+        System.out.println(sqlLessen);
         try {
             while (res.next()) {
                 Lesson lesson = new Lesson();
@@ -104,7 +107,9 @@ public class LoginView extends GridPane {
                 lesson.setTstl(res.getString("tstl"));
                 lesson.setTtr(res.getString("ttr"));
                 lesson.setStuNiv(res.getString("niveau_nivOm"));
-                lesson.setTtrNm((res.getString("ttrNm")));
+                lesson.setTtrNm(res.getString("ttrNm"));
+                lesson.setStuPc((res.getString("pc")));
+                lesson.setStuHnr(res.getString("hnr"));
                 Session.oblLessons.add(lesson);
             }
         } catch (Exception e) {

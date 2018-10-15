@@ -19,5 +19,6 @@ public class Session {
     static ObservableList<Device>hasDevices = FXCollections.observableArrayList();
     static ArrayList<Period>listPeriods = new ArrayList<>();
     static ArrayList<Level>listLevels = new ArrayList<>();
+    static ObservableList<Lesson> oblAvailableLessons = FXCollections.observableArrayList();
 
 }

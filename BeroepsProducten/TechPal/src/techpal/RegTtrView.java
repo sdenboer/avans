@@ -9,7 +9,6 @@ import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.scene.layout.GridPane;
 import techpal.Models.Device;
-import techpal.Models.Person;
 
 import java.util.ArrayList;
 
@@ -42,7 +41,7 @@ public class RegTtrView extends GridPane {
         for (int i = 0; i < Session.listDevices.size(); i++) {
             String tstl = Session.listDevices.get(i).getTstl();
             CheckBox checkBox = new CheckBox(tstl);
-            add(checkBox, i+1, 5); //adds a new device and checkbox to the grid
+            add(checkBox, i+1, 4); //adds a new device and checkbox to the grid
             listCheckbox.add(checkBox);
             Session.hasDevices.forEach(device -> {
                 if (device.getTstl().equals(tstl)) {
@@ -63,7 +62,8 @@ public class RegTtrView extends GridPane {
 
                 String sqlRegisterTutor = "INSERT INTO personen (userNm, pw, nm, pc, rollen_rol)" +
                         "VALUES (UPPER('"+Session.currentUser.getUserNm()+"'), '"+Session.currentUser.getPw()+"', " +
-                        "'" +Session.currentUser.getNm()+ "', '"+Session.currentUser.getPc()+ "', 'tutor')";
+                        "'" +Session.currentUser.getNm()+ "', UPPER('"+Session.currentUser.getPc()+ "'), '"+Session.currentUser.getRol()+"')";
+                int result = conn.executeDML(sqlRegisterTutor);
 
                 listCheckbox.forEach(checkBox -> {
                     if (checkBox.isSelected()) {
@@ -75,6 +75,8 @@ public class RegTtrView extends GridPane {
                         int resultAddHasDevice = conn.executeDML(sqlAddHasDevice);
                     }
                 });
+                this.getChildren().clear();
+                body.getChildren().add(new TtrMainView(this)); //opens the Student pane
             } else {
                 lblError.setText("Er is een probleem met de invoergegevens");
             }
@@ -88,8 +90,9 @@ public class RegTtrView extends GridPane {
         add(tfdName, 1, 2);
         add(lblZipCode, 0, 3);
         add(tfdZipCode, 1, 3);
-        add(btnRegister, 0, 4);
-        add(lblError, 0, 5);
+        add(lblDevices, 0, 4);
+        add(btnRegister, 0, 5);
+        add(lblError, 0, 6);
 
         body.getChildren().add(this);
     }

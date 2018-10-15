@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class Lesson {
 
-    private String stu, stuNm, per, prog, tstl, ttr, ttrNm, stuNiv;
+    private String stu, stuNm, per, prog, tstl, ttr, ttrNm, stuNiv, stuPc, stuHnr;
     private int isFin;
     private LocalDate dtm;
 
@@ -90,4 +90,21 @@ public class Lesson {
     public void setStuNiv(String stuNiv) {
         this.stuNiv = stuNiv;
     }
+
+    public String getStuPc() {
+        return stuPc;
+    }
+
+    public void setStuPc(String stuPc) {
+        this.stuPc = stuPc;
+    }
+
+    public String getStuHnr() {
+        return stuHnr;
+    }
+
+    public void setStuHnr(String stuHnr) {
+        this.stuHnr = stuHnr;
+    }
+
 }

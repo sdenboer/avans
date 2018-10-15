@@ -27,6 +27,7 @@ public class TechPalNavBar extends GridPane {
             Session.currentStudent = new Student(); //resets the current user if he or she is a student
             Session.oblLessons.clear(); // clear all the lessons of the previous user in the session
             Session.hasDevices.clear();
+            Session.oblAvailableLessons.clear();
         });
 
 

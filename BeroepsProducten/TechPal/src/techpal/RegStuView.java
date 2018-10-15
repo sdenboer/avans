@@ -73,7 +73,7 @@ public class RegStuView extends GridPane {
                 Session.currentUser.setRol("student");
 
                 String sqlRegisterStudent = "INSERT INTO personen VALUES (UPPER('"+Session.currentUser.getUserNm()+"'),'"+Session.currentUser.getPw()+"','"+Session.currentUser.getNm()+"'," +
-                        "'"+Session.currentUser.getPc()+"','"+Session.currentStudent.getHnr()+"','"+Session.currentStudent.getNiveau()+"', '"+Session.currentUser.getRol()+"')";
+                        "UPPER('"+Session.currentUser.getPc()+"'),'"+Session.currentStudent.getHnr()+"','"+Session.currentStudent.getNiveau()+"', '"+Session.currentUser.getRol()+"')";
                 int result = conn.executeDML(sqlRegisterStudent);
                 listCheckbox.forEach(checkBox -> {
                     if (checkBox.isSelected()) {
