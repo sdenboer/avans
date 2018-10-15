@@ -1,5 +1,7 @@
 package techpal.Models;
 
+import javafx.scene.paint.Color;
+
 import java.time.LocalDate;
 
 public class Lesson {
@@ -12,7 +14,7 @@ public class Lesson {
     }
 
     public String getStu() {
-          return stu;
+        return stu;
     }
 
     public void setStu(String stu) {

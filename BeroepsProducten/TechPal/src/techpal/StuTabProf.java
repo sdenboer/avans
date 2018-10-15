@@ -70,7 +70,7 @@ public class StuTabProf extends Tab {
                 Session.currentStudent.setNiveau(cbxLevel.getSelectionModel().getSelectedItem());
                 String sqlUpdatePerson = "UPDATE personen " +
                         "SET pw = '"+Session.currentUser.getPw()+"', nm = '"+Session.currentUser.getNm()+"', " +
-                        "pc = '"+Session.currentUser.getPc()+"', hnr = '"+Session.currentStudent.getHnr()+"', " +
+                        "pc = UPPER('"+Session.currentUser.getPc()+"'), hnr = '"+Session.currentStudent.getHnr()+"', " +
                         "niveau_nivOm = '"+Session.currentStudent.getNiveau()+"' " +
                         "WHERE userNm = UPPER('"+Session.currentUser.getUserNm()+"')";
                 System.out.println(sqlUpdatePerson);

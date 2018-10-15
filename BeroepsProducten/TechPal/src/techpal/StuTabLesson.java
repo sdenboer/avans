@@ -61,7 +61,6 @@ public class StuTabLesson extends Tab {
                     "WHERE dtm = to_date('"+pkDtm+"', 'yyyy/mm/dd') " +
                     "AND stu = UPPER('"+pkStu+"') " +
                     "AND periode_per = '"+pkPer+"' ";
-            System.out.println(sqlDelete);
             int result = conn.executeDML(sqlDelete);
         });
 

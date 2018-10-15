@@ -1,10 +1,13 @@
 package techpal;
 
 
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.scene.layout.GridPane;
@@ -20,20 +23,32 @@ public class RegTtrView extends GridPane {
     private Button btnRegister;
     private ArrayList<CheckBox> listCheckbox;
     private DbConnector conn;
+    private TtrMainView ttrMainView;
 
-    public RegTtrView(Pane body) {
+    public RegTtrView(AnchorPane body) {
+        this.setHgap(10);
+        this.setVgap(10);
+        this.setAlignment(Pos.CENTER);
+        this.setMinHeight(800);
+        this.setMinWidth(800);
+        this.getColumnConstraints().add(new ColumnConstraints(200));
 
         conn = new DbConnector();
         //ASSIGN labels and textfields
         lblUserName = new Text("Gebruikersnaam: ");
+        lblUserName.setId("text-label");
         tfdUserName = new TextField();
         lblPassword = new Text("Wachtwoord: ");
+        lblPassword.setId("text-label");
         pwfPassword = new PasswordField();
         lblName = new Text("Naam: ");
+        lblName.setId("text-label");
         tfdName = new TextField();
         lblZipCode = new Text("Postcode: ");
+        lblZipCode.setId("text-label");
         tfdZipCode = new TextField();
-        lblDevices = new Text("Ik ben gespecialiseerd in deze toestellen: ");
+        lblDevices = new Text("Specializaties: ");
+        lblDevices.setId("text-label");
         listCheckbox = new ArrayList<>();
         btnRegister = new Button("Registeren");
         lblError = new Text("");
@@ -41,8 +56,9 @@ public class RegTtrView extends GridPane {
         for (int i = 0; i < Session.listDevices.size(); i++) {
             String tstl = Session.listDevices.get(i).getTstl();
             CheckBox checkBox = new CheckBox(tstl);
-            add(checkBox, i+1, 4); //adds a new device and checkbox to the grid
+            add(checkBox, 1, 4+i); //adds a new device and checkbox to the grid
             listCheckbox.add(checkBox);
+            checkBox.setId("text-label");
             Session.hasDevices.forEach(device -> {
                 if (device.getTstl().equals(tstl)) {
                     checkBox.setSelected(true); //loops through the devices owned by the current user and checks them
@@ -75,8 +91,12 @@ public class RegTtrView extends GridPane {
                         int resultAddHasDevice = conn.executeDML(sqlAddHasDevice);
                     }
                 });
-                this.getChildren().clear();
-                body.getChildren().add(new TtrMainView(this)); //opens the Student pane
+                initStage.setAvailableLessons();
+                ttrMainView = new TtrMainView(body);
+                body.getChildren().clear();
+                body.getChildren().add(ttrMainView);
+//                this.getChildren().clear();
+//                body.getChildren().add(new TtrMainView(this)); //opens the Student pane
             } else {
                 lblError.setText("Er is een probleem met de invoergegevens");
             }
@@ -91,8 +111,8 @@ public class RegTtrView extends GridPane {
         add(lblZipCode, 0, 3);
         add(tfdZipCode, 1, 3);
         add(lblDevices, 0, 4);
-        add(btnRegister, 0, 5);
-        add(lblError, 0, 6);
+        add(btnRegister, 0, 7);
+        add(lblError, 0, 8);
 
         body.getChildren().add(this);
     }

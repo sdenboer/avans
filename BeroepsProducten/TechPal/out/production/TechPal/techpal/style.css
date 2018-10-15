@@ -1,3 +1,78 @@
 .root {
-    -fx-background-color: #2D3447;
+    -fx-background-color: #007aa3
+}
+
+#text-title {
+    -fx-font-family: Montserrat;
+    -fx-font-size: 50;
+    -fx-fill: white;
+}
+
+#text-label {
+    -fx-font-family: Montserrat;
+    -fx-font-size: 15;
+    -fx-fill: white;
+    -fx-text-fill: white;
+}
+
+#text-username {
+    -fx-font-size: 15;
+    -fx-fill: #EAC435;
+    -fx-text-fill: #EAC435;
+    -fx-font-weight: bold;
+}
+
+
+#text-choice {
+    -fx-font-family: Montserrat;
+    -fx-font-size: 20;
+    -fx-fill: white;
+}
+
+.button {
+    -fx-background-radius: 0%;
+}
+
+#btn-reg {
+    -fx-background-color: #007aa3;
+    -fx-font-size: 15;
+    -fx-text-fill: #EAC435;
+}
+#btn-reg:hover {
+    -fx-text-fill: #F5FF90;
+}
+
+#btn-student {
+    -fx-background-color: #007aa3;
+    -fx-text-fill: #FF9874;
+    -fx-font-size: 15;
+}
+#btn-student:hover {
+    -fx-text-fill: f76c3d;
+}
+
+#btn-login {
+    -fx-background-color: #CEF4FE;
+}
+
+#navbar {
+    -fx-background-color: #00171e;
+}
+
+#nav-btn {
+    -fx-background-color: #00171e;
+    -fx-text-fill: #F4F3F3;
+}
+
+#nav-btn:hover {
+    -fx-background-color: #00090c;
+    -fx-text-fill: #e0e0e0;
+}
+
+.text-field {
+    -fx-background-color: #007aa3;
+    -fx-font-size: 18;
+    -fx-font-weight: bold;
+    -fx-border-color: white;
+    -fx-border-width: 0 0 1 0;
 }

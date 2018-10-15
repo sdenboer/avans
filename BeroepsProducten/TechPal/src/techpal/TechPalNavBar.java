@@ -1,5 +1,6 @@
 package techpal;
 
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
@@ -12,22 +13,23 @@ public class TechPalNavBar extends GridPane {
     private LoginView resetLoginView;
 
     public TechPalNavBar(AnchorPane body) {
-        this.setStyle("-fx-background-color:#575757");
-        btnBackToLogin = new Button("Home");
-        btnBackToLogin.setStyle("-fx-background-color:#575757; -fx-text-fill: white");
-        btnBackToLogin.setOnMouseEntered(e -> btnBackToLogin.setStyle("-fx-background-color:#444444; -fx-text-fill: white"));
-        btnBackToLogin.setOnMouseExited(e -> btnBackToLogin.setStyle("-fx-background-color:#575757; -fx-text-fill: white"));
+        this.setMinWidth(850);
+        this.setId("navbar");
+        this.setAlignment(Pos.TOP_RIGHT);
+        btnBackToLogin = new Button("");
+        btnBackToLogin.setId("nav-btn");
 
         btnBackToLogin.setOnAction(event -> {
             resetLoginView = new LoginView(body, this);
+            btnBackToLogin.setText("");
             body.getChildren().clear();
             body.getChildren().add(resetLoginView);
-            btnBackToLogin.setText("Home");
             Session.currentUser = new Person(); //resets the current user
             Session.currentStudent = new Student(); //resets the current user if he or she is a student
             Session.oblLessons.clear(); // clear all the lessons of the previous user in the session
             Session.hasDevices.clear();
             Session.oblAvailableLessons.clear();
+            Session.oblPrevLessons.clear();
         });
 
 
@@ -36,6 +38,14 @@ public class TechPalNavBar extends GridPane {
     }
 
     public void loginSuccess() {
+        this.getChildren().clear();
         btnBackToLogin.setText("Uitloggen");
+        add(btnBackToLogin, 0, 0);
+    }
+
+    public void register() {
+        this.getChildren().clear();
+        btnBackToLogin.setText("Terug");
+        add(btnBackToLogin, 0, 0);
     }
 }
