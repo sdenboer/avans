@@ -2,42 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TechPal/techpal/LoginView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TechPal/techpal/Models/Lesson.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TechPal/techpal/Models/Lesson.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TechPal/techpal/RegRoleView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TechPal/techpal/RegStuView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TechPal/techpal/RegTtrView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TechPal/techpal/Session.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TechPal/techpal/Session.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TechPal/techpal/StuMainView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TechPal/techpal/StuMainView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TechPal/techpal/StuTabLesson.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TechPal/techpal/StuTabLesson.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TechPal/techpal/StuTabProf.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TechPal/techpal/StuTabProf.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TechPal/techpal/TechPal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TechPal/techpal/TechPalNavBar.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TechPal/techpal/TtrMainView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TechPal/techpal/TtrMainView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TechPal/techpal/TtrTabAdd.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TechPal/techpal/TtrTabLesson.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TechPal/techpal/TtrTabProf.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TechPal/techpal/initStage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TechPal/techpal/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/techpal/LoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/techpal/LoginView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/techpal/Models/Lesson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/techpal/Models/Lesson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/techpal/RegRoleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/techpal/RegRoleView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/techpal/RegStuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/techpal/RegStuView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/techpal/RegTtrView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/techpal/RegTtrView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/techpal/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/techpal/Session.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/techpal/StuMainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/techpal/StuMainView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/techpal/StuTabLesson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/techpal/StuTabLesson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/techpal/StuTabProf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/techpal/StuTabProf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/techpal/TechPal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/techpal/TechPal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/techpal/TechPalNavBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/techpal/TechPalNavBar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/techpal/TtrMainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/techpal/TtrMainView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/techpal/TtrTabAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/techpal/TtrTabAdd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/techpal/TtrTabLesson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/techpal/TtrTabLesson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/techpal/TtrTabProf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/techpal/TtrTabProf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/techpal/initStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/techpal/initStage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/techpal/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../FX0501/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../FX0501/nbproject/private/private.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/techpal/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/techpal/icon.png" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -193,8 +158,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/techpal/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+            <state relative-caret-position="64">
+              <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -238,6 +203,7 @@
       <find>weet u</find>
       <find>alert</find>
       <find>gebruikers</find>
+      <find>bold</find>
     </findStrings>
   </component>
   <component name="FindManager">
@@ -371,7 +337,7 @@
     <property name="SearchEverywhereHistoryKey" value="Ttr&#9;FILE&#9;file:///home/sven/code/avans/BeroepsProducten/TechPal/src/techpal/TtrTabProf.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539640533984" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539640864961" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -482,12 +448,12 @@
       <workItem from="1539096807709" duration="30372000" />
       <workItem from="1539283479532" duration="9202000" />
       <workItem from="1539330940818" duration="6255000" />
-      <workItem from="1539420224560" duration="123055000" />
+      <workItem from="1539420224560" duration="123403000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="175605000" />
+    <option name="totallyTimeSpent" value="175953000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="986" extended-state="6" />
@@ -871,8 +837,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/techpal/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+        <state relative-caret-position="64">
+          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
         </state>
       </provider>
     </entry>
