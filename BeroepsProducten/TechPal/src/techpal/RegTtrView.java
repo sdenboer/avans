@@ -2,13 +2,9 @@ package techpal;
 
 
 import javafx.geometry.Pos;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.ColumnConstraints;
-import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.scene.layout.GridPane;
 import techpal.Models.Device;
@@ -17,7 +13,7 @@ import java.util.ArrayList;
 
 
 public class RegTtrView extends GridPane {
-    private Text lblUserName, lblPassword, lblName, lblZipCode, lblDevices, lblError;
+    private Text lblUserName, lblPassword, lblName, lblZipCode, lblDevices;
     private TextField tfdUserName, tfdName, tfdZipCode;
     private PasswordField pwfPassword;
     private Button btnRegister;
@@ -51,7 +47,6 @@ public class RegTtrView extends GridPane {
         lblDevices.setId("text-label");
         listCheckbox = new ArrayList<>();
         btnRegister = new Button("Registeren");
-        lblError = new Text("");
 
         for (int i = 0; i < Session.listDevices.size(); i++) {
             String tstl = Session.listDevices.get(i).getTstl();
@@ -69,7 +64,6 @@ public class RegTtrView extends GridPane {
         btnRegister.setOnAction(event -> {
             if (tfdZipCode.getText().toUpperCase().matches("(\\d{4})\\s*([A-Z]{2})")
                     && tfdName.getText().matches("^[a-zA-ZàáâäãåąčćęèéêëėįìíîïńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇČŠŽ ,.'-]+$")) {
-                lblError.setText("");
                 Session.currentUser.setUserNm(tfdUserName.getText());
                 Session.currentUser.setPw(pwfPassword.getText());
                 Session.currentUser.setNm(tfdName.getText());
@@ -98,7 +92,11 @@ public class RegTtrView extends GridPane {
 //                this.getChildren().clear();
 //                body.getChildren().add(new TtrMainView(this)); //opens the Student pane
             } else {
-                lblError.setText("Er is een probleem met de invoergegevens");
+                Alert alert = new Alert(Alert.AlertType.ERROR); //if the sql query can't find anyone, this window pops up to alert the user.
+                alert.setTitle("Oeps!");
+                alert.setHeaderText(null);
+                alert.setContentText("Er is een probleem met de invoergegevens");
+                alert.showAndWait();
             }
         });
 
@@ -112,8 +110,6 @@ public class RegTtrView extends GridPane {
         add(tfdZipCode, 1, 3);
         add(lblDevices, 0, 4);
         add(btnRegister, 0, 7);
-        add(lblError, 0, 8);
-
         body.getChildren().add(this);
     }
 }

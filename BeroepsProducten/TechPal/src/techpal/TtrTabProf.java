@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class TtrTabProf extends Tab {
     private GridPane grid;
-    private Text lblUserName, txtUserName, title, lblPassword, lblName, lblZipCode, lblNumber, lblDevices, lblLevel;
+    private Text lblUserName, txtUserName, title, lblPassword, lblName, lblZipCode, lblDevices;
     private PasswordField pwfPassword;
     private TextField tfdName, tfdZipCode;
     private Button btn;
@@ -60,7 +60,6 @@ public class TtrTabProf extends Tab {
             if (!pwfPassword.getText().isEmpty()
                     && tfdZipCode.getText().toUpperCase().matches("(\\d{4})\\s*([A-Z]{2})")
                     && tfdName.getText().matches("^[a-zA-ZàáâäãåąčćęèéêëėįìíîïńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇČŠŽ ,.'-]+$")) {
-                lblPassword.setFill(Color.BLACK);
                 Session.currentUser.setPw(pwfPassword.getText());
                 Session.currentUser.setNm(tfdName.getText());
                 Session.currentUser.setPc(tfdZipCode.getText());
@@ -94,9 +93,12 @@ public class TtrTabProf extends Tab {
                 alert.setContentText("Uw gegevens zijn aangepast!");
                 alert.showAndWait();
                 tabPane.getSelectionModel().select(0);
-
             } else {
-                lblPassword.setFill(Color.RED);
+                Alert alert = new Alert(Alert.AlertType.ERROR); //if the sql query can't find anyone, this window pops up to alert the user.
+                alert.setTitle("Oeps!");
+                alert.setHeaderText(null);
+                alert.setContentText("Er is een probleem met de invoergegevens");
+                alert.showAndWait();
             }
         });
 
