@@ -3,7 +3,6 @@ package techpal;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import techpal.Models.*;
-
 import java.util.ArrayList;
 
 public class Session {

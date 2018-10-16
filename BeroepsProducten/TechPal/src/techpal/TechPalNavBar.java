@@ -31,13 +31,10 @@ public class TechPalNavBar extends GridPane {
             Session.oblAvailableLessons.clear();
             Session.oblPrevLessons.clear();
         });
-
-
-
         add(btnBackToLogin, 0, 0);
     }
 
-    public void loginSuccess() {
+    public void loginSuccess() { //changes the text once button is pressed
         this.getChildren().clear();
         btnBackToLogin.setText("Uitloggen");
         add(btnBackToLogin, 0, 0);

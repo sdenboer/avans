@@ -71,8 +71,20 @@
 
 .text-field {
     -fx-background-color: #007aa3;
+    -fx-font-size: 20;
+    -fx-font-weight: lighter;
+    -fx-border-color: white;
+    -fx-border-width: 0 0 1 0;
+    -fx-text-fill: white;
+}
+
+.date-picker > .text-field {
+    -fx-background-color: white;
     -fx-font-size: 18;
     -fx-font-weight: bold;
     -fx-border-color: white;
     -fx-border-width: 0 0 1 0;
+    -fx-background-insets: 1 0 1 1;
+    -fx-background-radius: 2 0 0 2;
+    -fx-text-fill: black;
 }

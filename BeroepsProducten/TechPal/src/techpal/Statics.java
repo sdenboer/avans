@@ -1,12 +1,19 @@
 package techpal;
 
+import javafx.geometry.Pos;
+import javafx.scene.control.Alert;
+import javafx.scene.control.CheckBox;
+import javafx.scene.layout.ColumnConstraints;
 import techpal.Models.*;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.StringJoiner;
 import static java.lang.Math.abs;
+import javafx.scene.layout.GridPane;
 
-public class initStage {
-    public initStage() {
+public class Statics { //I'm saving all static methods in this file
+
+    public Statics() {
     }
 
     public static void setPeriods() {
@@ -23,6 +30,7 @@ public class initStage {
             e.printStackTrace();
         }
     }
+
     public static void setLevels() {
         DbConnector conn = new DbConnector();
         String sqlLvl = "SELECT nivOm FROM niveaus";
@@ -52,6 +60,7 @@ public class initStage {
             e.printStackTrace();
         }
     }
+
     public static void setDevices() {
         DbConnector conn = new DbConnector();
         String sqlDev = "SELECT tstl FROM toestellen";
@@ -82,6 +91,82 @@ public class initStage {
         }
     }
 
+
+
+    public static void setLessons() {
+        //This method sets the user specific lessons in the Lesson and Session classes.
+        // Session is an arrayList of Lesson instances.
+        DbConnector conn = new DbConnector();
+        String role = Session.currentUser.getRol().equals("student") ? "stu" : "ttr";
+        //checks whether the user is a student or a tutor
+        //The following sql query joins the person table twice,
+        // as I want to show the name of the tutor in the lesson tab view,
+        // and not just the tutor's username. PS stands for PersoonStudent and PT means PersoonTutor
+        String sqlLessen = "SELECT ps.usernm, ps.nm AS stuNm, ps.pc, ps.hnr, ps.niveau_nivom, l.stu, l.dtm, l.periode_per, " +
+                "l.programma_prognm, l.isFin, l.tstl, l.ttr, pt.nm AS ttrNm " +
+                "FROM personen ps " +
+                "INNER JOIN lessen l ON(l.stu = ps.userNm) " +
+                "LEFT OUTER JOIN personen pt ON(l.ttr = pt.usernm) " +
+                "WHERE "+role+" = UPPER('"+Session.currentUser.getUserNm()+"')";
+        ResultSet res = conn.getData(sqlLessen);
+        try {
+            while (res.next()) {
+                Lesson lesson = new Lesson();
+                lesson.setStu(res.getString("stu"));
+                lesson.setStuNm(res.getString("stuNm"));
+                lesson.setDtm(res.getDate("dtm").toLocalDate());
+                lesson.setPer(res.getString("periode_per"));
+                lesson.setProg(res.getString("programma_progNm"));
+                lesson.setIsFin(res.getInt("isFin"));
+                lesson.setTstl(res.getString("tstl"));
+                lesson.setTtr(res.getString("ttr"));
+                lesson.setStuNiv(res.getString("niveau_nivOm"));
+                lesson.setTtrNm(res.getString("ttrNm"));
+                lesson.setStuPc((res.getString("pc")));
+                lesson.setStuHnr(res.getString("hnr"));
+                if (lesson.getIsFin() == 0) {
+                    Session.oblLessons.add(lesson);
+                } else {
+                    Session.oblPrevLessons.add(lesson);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void alert(String title, String content, Alert.AlertType alertType) {
+        Alert alert = new Alert(alertType);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(content);
+        alert.showAndWait();
+    }
+
+    public static void checkBoxPlacement(ArrayList<CheckBox> listCheckbox, int checkBoxRowInd, GridPane grid) {
+        for (int i = 0; i < Session.listDevices.size(); i++) {
+            String tstl = Session.listDevices.get(i).getTstl();
+            CheckBox checkBox = new CheckBox(tstl);
+            checkBox.setId("text-label");
+            grid.add(checkBox, 1, checkBoxRowInd+i); //adds a new device and checkbox to the grid
+            listCheckbox.add(checkBox);
+            Session.hasDevices.forEach(device -> {
+                if (device.getTstl().equals(tstl)) {
+                    checkBox.setSelected(true); //loops through the devices owned by the current user and checks them
+                }
+            });
+        }
+    }
+
+    public static void setGrid(GridPane grid){
+        grid.setHgap(10);
+        grid.setVgap(10);
+        grid.setAlignment(Pos.CENTER);
+        grid.setMinHeight(800);
+        grid.setMinWidth(800);
+        grid.getColumnConstraints().add(new ColumnConstraints(200));
+    }
+
     public static void setAvailableLessons() {
         Session.oblAvailableLessons.clear();
         DbConnector conn = new DbConnector();
@@ -89,7 +174,6 @@ public class initStage {
         Session.hasDevices.forEach(device -> {
             strjDev.add(device.getTstl());
         });
-
         String sqlAv = "SELECT p.nm, p.pc, p.hnr, p.niveau_nivom, l.stu, l.dtm, l.periode_per, l.programma_prognm, " +
                 "l.isFin, l.tstl " +
                 "FROM lessen l " +
@@ -116,7 +200,6 @@ public class initStage {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         //Reordering the zip codes from nearest to furthest from the home address of the currentUser.
         int zipCode = Integer.parseInt(Session.currentUser.getPc().replaceAll("[\\D]", ""));
         for (int i = 0; i<Session.oblAvailableLessons.size(); i++) {
@@ -153,46 +236,5 @@ public class initStage {
 //        System.out.println(arr.length);
 //        System.out.println(Arrays.toString(arr));
 //        System.out.println(Session.oblAvailableLessons.size());
-    }
-
-    public static void setLessons() {     //This method sets the user specific lessons in the Lesson and Session classes. Session is an arrayList of Lesson instances.
-        DbConnector conn = new DbConnector();
-        String role = Session.currentUser.getRol().equals("student") ? "stu" : "ttr"; //checks whether the user is a student or a tutor
-        //The following sql query joins the person table twice,
-        // as I want to show the name of the tutor in the lesson tab view,
-        // and not just the tutor's username. PS stands for PersoonStudent and PT means PersoonTutor
-        String sqlLessen = "SELECT ps.usernm, ps.nm AS stuNm, ps.pc, ps.hnr, ps.niveau_nivom, l.stu, l.dtm, l.periode_per, " +
-                "l.programma_prognm, l.isFin, l.tstl, l.ttr, pt.nm AS ttrNm " +
-                "FROM personen ps " +
-                "INNER JOIN lessen l ON(l.stu = ps.userNm) " +
-                "LEFT OUTER JOIN personen pt ON(l.ttr = pt.usernm) " +
-                "WHERE "+role+" = UPPER('"+Session.currentUser.getUserNm()+"')";
-        ResultSet res = conn.getData(sqlLessen);
-        System.out.println(sqlLessen);
-        try {
-            while (res.next()) {
-                Lesson lesson = new Lesson();
-                lesson.setStu(res.getString("stu"));
-                lesson.setStuNm(res.getString("stuNm"));
-                lesson.setDtm(res.getDate("dtm").toLocalDate());
-                lesson.setPer(res.getString("periode_per"));
-                lesson.setProg(res.getString("programma_progNm"));
-                lesson.setIsFin(res.getInt("isFin"));
-                lesson.setTstl(res.getString("tstl"));
-                lesson.setTtr(res.getString("ttr"));
-                lesson.setStuNiv(res.getString("niveau_nivOm"));
-                lesson.setTtrNm(res.getString("ttrNm"));
-                lesson.setStuPc((res.getString("pc")));
-                lesson.setStuHnr(res.getString("hnr"));
-                if (lesson.getIsFin() == 0) {
-                    Session.oblLessons.add(lesson);
-                } else {
-                    Session.oblPrevLessons.add(lesson);
-                }
-
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 }

@@ -1,6 +1,8 @@
 package techpal;
 
+import javafx.geometry.Pos;
 import javafx.scene.control.*;
+import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.text.Text;
 import javafx.scene.layout.GridPane;
 import javafx.util.StringConverter;
@@ -13,20 +15,26 @@ public class StuTabAdd extends Tab {
     private DatePicker dpDate;
     private ComboBox<String> cbxProg, cbxPer;
     private ComboBox<Device> cbxDev;
-    private Text lblTitle, lblDate, lblProg, lblDev, lblPer;
+    private Text title, lblDate, lblProg, lblDevices, lblPer;
     private Button btn;
     private DbConnector conn;
 
-    public StuTabAdd(StuMainView tabPane) {
+    public StuTabAdd(TabView tabPane) {
         this.setText("Les Toevoegen");
         GridPane grid = new GridPane();
         conn = new DbConnector();
-        lblTitle = new Text("Voeg een les toe");
+        title = new Text("Voeg een les toe");
+        title.setId("text-title");
         lblDate = new Text("Datum: ");
-        lblDev = new Text("Toestel: ");
+        lblDate.setId("text-label");
+        lblDevices = new Text("Toestel: ");
+        lblDevices.setId("text-label");
         lblProg = new Text("Onderwerp: ");
+        lblProg.setId("text-label");
         lblPer = new Text("Tijd: ");
+        lblPer.setId("text-label");
         dpDate = new DatePicker();
+        dpDate.setId("datepicker");
         cbxProg = new ComboBox<>();
         cbxDev = new ComboBox<>();
         cbxPer = new ComboBox<>();
@@ -47,13 +55,15 @@ public class StuTabAdd extends Tab {
             }
         });
 
-
         Session.listPrograms.forEach(program -> {
-            cbxProg.getItems().add(program.getProgNm());
+            cbxProg.getItems().add(program.getProgNm()); //add all available programs to the combobox
         });
+        cbxProg.getSelectionModel().selectFirst();
 
         cbxDev.setItems(Session.hasDevices);
+        cbxDev.getSelectionModel().selectFirst();
         cbxDev.setConverter(new StringConverter<Device>() {
+            //since the combobox is filled with objects, they should be converted to strings.
             @Override
             public String toString(Device object) { return object.getTstl(); }
             @Override
@@ -63,43 +73,43 @@ public class StuTabAdd extends Tab {
         Session.listPeriods.forEach(period -> {
             cbxPer.getItems().add(period.getPer());
         });
+        cbxPer.getSelectionModel().selectFirst();
 
         btn.setOnAction(event -> {
-            Lesson lesson = new Lesson();
-            lesson.setStu(Session.currentUser.getUserNm());
-            lesson.setDtm(dpDate.getValue());
-            lesson.setPer(cbxPer.getSelectionModel().getSelectedItem());
-            lesson.setProg((cbxProg.getSelectionModel().getSelectedItem()));
-            lesson.setIsFin(0);
-            lesson.setTstl(cbxDev.getValue().getTstl());
-            String sqlAdd = "INSERT INTO lessen (stu, dtm, periode_per, programma_prognm, isFin, tstl) " +
-                    "VALUES (UPPER('"+lesson.getStu()+"'), to_date('"+lesson.getDtm()+"', 'yyyy/mm/dd')" +
-                    ", '"+lesson.getPer()+"', '"+lesson.getProg()+"', "+lesson.getIsFin()+", '"+lesson.getTstl()+"')";
-            System.out.println(sqlAdd);
-            Session.oblLessons.add(lesson);
-            int result = conn.executeDML(sqlAdd);
-            if (result == 0) {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("TechPal");
-                alert.setHeaderText(null);
-                alert.setContentText("Er is iets fout gegaan met de invoer");
-                alert.showAndWait();
+            if (!cbxDev.getItems().isEmpty() && !cbxProg.getItems().isEmpty() && !cbxPer.getItems().isEmpty()) {
+                Lesson lesson = new Lesson();
+                lesson.setStu(Session.currentUser.getUserNm());
+                lesson.setDtm(dpDate.getValue());
+                lesson.setPer(cbxPer.getSelectionModel().getSelectedItem());
+                lesson.setProg((cbxProg.getSelectionModel().getSelectedItem()));
+                lesson.setIsFin(0);
+                lesson.setTstl(cbxDev.getValue().getTstl());
+                String sqlAdd = "INSERT INTO lessen (stu, dtm, periode_per, programma_prognm, isFin, tstl) " +
+                        "VALUES (UPPER('"+lesson.getStu()+"'), to_date('"+lesson.getDtm()+"', 'yyyy/mm/dd')" +
+                        ", '"+lesson.getPer()+"', '"+lesson.getProg()+"', "+lesson.getIsFin()+", '"+lesson.getTstl()+"')";
+                Session.oblLessons.add(lesson);
+                int result = conn.executeDML(sqlAdd);
+                if (result == 0) {
+                    Statics.alert("Oeps!", "Er is iets fout gegaan met de invoer", Alert.AlertType.INFORMATION);
+                } else {
+                    tabPane.getSelectionModel().select(0); //Return to first tab
+                }
             } else {
-                tabPane.getSelectionModel().select(0);
+                Statics.alert("Oeps!", "Er is iets fout gegaan met de invoer", Alert.AlertType.INFORMATION);
             }
         });
 
-
-        grid.add(lblDev, 0, 1);
-        grid.add(cbxDev, 1, 1);
-        grid.add(lblProg, 0, 2);
-        grid.add(cbxProg, 1, 2);
-        grid.add(lblDate, 0, 3);
-        grid.add(dpDate, 1, 3);
-        grid.add(lblPer, 0, 4);
-        grid.add(cbxPer, 1, 4);
-        grid.add(btn, 0, 5);
-
+        Statics.setGrid(grid);
+        grid.add(title, 0, 0);
+        grid.add(lblDevices, 0, 11);
+        grid.add(cbxDev, 1, 11);
+        grid.add(lblProg, 0, 12);
+        grid.add(cbxProg, 1, 12);
+        grid.add(lblDate, 0, 13);
+        grid.add(dpDate, 1, 13);
+        grid.add(lblPer, 0, 14);
+        grid.add(cbxPer, 1, 14);
+        grid.add(btn, 0, 15);
         this.setContent(grid);
     }
 }

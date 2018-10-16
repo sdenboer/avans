@@ -1,6 +1,7 @@
 package techpal;
 
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
@@ -18,9 +19,6 @@ public class LoginView extends GridPane {
     private PasswordField pwfPassword;
     private Button btnOk, btnRegister;
     private DbConnector conn;
-    private RegRoleView regRoleView;
-    private StuMainView stuMainView;
-    private TtrMainView ttrMainView;
 
     public LoginView(AnchorPane body, TechPalNavBar navBar) {
         this.setHgap(10);
@@ -29,9 +27,7 @@ public class LoginView extends GridPane {
         this.setMinHeight(800);
         this.setMinWidth(850);
         this.getColumnConstraints().add(new ColumnConstraints(150));
-
         conn = new DbConnector();
-
         title = new Text("TechPal");
         title.setId("text-title");
         lblUserName = new Text("Gebruikersnaam");
@@ -58,28 +54,17 @@ public class LoginView extends GridPane {
                     Session.currentStudent.setHnr(res.getString("hnr"));
                     Session.currentStudent.setNiveau(res.getString("niveau_nivom"));
                     navBar.loginSuccess();
-                    initStage.setLessons(); //method call to get all lessons from database and add them to an ArrayList in the Session class
-                    initStage.setHasDevices(); //method call to get all devices owned by the current user.
-                    if (Session.currentUser.getRol().equals("student")) {
-                        stuMainView = new StuMainView(body);
-                        body.getChildren().clear();
-                        body.getChildren().add(stuMainView);
-//                        this.getChildren().clear();
-//                        body.getChildren().add(new StuMainView(this)); //opens the Student pane
-                    } else {
-                        initStage.setAvailableLessons(); //selects all the lessons and stores them in an Observable Array, to be used in TableViews
-                        ttrMainView = new TtrMainView(body);
-                        body.getChildren().clear();
-                        body.getChildren().add(ttrMainView);
-//                        this.getChildren().clear();
-//                        body.getChildren().add(new TtrMainView(this)); //opens the Tutor pane
+                    Statics.setLessons(); //method call to get all lessons from database and add them to an ArrayList in the Session class
+                    Statics.setHasDevices(); //method call to get all devices owned by the current user.
+                    if (Session.currentUser.getRol().equals("tutor")) {
+                        Statics.setAvailableLessons(); //selects all the lessons and stores them in an Observable Array, to be used in TableViews
                     }
+                    openNextView(new TabView(body), body);
                 } else {
-                    Alert alert = new Alert(Alert.AlertType.ERROR); //if the sql query can't find anyone, this window pops up to alert the user.
-                    alert.setTitle("Oeps!");
-                    alert.setHeaderText(null);
-                    alert.setContentText("Uw gebruikersnaam/wachtwoord combinatie klopt niet. Als u geen account heeft kunt u registeren");
-                    alert.showAndWait();
+                    //if the sql query can't find anyone, this window pops up to alert the user.
+                    Statics.alert("Oeps!",
+                            "Uw gebruikersnaam/wachtwoord combinatie klopt niet. Als u geen account heeft kunt u registeren",
+                            Alert.AlertType.ERROR);
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -87,9 +72,7 @@ public class LoginView extends GridPane {
         });
 
         btnRegister.setOnAction(event -> { //button to register a new user as a Persoon
-            regRoleView = new RegRoleView(body);
-            body.getChildren().clear();
-            body.getChildren().add(regRoleView);
+            openNextView(new RegRoleView(body), body);
             navBar.register();
         });
 
@@ -101,5 +84,10 @@ public class LoginView extends GridPane {
         add(btnOk, 0, 18);
         add(btnRegister, 1, 18);
         body.getChildren().add(this);
+    }
+
+    private void openNextView(Node next, AnchorPane body) { //sets the next view
+        body.getChildren().clear();
+        body.getChildren().add(next);
     }
 }

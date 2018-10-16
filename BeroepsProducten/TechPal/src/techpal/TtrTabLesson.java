@@ -34,20 +34,28 @@ public class TtrTabLesson extends Tab {
         tblLessons = new TableView<>();
         TableColumn colDate = new TableColumn("datum");
         colDate.setCellValueFactory(new PropertyValueFactory<Lesson, LocalDate>("dtm"));
+        colDate.prefWidthProperty().bind(tblLessons.widthProperty().divide(100/12.5));
         TableColumn colPer = new TableColumn("tijd");
         colPer.setCellValueFactory(new PropertyValueFactory<Lesson, String>("per"));
+        colPer.prefWidthProperty().bind(tblLessons.widthProperty().divide(100/12.5));
         TableColumn colProg = new TableColumn("onderwerp");
         colProg.setCellValueFactory(new PropertyValueFactory<Lesson, String>("prog"));
+        colProg.prefWidthProperty().bind(tblLessons.widthProperty().divide(100/10.5));
         TableColumn colTstl = new TableColumn("toestel");
         colTstl.setCellValueFactory(new PropertyValueFactory<Lesson, String>("tstl"));
+        colTstl.prefWidthProperty().bind(tblLessons.widthProperty().divide(100/10.5));
         TableColumn colStuNm = new TableColumn("student");
         colStuNm.setCellValueFactory(new PropertyValueFactory<Lesson, String>("stuNm"));
+        colStuNm.prefWidthProperty().bind(tblLessons.widthProperty().divide(100/18.5));
         TableColumn colStuPc = new TableColumn("postcode");
         colStuPc.setCellValueFactory(new PropertyValueFactory<Lesson, String>("stuPc"));
+        colStuPc.prefWidthProperty().bind(tblLessons.widthProperty().divide(100/10.5));
         TableColumn colStuHnr = new TableColumn("huisnummer");
         colStuHnr.setCellValueFactory(new PropertyValueFactory<Lesson, String>("stuHnr"));
+        colStuHnr.prefWidthProperty().bind(tblLessons.widthProperty().divide(100/12.5));
         TableColumn colStuNiv = new TableColumn("niveau");
         colStuNiv.setCellValueFactory(new PropertyValueFactory<Lesson, String>("stuNiv"));
+        colStuNiv.prefWidthProperty().bind(tblLessons.widthProperty().divide(100/12.5));
 
         tblLessons.setItems(Session.oblLessons);
         tblLessons.getColumns().addAll(colDate, colPer, colProg, colTstl, colStuNm, colStuPc, colStuHnr, colStuNiv);
@@ -76,7 +84,6 @@ public class TtrTabLesson extends Tab {
                         "AND stu = '" + pkStu + "' " +
                         "AND ttr = UPPER('" + fkTtr + "') " +
                         "AND periode_per = '" + pkPer + "' ";
-                System.out.println(sqlDelete);
                 int result = conn.executeDML(sqlDelete);
             }
         });
@@ -107,12 +114,10 @@ public class TtrTabLesson extends Tab {
         });
 
         grid = new GridPane();
-        grid.add(delete, 0, 0);
+        grid.add(delete, 0, 0); //sets the buttons in a centered GridPane
         grid.add(isFin, 1, 0);
         grid.setAlignment(Pos.CENTER);
         grid.setHgap(50);
-
-
 
         vbox.getChildren().addAll(title, tblLessons, grid);
         this.setContent(vbox);

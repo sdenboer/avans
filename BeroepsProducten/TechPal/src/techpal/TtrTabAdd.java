@@ -20,7 +20,7 @@ public class TtrTabAdd extends Tab {
     private DbConnector conn;
     private GridPane grid;
 
-    public TtrTabAdd(TtrMainView tabPane) {
+    public TtrTabAdd(TabView tabPane) {
         this.setText("Beschikbare lessen");
         conn = new DbConnector();
         vbox = new VBox();
@@ -34,20 +34,29 @@ public class TtrTabAdd extends Tab {
         tblLessons = new TableView<>();
         TableColumn colDate = new TableColumn("datum");
         colDate.setCellValueFactory(new PropertyValueFactory<Lesson, LocalDate>("dtm"));
+        colDate.prefWidthProperty().bind(tblLessons.widthProperty().divide(100/12.5));
         TableColumn colPer = new TableColumn("tijd");
         colPer.setCellValueFactory(new PropertyValueFactory<Lesson, String>("per"));
+        colPer.prefWidthProperty().bind(tblLessons.widthProperty().divide(100/12.5));
         TableColumn colProg = new TableColumn("onderwerp");
         colProg.setCellValueFactory(new PropertyValueFactory<Lesson, String>("prog"));
+        colProg.prefWidthProperty().bind(tblLessons.widthProperty().divide(100/10.5));
         TableColumn colTstl = new TableColumn("toestel");
         colTstl.setCellValueFactory(new PropertyValueFactory<Lesson, String>("tstl"));
+        colTstl.prefWidthProperty().bind(tblLessons.widthProperty().divide(100/10.5));
         TableColumn colStuNm = new TableColumn("student");
         colStuNm.setCellValueFactory(new PropertyValueFactory<Lesson, String>("stuNm"));
+        colStuNm.prefWidthProperty().bind(tblLessons.widthProperty().divide(100/18.5));
         TableColumn colStuPc = new TableColumn("postcode");
         colStuPc.setCellValueFactory(new PropertyValueFactory<Lesson, String>("stuPc"));
+        colStuPc.prefWidthProperty().bind(tblLessons.widthProperty().divide(100/10.5));
         TableColumn colStuHnr = new TableColumn("huisnummer");
         colStuHnr.setCellValueFactory(new PropertyValueFactory<Lesson, String>("stuHnr"));
+        colStuHnr.prefWidthProperty().bind(tblLessons.widthProperty().divide(100/12.5));
         TableColumn colStuNiv = new TableColumn("niveau");
         colStuNiv.setCellValueFactory(new PropertyValueFactory<Lesson, String>("stuNiv"));
+        colStuNiv.prefWidthProperty().bind(tblLessons.widthProperty().divide(100/12.5));
+
         tblLessons.setItems(Session.oblAvailableLessons);
         tblLessons.getColumns().addAll(colDate, colPer, colProg, colTstl, colStuNm, colStuPc, colStuHnr, colStuNiv);
         tblLessons.setPlaceholder(new Text("Er zijn geen lessen beschikbaar voor u"));
@@ -83,7 +92,6 @@ public class TtrTabAdd extends Tab {
                         "WHERE dtm = to_date('" + lesson.getDtm() + "', 'yyyy/mm/dd') " +
                         "AND stu = '" + lesson.getStu() + "' " +
                         "AND periode_per = '" + lesson.getPer() + "' ";
-                System.out.println(sqlAdd);
                 int result = conn.executeDML(sqlAdd);
                 tabPane.getSelectionModel().select(0);
             }

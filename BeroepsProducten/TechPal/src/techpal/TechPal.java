@@ -18,10 +18,10 @@ public class TechPal extends Application {
         Scene scene = new Scene(root, 850, 850);
         scene.getStylesheets().add("techpal/style.css"); //ID"s are set throughout the application.
         scene.getStylesheets().add("https://fonts.googleapis.com/css?family=Montserrat"); //nicer font than default
-        initStage.setPeriods(); //the initStage class sets all static values from the database.
-        initStage.setLevels();
-        initStage.setPrograms();
-        initStage.setDevices();
+        Statics.setPeriods(); //the Statics class sets all static values from the database.
+        Statics.setLevels();
+        Statics.setPrograms();
+        Statics.setDevices();
         new LoginView(body, navBar);
         primaryStage.setTitle("TechPal");
         primaryStage.setScene(scene);
