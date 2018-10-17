@@ -6,6 +6,10 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import techpal.controllers.Statics;
+import techpal.views.LoginView;
+import techpal.views.TechPalNavBar;
+
 import java.util.Locale;
 
 public class TechPal extends Application {
@@ -16,7 +20,7 @@ public class TechPal extends Application {
         TechPalNavBar navBar = new TechPalNavBar(body);
         VBox root = new VBox(navBar, body);
         Scene scene = new Scene(root, 850, 850);
-        scene.getStylesheets().add("techpal/style.css"); //ID"s are set throughout the application.
+        scene.getStylesheets().add("techpal/style/style.css"); //ID"s are set throughout the application.
         scene.getStylesheets().add("https://fonts.googleapis.com/css?family=Montserrat"); //nicer font than default
         Statics.setPeriods(); //the Statics class sets all static values from the database.
         Statics.setLevels();
@@ -30,7 +34,7 @@ public class TechPal extends Application {
         primaryStage.setMinHeight(850);
         primaryStage.setMaxWidth(850);
         primaryStage.setMinWidth(850);
-        primaryStage.getIcons().add(new Image("techpal/icon.png"));
+        primaryStage.getIcons().add(new Image("techpal/style/resources/icon.png"));
     }
     public static void main(String[] args) {
         launch(args);
