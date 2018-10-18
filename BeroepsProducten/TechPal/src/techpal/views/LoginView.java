@@ -13,7 +13,8 @@ import javafx.scene.layout.GridPane;
 import techpal.controllers.DbConnector;
 import techpal.controllers.Session;
 import techpal.controllers.Statics;
-
+import techpal.models.Person;
+import techpal.models.Student;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -46,24 +47,16 @@ public class LoginView extends GridPane {
         btnRegister.setId("btn-reg");
 
         btnOk.setOnAction(event -> {
-            Session.currentUser.setUserNm(tdfUserName.getText().toUpperCase()); //storing the username in the local storage
-            Session.currentUser.setPw(pwfPassword.getText()); //storing the password to check
-            String sql = "SELECT * FROM personen WHERE userNm = '"+Session.currentUser.getUserNm()+"' AND pw = '"+Session.currentUser.getPw()+"'";
+            String strUserName = tdfUserName.getText().toUpperCase(); //storing the username in the local storage
+            String strPassword = pwfPassword.getText(); //storing the password to check
+            String sql = "SELECT * FROM personen WHERE userNm = '"+strUserName+"' AND pw = '"+strPassword+"'";
             ResultSet res = conn.getData(sql);
             try {
-                if (res.next()) { //storing the current user's information in local storage
-                    Session.currentUser.setNm(res.getString("nm"));
-                    Session.currentUser.setPc(res.getString("pc"));
-                    Session.currentUser.setRol(res.getString("rollen_rol"));
-                    Session.currentStudent.setHnr(res.getString("hnr"));
-                    Session.currentStudent.setNiveau(res.getString("niveau_nivom"));
-                    navBar.loginSuccess();
-                    Statics.setLessons(); //method call to get all lessons from database and add them to an ArrayList in the Session class
-                    Statics.setHasDevices(); //method call to get all devices owned by the current user.
-                    if (Session.currentUser.getRol().equals("tutor")) {
-                        Statics.setAvailableLessons(); //selects all the lessons and stores them in an Observable Array, to be used in TableViews
-                    }
-                    openNextView(new TabView(body), body);
+                if (res.next()) {
+                    String strUserRole = res.getString("rollen_rol");
+                    Person user = strUserRole.equals("student") ? Session.currentStudent : Session.currentTutor;
+                    setUser(user, navBar, res);
+                    openNextView(new TabView(body, user), body);
                 } else {
                     //if the sql query can't find anyone, this window pops up to alert the user.
                     Statics.alert("Oeps!",
@@ -75,8 +68,8 @@ public class LoginView extends GridPane {
             }
         });
 
-        btnRegister.setOnAction(event -> { //button to register a new user as a Persoon
-            openNextView(new RegRoleView(body), body);
+        btnRegister.setOnAction(event -> { //button to register a new user as a Person
+            openNextView(new RegRoleView(body, navBar), body);
             navBar.register();
         });
 
@@ -93,5 +86,23 @@ public class LoginView extends GridPane {
     private void openNextView(Node next, AnchorPane body) { //sets the next view
         body.getChildren().clear();
         body.getChildren().add(next);
+    }
+
+    private void setUser(Person user, TechPalNavBar navBar, ResultSet res) throws SQLException {
+        user.setUserNm(res.getString("userNm"));
+        user.setPw(res.getString("pw"));
+        user.setNm(res.getString("nm"));
+        user.setPc(res.getString("pc"));
+        user.setRol(res.getString("rollen_rol"));
+        user.setUserNm(tdfUserName.getText().toUpperCase());
+        navBar.loginSuccess();
+        Statics.setLessons(user); //method call to get all lessons from database and add them to an ArrayList in the Session class
+        Statics.setHasDevices(user); //method call to get all devices owned by the current user.
+        if (user instanceof Student) {
+            ((Student) user).setHnr(res.getString("hnr"));
+            ((Student) user).setNiveau(res.getString("niveau_nivom"));
+        } else {
+            Statics.setAvailableLessons();
+        }
     }
 }

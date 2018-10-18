@@ -80,7 +80,7 @@ public class StuTabAdd extends Tab {
         btn.setOnAction(event -> {
             try {
                 Lesson lesson = new Lesson();
-                lesson.setStu(Session.currentUser.getUserNm());
+                lesson.setStu(Session.currentStudent.getUserNm());
                 lesson.setDtm(dpDate.getValue());
                 lesson.setPer(cbxPer.getSelectionModel().getSelectedItem());
                 lesson.setProg((cbxProg.getSelectionModel().getSelectedItem()));

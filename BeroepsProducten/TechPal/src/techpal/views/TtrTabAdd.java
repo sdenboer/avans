@@ -82,7 +82,7 @@ public class TtrTabAdd extends Tab {
                 lesson.setProg(tblLessons.getSelectionModel().getSelectedItem().getProg());
                 lesson.setIsFin(0);
                 lesson.setTstl(tblLessons.getSelectionModel().getSelectedItem().getTstl());
-                lesson.setTtr(Session.currentUser.getUserNm());
+                lesson.setTtr(Session.currentTutor.getUserNm());
                 lesson.setStuHnr(tblLessons.getSelectionModel().getSelectedItem().getStuHnr());
                 lesson.setStuNm(tblLessons.getSelectionModel().getSelectedItem().getStuNm());
                 lesson.setStuNiv(tblLessons.getSelectionModel().getSelectedItem().getStuNiv());

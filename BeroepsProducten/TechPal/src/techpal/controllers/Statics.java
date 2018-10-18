@@ -76,9 +76,9 @@ public class Statics { //I'm saving all static methods in this file
         }
     }
 
-    public static void setHasDevices() {
+    public static void setHasDevices(Person user) {
         DbConnector conn = new DbConnector();
-        String sqlDev = "SELECT toestel_tstl FROM heeftToestellen WHERE persoon_user = UPPER('"+Session.currentUser.getUserNm()+"')";
+        String sqlDev = "SELECT toestel_tstl FROM heeftToestellen WHERE persoon_user = UPPER('"+user.getUserNm()+"')";
         ResultSet resDev = conn.getData(sqlDev);
         try {
             while (resDev.next()) {
@@ -91,13 +91,11 @@ public class Statics { //I'm saving all static methods in this file
         }
     }
 
-
-
-    public static void setLessons() {
+    public static void setLessons(Person user) {
         //This method sets the user specific lessons in the Lesson and Session classes.
         // Session is an arrayList of Lesson instances.
         DbConnector conn = new DbConnector();
-        String role = Session.currentUser.getRol().equals("student") ? "stu" : "ttr";
+        String role = user instanceof Student ? "stu" : "ttr";
         //checks whether the user is a student or a tutor
         //The following sql query joins the person table twice,
         // as I want to show the name of the tutor in the lesson tab view,
@@ -107,7 +105,7 @@ public class Statics { //I'm saving all static methods in this file
                 "FROM personen ps " +
                 "INNER JOIN lessen l ON(l.stu = ps.userNm) " +
                 "LEFT OUTER JOIN personen pt ON(l.ttr = pt.usernm) " +
-                "WHERE "+role+" = UPPER('"+Session.currentUser.getUserNm()+"')";
+                "WHERE "+role+" = UPPER('"+user.getUserNm()+"')";
         ResultSet res = conn.getData(sqlLessen);
         try {
             while (res.next()) {
@@ -201,7 +199,7 @@ public class Statics { //I'm saving all static methods in this file
             e.printStackTrace();
         }
         //Reordering the zip codes from nearest to furthest from the home address of the currentUser.
-        int zipCode = Integer.parseInt(Session.currentUser.getPc().replaceAll("[\\D]", ""));
+        int zipCode = Integer.parseInt(Session.currentTutor.getPc().replaceAll("[\\D]", ""));
         for (int i = 0; i<Session.oblAvailableLessons.size(); i++) {
             for (int j = 1; j <Session.oblAvailableLessons.size()-i; j++) {
                 int intFirst = abs(Integer.parseInt(Session.oblAvailableLessons.get(j-1).getStuPc().replaceAll("[\\D]", ""))-zipCode);

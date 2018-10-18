@@ -63,7 +63,7 @@ public class StuTabLesson extends Tab {
             alert.setContentText("Weet u het zeker?");
             if (alert.showAndWait().get() == ButtonType.OK) {
                 LocalDate pkDtm = tblLessons.getSelectionModel().getSelectedItem().getDtm();
-                String pkStu = Session.currentUser.getUserNm();
+                String pkStu = Session.currentStudent.getUserNm();
                 String pkPer = tblLessons.getSelectionModel().getSelectedItem().getPer();
                 Session.oblLessons.remove(tblLessons.getSelectionModel().getSelectedIndex());
                 String sqlDelete = "DELETE FROM lessen " +
