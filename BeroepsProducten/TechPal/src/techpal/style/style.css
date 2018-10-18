@@ -1,5 +1,5 @@
 .root {
-    -fx-background-color: #007aa3
+    -fx-background-color: #3D4956
 }
 
 #text-title {
@@ -34,16 +34,17 @@
 }
 
 #btn-reg {
-    -fx-background-color: #007aa3;
+    -fx-background-color: #3D4956;
     -fx-font-size: 15;
-    -fx-text-fill: #EAC435;
+    -fx-font-weight: bold;
+    -fx-text-fill: lightgrey;
 }
 #btn-reg:hover {
-    -fx-text-fill: #F5FF90;
+    -fx-text-fill: darkgrey;
 }
 
 #btn-student {
-    -fx-background-color: #007aa3;
+    -fx-background-color: #3D4956;
     -fx-text-fill: #FF9874;
     -fx-font-size: 15;
 }
@@ -52,7 +53,17 @@
 }
 
 #btn-login {
-    -fx-background-color: #CEF4FE;
+    -fx-background-color: #0096ED;
+    -fx-background-radius: 2;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20 10 20;
+}
+
+#btn-login:hover {
+    -fx-background-color: #0077C3;
+    -fx-text-fill: #fafafa;
 }
 
 #navbar {
@@ -70,7 +81,7 @@
 }
 
 .text-field {
-    -fx-background-color: #007aa3;
+    -fx-background-color: #3D4956;
     -fx-font-size: 20;
     -fx-font-weight: lighter;
     -fx-border-color: white;

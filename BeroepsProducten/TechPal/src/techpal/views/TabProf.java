@@ -24,7 +24,7 @@ public class TabProf extends Tab {
     private ArrayList<CheckBox> listCheckbox;
 
     public TabProf(Person user, TabView tabPane) {
-        this.setText("Mijn Profiel");
+        this.setText("Mijn profiel");
         conn = new DbConnector();
         grid = new GridPane();
         listCheckbox = new ArrayList<>();
@@ -62,11 +62,6 @@ public class TabProf extends Tab {
             cbxLevel = new ComboBox<>(); //filling a combobox with the available lessons
             Session.listLevels.forEach(level -> cbxLevel.getItems().add(level.getLvl()));
             cbxLevel.setValue(Session.currentStudent.getNiveau());
-            sql = "UPDATE personen " +
-                    "SET pw = '"+user.getPw()+"', nm = '"+user.getNm()+"', " +
-                    "pc = UPPER('"+user.getPc()+"'), hnr = '"+Session.currentStudent.getHnr()+"', " +
-                    "niveau_nivOm = '"+Session.currentStudent.getNiveau()+"' " +
-                    "WHERE userNm = UPPER('"+user.getUserNm()+"')";
             grid.add(lblNumber, 0, 15);
             grid.add(tfdNumber, 1, 15);
             grid.add(lblLevel, 0, checkBoxRowInd+listCheckbox.size());
@@ -74,10 +69,6 @@ public class TabProf extends Tab {
             grid.add(btn, 0, checkBoxRowInd+listCheckbox.size()+1);
         } else { //if the current user is a tutor
             lblDevices.setText("Specializaties: ");
-            sql = "UPDATE personen " +
-                    "SET pw = '"+user.getPw()+"', nm = '"+user.getNm()+"', " +
-                    "pc = UPPER('"+user.getPc()+"') " +
-                    "WHERE userNm = UPPER('"+user.getUserNm()+"')";
             grid.add(btn, 0, checkBoxRowInd+listCheckbox.size());
         }
 
@@ -89,7 +80,7 @@ public class TabProf extends Tab {
                 user.setPw(pwfPassword.getText());
                 user.setPc(tfdZipCode.getText());
                 user.setNm(tfdName.getText());
-                int resultUpdatePerson = conn.executeDML(sql);
+                int resultUpdatePerson = conn.executeDML(setSQL(user));
 
                 //I apologize for the next lines of code. I don't know how to do a merge insert in Oracle DB to avoid duplicate errors.
                 //In the following nightmarish lines I delete the devices of the person, then add them again in a loop.
@@ -129,5 +120,22 @@ public class TabProf extends Tab {
         grid.add(tfdZipCode, 1, 14);
         grid.add(lblDevices, 0, checkBoxRowInd);
         this.setContent(grid);
+    }
+
+    public String setSQL(Person user) {
+        String sql;
+        if (user instanceof Student) {
+            sql = "UPDATE personen " +
+                    "SET pw = '"+user.getPw()+"', nm = '"+user.getNm()+"', " +
+                    "pc = UPPER('"+user.getPc()+"'), hnr = '"+Session.currentStudent.getHnr()+"', " +
+                    "niveau_nivOm = '"+Session.currentStudent.getNiveau()+"' " +
+                    "WHERE userNm = UPPER('"+user.getUserNm()+"')";
+        } else {
+            sql = "UPDATE personen " +
+                    "SET pw = '"+user.getPw()+"', nm = '"+user.getNm()+"', " +
+                    "pc = UPPER('"+user.getPc()+"') " +
+                    "WHERE userNm = UPPER('"+user.getUserNm()+"')";
+        }
+        return sql;
     }
 }

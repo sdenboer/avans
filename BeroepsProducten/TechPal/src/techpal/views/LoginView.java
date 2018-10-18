@@ -1,5 +1,6 @@
 package techpal.views;
 
+import javafx.geometry.HPos;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
@@ -41,10 +42,11 @@ public class LoginView extends GridPane {
         lblPassword = new Text("Wachtwoord");
         lblPassword.setId("text-label");
         pwfPassword = new PasswordField();
-        btnOk = new Button("Inloggen");
+        btnOk = new Button("LOG IN");
         btnOk.setId("btn-login");
-        btnRegister = new Button("Registeren");
+        btnRegister = new Button("REGISTEREN");
         btnRegister.setId("btn-reg");
+        this.setHalignment(btnOk, HPos.RIGHT);
 
         btnOk.setOnAction(event -> {
             String strUserName = tdfUserName.getText().toUpperCase(); //storing the username in the local storage
@@ -78,8 +80,8 @@ public class LoginView extends GridPane {
         add(tdfUserName, 1, 16);
         add(lblPassword, 0, 17);
         add(pwfPassword, 1, 17);
-        add(btnOk, 0, 18);
-        add(btnRegister, 1, 18);
+        add(btnOk, 1, 20);
+        add(btnRegister, 0, 20);
         body.getChildren().add(this);
     }
 

@@ -3,16 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/techpal/controllers/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/techpal/controllers/Session.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/techpal/controllers/Statics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/techpal/controllers/Statics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TechPal/techpal/style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TechPal/techpal/style/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TechPal/techpal/views/LoginView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TechPal/techpal/views/LoginView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TechPal/techpal/views/RegRoleView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TechPal/techpal/views/RegView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TechPal/techpal/views/RegView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TechPal/techpal/views/StuTabAdd.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TechPal/techpal/views/StuTabAdd.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TechPal/techpal/views/TabProf.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TechPal/techpal/views/TtrTabLesson.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TechPal/techpal/views/TtrTabLesson.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/techpal/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/techpal/models/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/techpal/style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/techpal/style/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/techpal/views/LoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/techpal/views/LoginView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/techpal/views/RegRoleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/techpal/views/RegRoleView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/techpal/views/RegView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/techpal/views/RegView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/techpal/views/StuTabAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/techpal/views/StuTabAdd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/techpal/views/StuTabLesson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/techpal/views/StuTabLesson.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/techpal/views/TabProf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/techpal/views/TabProf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/techpal/views/TabView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/techpal/views/TabView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/techpal/views/TtrTabAdd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/techpal/views/TtrTabAdd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/techpal/views/TtrTabLesson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/techpal/views/TtrTabLesson.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -68,43 +72,43 @@
     <session id="-1046429182">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="14" />
+          <entry key="project.closed" value="15" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.11" value="1" />
-          <entry key="project.open.time.7" value="6" />
+          <entry key="project.open.time.7" value="7" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="14" />
+          <entry key="project.opened" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="807" />
+          <entry key="css" value="1029" />
           <entry key="dummy" value="282" />
-          <entry key="java" value="43272" />
+          <entry key="java" value="44020" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="807" />
-          <entry key="JAVA" value="43272" />
+          <entry key="CSS" value="1029" />
+          <entry key="JAVA" value="44020" />
           <entry key="PLAIN_TEXT" value="282" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="7" />
-          <entry key="java" value="432" />
+          <entry key="css" value="8" />
+          <entry key="java" value="448" />
           <entry key="png" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="7" />
+          <entry key="CSS" value="8" />
           <entry key="Image" value="5" />
-          <entry key="JAVA" value="432" />
+          <entry key="JAVA" value="448" />
         </counts>
       </usages-collector>
     </session>
@@ -114,59 +118,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/techpal/views/TabProf.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-365">
-              <caret line="97" column="80" selection-start-line="97" selection-start-column="80" selection-end-line="97" selection-end-column="80" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/techpal/views/TabView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-371">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/techpal/views/TechPalNavBar.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="44" column="35" lean-forward="true" selection-start-line="44" selection-start-column="35" selection-end-line="44" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/techpal/views/TtrTabAdd.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-151">
-              <caret line="85" column="70" selection-start-line="85" selection-start-column="70" selection-end-line="85" selection-end-column="70" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/techpal/views/TtrTabLesson.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1772">
-              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+            <state relative-caret-position="149">
+              <caret line="81" column="46" selection-start-line="81" selection-start-column="46" selection-end-line="81" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -185,7 +141,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>system.out</find>
       <find>system</find>
       <find>System.ou</find>
       <find>System</find>
@@ -215,6 +170,7 @@
       <find>sethasdevice</find>
       <find>currentuser</find>
       <find>system.ou</find>
+      <find>reg</find>
     </findStrings>
   </component>
   <component name="FindManager">
@@ -228,9 +184,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/techpal/CurrentUser.java" />
-        <option value="$PROJECT_DIR$/src/techpal/Lesson.java" />
-        <option value="$PROJECT_DIR$/src/techpal/Programs.java" />
         <option value="$PROJECT_DIR$/src/techpal/hasDevices.java" />
         <option value="$PROJECT_DIR$/src/techpal/Program.java" />
         <option value="$PROJECT_DIR$/src/techpal/Device.java" />
@@ -270,15 +223,18 @@
         <option value="$PROJECT_DIR$/src/techpal/models/Lesson.java" />
         <option value="$PROJECT_DIR$/src/techpal/models/Tutor.java" />
         <option value="$PROJECT_DIR$/src/techpal/controllers/Session.java" />
-        <option value="$PROJECT_DIR$/src/techpal/views/TabProf.java" />
         <option value="$PROJECT_DIR$/src/techpal/views/TabView.java" />
-        <option value="$PROJECT_DIR$/src/techpal/views/StuTabAdd.java" />
         <option value="$PROJECT_DIR$/src/techpal/views/StuTabLesson.java" />
         <option value="$PROJECT_DIR$/src/techpal/views/TtrTabAdd.java" />
         <option value="$PROJECT_DIR$/src/techpal/controllers/Statics.java" />
+        <option value="$PROJECT_DIR$/src/techpal/views/RegView.java" />
+        <option value="$PROJECT_DIR$/src/techpal/models/Person.java" />
+        <option value="$PROJECT_DIR$/src/techpal/views/TtrTabLesson.java" />
+        <option value="$PROJECT_DIR$/src/techpal/views/StuTabAdd.java" />
         <option value="$PROJECT_DIR$/src/techpal/views/LoginView.java" />
         <option value="$PROJECT_DIR$/src/techpal/views/RegRoleView.java" />
-        <option value="$PROJECT_DIR$/src/techpal/views/RegView.java" />
+        <option value="$PROJECT_DIR$/src/techpal/style/style.css" />
+        <option value="$PROJECT_DIR$/src/techpal/views/TabProf.java" />
       </list>
     </option>
   </component>
@@ -305,8 +261,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -361,7 +315,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -375,7 +331,7 @@
     <property name="SearchEverywhereHistoryKey" value="currentuser&#9;PSI&#9;JAVA://techpal.controllers.Session#currentUser&#10;Ttr&#9;FILE&#9;file:///home/sven/code/avans/BeroepsProducten/TechPal/src/techpal/TtrTabProf.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539865552055" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539875006746" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -498,15 +454,15 @@
       <workItem from="1539814358337" duration="1699000" />
       <workItem from="1539816225348" duration="3000" />
       <workItem from="1539858225129" duration="7379000" />
+      <workItem from="1539865876294" duration="5988000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="207429000" />
+    <option name="totallyTimeSpent" value="213417000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="986" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.209375" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -631,20 +587,6 @@
     <entry file="file://$PROJECT_DIR$/src/techpal/TtrMainView.java" />
     <entry file="file://$PROJECT_DIR$/src/techpal/RegTtrView.java" />
     <entry file="file://$PROJECT_DIR$/src/techpal/StuMainView.java" />
-    <entry file="file://$PROJECT_DIR$/src/techpal/models/Device.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/techpal/style/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="88" column="24" selection-start-line="88" selection-start-column="24" selection-end-line="88" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/techpal/style/resources.java" />
     <entry file="file://$PROJECT_DIR$/src/techpal/style/resources/icon.png">
       <provider selected="true" editor-type-id="images" />
@@ -659,62 +601,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/techpal/TechPal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="21" column="48" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/techpal/models/Program.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/techpal/models/Student.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/techpal/models/Person.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/techpal/models/Tutor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
           <caret line="4" column="20" lean-forward="true" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/techpal/models/Level.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/techpal/models/Lesson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-474">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/techpal/models/Period.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -745,50 +635,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/techpal/views/LoginView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1562">
-          <caret line="71" column="53" selection-start-line="71" selection-start-column="53" selection-end-line="71" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/techpal/views/RegRoleView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-361">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/techpal/views/RegView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2571">
-          <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/techpal/views/StuTabAdd.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-481">
-          <caret line="77" column="40" lean-forward="true" selection-start-line="77" selection-start-column="40" selection-end-line="77" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/techpal/views/StuTabLesson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="65" column="46" selection-start-line="65" selection-start-column="31" selection-end-line="65" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/techpal/views/TabPrev.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="201">
@@ -799,30 +645,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/techpal/views/TabProf.java">
+    <entry file="file://$PROJECT_DIR$/src/techpal/models/Student.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-365">
-          <caret line="97" column="80" selection-start-line="97" selection-start-column="80" selection-end-line="97" selection-end-column="80" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="352">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/techpal/views/TabView.java">
+    <entry file="file://$PROJECT_DIR$/src/techpal/models/Person.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-371">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="594">
+          <caret line="47" selection-start-line="47" selection-end-line="47" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/techpal/views/TechPalNavBar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="44" column="35" lean-forward="true" selection-start-line="44" selection-start-column="35" selection-end-line="44" selection-end-column="35" />
+        <state relative-caret-position="560">
+          <caret line="44" column="35" selection-start-line="44" selection-start-column="35" selection-end-line="44" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -831,8 +671,100 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/techpal/views/TtrTabAdd.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-151">
+        <state relative-caret-position="98">
           <caret line="85" column="70" selection-start-line="85" selection-start-column="70" selection-end-line="85" selection-end-column="70" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/techpal/models/Program.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/techpal/models/Device.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/techpal/models/Period.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/techpal/models/Level.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/techpal/models/Lesson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-78">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/techpal/TechPal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="21" column="48" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/techpal/views/RegRoleView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="47">
+          <caret line="21" column="63" lean-forward="true" selection-start-line="21" selection-start-column="63" selection-end-line="21" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/techpal/style/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="50" column="20" lean-forward="true" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/techpal/views/RegView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/techpal/views/StuTabAdd.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="25" column="39" lean-forward="true" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/techpal/views/LoginView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="44" column="34" selection-start-line="44" selection-start-column="34" selection-end-line="44" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -841,8 +773,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/techpal/views/TtrTabLesson.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1772">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        <state relative-caret-position="220">
+          <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/techpal/views/StuTabLesson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1303">
+          <caret line="65" column="46" selection-start-line="65" selection-start-column="31" selection-end-line="65" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/techpal/views/TabView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/techpal/views/TabProf.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="81" column="46" selection-start-line="81" selection-start-column="46" selection-end-line="81" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

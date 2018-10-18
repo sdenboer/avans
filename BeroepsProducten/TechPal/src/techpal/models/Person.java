@@ -46,5 +46,5 @@ public class Person {
         this.rol = rol;
     }
 
-
 }
+

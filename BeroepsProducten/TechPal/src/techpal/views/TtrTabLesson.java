@@ -23,7 +23,7 @@ public class TtrTabLesson extends Tab {
     private DbConnector conn;
 
     public TtrTabLesson() {
-        this.setText("Mijn lessen");
+        this.setText("Mijn planning");
         conn = new DbConnector();
         vbox = new VBox();
         vbox.setSpacing(5);

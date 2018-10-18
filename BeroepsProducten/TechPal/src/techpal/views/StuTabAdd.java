@@ -22,7 +22,7 @@ public class StuTabAdd extends Tab {
     private DbConnector conn;
 
     public StuTabAdd(TabView tabPane) {
-        this.setText("Les Toevoegen");
+        this.setText("Les toevoegen");
         GridPane grid = new GridPane();
         conn = new DbConnector();
         title = new Text("Voeg een les toe");
