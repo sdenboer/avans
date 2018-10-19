@@ -9,6 +9,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import techpal.controllers.DbConnector;
+import techpal.controllers.Statics;
 import techpal.models.Lesson;
 import techpal.controllers.Session;
 
@@ -19,7 +20,7 @@ public class TtrTabLesson extends Tab {
     private Text title;
     private VBox vbox;
     private GridPane grid;
-    private Button delete, isFin;
+    private Button delete, isFin, btnLocation;
     private DbConnector conn;
 
     public TtrTabLesson() {
@@ -115,9 +116,25 @@ public class TtrTabLesson extends Tab {
             }
         });
 
+        btnLocation = new Button("Locatie");
+        btnLocation.disableProperty().bind(Bindings.size(Session.oblLessons).isEqualTo(0)); //disables button when the arraylist & tableview is empty
+        btnLocation.disableProperty().bind(Bindings.isEmpty(tblLessons.getSelectionModel().getSelectedItems()));
+        btnLocation.setOnAction(event -> {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("U verlaat TechPal");
+            alert.setHeaderText(null);
+            alert.setContentText("U opent nu Google Maps via uw standaard browser");
+            if (alert.showAndWait().get() == ButtonType.OK) {
+                String zipcode = tblLessons.getSelectionModel().getSelectedItem().getStuPc();
+                String number = tblLessons.getSelectionModel().getSelectedItem().getStuHnr();
+                Statics.openMap(zipcode, number);
+            }
+        });
+
         grid = new GridPane();
         grid.add(delete, 0, 0); //sets the buttons in a centered GridPane
-        grid.add(isFin, 1, 0);
+        grid.add(isFin, 2, 0);
+        grid.add(btnLocation, 1, 0);
         grid.setAlignment(Pos.CENTER);
         grid.setHgap(50);
 

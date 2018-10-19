@@ -4,9 +4,22 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Alert;
 import javafx.scene.control.CheckBox;
 import javafx.scene.layout.ColumnConstraints;
+import org.json.JSONException;
+import org.json.JSONObject;
 import techpal.models.*;
+
+import java.awt.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.Properties;
 import java.util.StringJoiner;
 import static java.lang.Math.abs;
 import javafx.scene.layout.GridPane;
@@ -163,6 +176,48 @@ public class Statics { //I'm saving all static methods in this file
         grid.setMinHeight(800);
         grid.setMinWidth(800);
         grid.getColumnConstraints().add(new ColumnConstraints(200));
+    }
+
+    public static void openMap(String zipcode, String number) {
+        //I only made this feature to challenge myself. Basically, it's an API call + JSON parser using a Dutch
+        //zip code to address service. I signed up for the free subsciption
+        try {
+            FileReader reader = new FileReader("config");
+            Properties props = new Properties();
+            props.load(reader);
+            String apiKey = props.getProperty("xApiKey");
+            URL apiUrl = new URL("https://api.postcodeapi.nu/v2/addresses/?postcode="+zipcode+"");
+            System.out.println(apiUrl);
+            HttpURLConnection conn = (HttpURLConnection)apiUrl.openConnection(); //typecasting to an http
+            conn.setRequestMethod("GET");  //We're GETting information
+            conn.setRequestProperty("x-api-key", apiKey);
+            conn.connect();
+            int result = conn.getResponseCode();
+            if (result == 200) {
+                BufferedReader in = new BufferedReader(
+                        new InputStreamReader(conn.getInputStream()));
+                String inputLine;
+                StringBuilder response = new StringBuilder();
+                while ((inputLine = in.readLine()) != null) {
+                    response.append(inputLine);
+                }
+                in.close();
+                JSONObject jsonObject = new JSONObject(response.toString());
+                String street = jsonObject.getJSONObject("_embedded").getJSONArray("addresses").getJSONObject(0).getJSONObject("nen5825").getString("street");
+                new Thread(() -> {
+                    try {
+                        Desktop.getDesktop().browse(new URI( "https://www.google.com/maps?q="+street+"+"+number+"" ));
+                    } catch (IOException | URISyntaxException e) {
+                        e.printStackTrace();
+                    }
+                }).start();
+            } else {
+                System.out.println(result);
+                Statics.alert("Oeps!", "Er is iets foutgegaan", Alert.AlertType.ERROR);
+            }
+        } catch (IOException | JSONException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void setAvailableLessons() {

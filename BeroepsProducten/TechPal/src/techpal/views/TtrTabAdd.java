@@ -4,14 +4,15 @@ import javafx.beans.binding.Bindings;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import techpal.controllers.DbConnector;
+import techpal.controllers.Statics;
 import techpal.models.Lesson;
 import javafx.scene.layout.GridPane;
 import techpal.controllers.Session;
-
 import java.time.LocalDate;
 
 public class TtrTabAdd extends Tab {
@@ -21,6 +22,7 @@ public class TtrTabAdd extends Tab {
     private Button addLesson;
     private DbConnector conn;
     private GridPane grid;
+    private Button btnLocation;
 
     public TtrTabAdd(TabView tabPane) {
         this.setText("Beschikbare lessen");
@@ -99,12 +101,28 @@ public class TtrTabAdd extends Tab {
             }
         });
 
+        btnLocation = new Button("Locatie");
+        btnLocation.disableProperty().bind(Bindings.size(Session.oblLessons).isEqualTo(0)); //disables button when the arraylist & tableview is empty
+        btnLocation.disableProperty().bind(Bindings.isEmpty(tblLessons.getSelectionModel().getSelectedItems()));
+        btnLocation.setOnAction(event -> {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("U verlaat TechPal");
+            alert.setHeaderText(null);
+            alert.setContentText("U opent nu Google Maps via uw standaard browser");
+            if (alert.showAndWait().get() == ButtonType.OK) {
+                String zipcode = tblLessons.getSelectionModel().getSelectedItem().getStuPc();
+                String number = tblLessons.getSelectionModel().getSelectedItem().getStuHnr();
+                Statics.openMap(zipcode, number);
+            }
+        });
+
         grid = new GridPane();
         grid.add(addLesson, 0, 0);
+        grid.add(btnLocation, 1, 0);
         grid.setAlignment(Pos.CENTER);
         grid.setHgap(50);
 
-        vbox.getChildren().addAll(title, tblLessons, addLesson);
+        vbox.getChildren().addAll(title, tblLessons, grid);
         this.setContent(vbox);
 
     }
