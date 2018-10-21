@@ -7,10 +7,8 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
-import techpal.controllers.DbConnector;
+import techpal.controllers.LessonsController;
 import techpal.models.Lesson;
-import techpal.controllers.Session;
-
 import java.time.LocalDate;
 
 public class StuTabLesson extends Tab {
@@ -18,11 +16,9 @@ public class StuTabLesson extends Tab {
     private Text title;
     private VBox vbox;
     private Button delete;
-    private DbConnector conn;
 
     public StuTabLesson() {
         this.setText("Mijn lessen");
-        conn = new DbConnector();
         vbox = new VBox();
         vbox.setSpacing(5);
         vbox.setPadding(new Insets(10, 10, 10, 10));
@@ -47,14 +43,14 @@ public class StuTabLesson extends Tab {
         colTtr.setCellValueFactory(new PropertyValueFactory<Lesson, String>("ttrNm"));
         colTtr.prefWidthProperty().bind(tblLessons.widthProperty().divide(100/20));
 
-        tblLessons.setItems(Session.oblLessons);
+        tblLessons.setItems(LessonsController.olLessons);
         tblLessons.getColumns().addAll(colDate, colPer, colProg, colTstl, colTtr);
         tblLessons.setPlaceholder(new Text("U heeft nog geen lessen"));
         tblLessons.setPrefHeight(500);
         tblLessons.setPrefWidth(800);
 
         delete = new Button("Verwijder les");
-        delete.disableProperty().bind(Bindings.size(Session.oblLessons).isEqualTo(0)); //disables button when the arraylist & tableview is empty
+        delete.disableProperty().bind(Bindings.size(LessonsController.olLessons).isEqualTo(0)); //disables button when the arraylist & tableview is empty
         delete.disableProperty().bind(Bindings.isEmpty(tblLessons.getSelectionModel().getSelectedItems())); //disables button when nothing is selected
         delete.setOnAction(event -> {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -62,15 +58,9 @@ public class StuTabLesson extends Tab {
             alert.setHeaderText(null);
             alert.setContentText("Weet u het zeker?");
             if (alert.showAndWait().get() == ButtonType.OK) {
-                LocalDate pkDtm = tblLessons.getSelectionModel().getSelectedItem().getDtm();
-                String pkStu = Session.currentStudent.getUserNm();
-                String pkPer = tblLessons.getSelectionModel().getSelectedItem().getPer();
-                Session.oblLessons.remove(tblLessons.getSelectionModel().getSelectedIndex());
-                String sqlDelete = "DELETE FROM lessen " +
-                        "WHERE dtm = to_date('" + pkDtm + "', 'yyyy/mm/dd') " +
-                        "AND stu = UPPER('" + pkStu + "') " +
-                        "AND periode_per = '" + pkPer + "' ";
-                int result = conn.executeDML(sqlDelete);
+                LessonsController.deleteLesson(tblLessons.getSelectionModel().getSelectedItem().getDtm(),
+                        tblLessons.getSelectionModel().getSelectedItem().getPer(),
+                        tblLessons.getSelectionModel().getSelectedIndex());
             }
         });
 

@@ -6,15 +6,10 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import techpal.controllers.Statics;
+import techpal.controllers.*;
 import techpal.views.LoginView;
 import techpal.views.TechPalNavBar;
-
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.Locale;
-import java.util.Properties;
 
 public class TechPal extends Application {
 
@@ -26,11 +21,11 @@ public class TechPal extends Application {
         Scene scene = new Scene(root, 850, 850);
         scene.getStylesheets().add("techpal/style/style.css"); //ID"s are set throughout the application.
         scene.getStylesheets().add("https://fonts.googleapis.com/css?family=Montserrat"); //nicer font than default
-        Statics.setPeriods(); //the Statics class sets all static values from the database.
-        Statics.setLevels();
-        Statics.setPrograms();
-        Statics.setDevices();
-        new LoginView(body, navBar);
+        PeriodsController.setPeriods(); //the unfortunately named PeriodsController class sets all static values from the database.
+        LevelsController.setLevels();
+        ProgramsController.setPrograms();
+        DevicesController.setDevices();
+        new LoginView(body, navBar); //for fun, enter [' OR '1'='1] in both the username and password field and enjoy the power of sql injections
         primaryStage.setTitle("TechPal");
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -44,3 +39,4 @@ public class TechPal extends Application {
         launch(args);
     }
 }
+

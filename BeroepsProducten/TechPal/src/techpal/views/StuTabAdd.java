@@ -4,12 +4,8 @@ import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import javafx.scene.layout.GridPane;
 import javafx.util.StringConverter;
-import techpal.controllers.DbConnector;
+import techpal.controllers.*;
 import techpal.models.Device;
-import techpal.models.Lesson;
-import techpal.controllers.Session;
-import techpal.controllers.Statics;
-
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
@@ -19,12 +15,10 @@ public class StuTabAdd extends Tab {
     private ComboBox<Device> cbxDev;
     private Text title, lblDate, lblProg, lblDevices, lblPer;
     private Button btn;
-    private DbConnector conn;
 
     public StuTabAdd(TabView tabPane) {
         this.setText("Les toevoegen");
         GridPane grid = new GridPane();
-        conn = new DbConnector();
         title = new Text("Voeg een les toe");
         title.setId("text-title");
         lblDate = new Text("Datum: ");
@@ -57,52 +51,37 @@ public class StuTabAdd extends Tab {
             }
         });
 
-        Session.listPrograms.forEach(program -> {
+        ProgramsController.alPrograms.forEach(program -> {
             cbxProg.getItems().add(program.getProgNm()); //add all available programs to the combobox
         });
         cbxProg.getSelectionModel().selectFirst();
 
-        cbxDev.setItems(Session.hasDevices);
-        cbxDev.getSelectionModel().selectFirst();
+        cbxDev.setItems(DevicesController.olHasDevices);
+        cbxDev.getSelectionModel().selectFirst(); //sets the first device as a default in the combobox
         cbxDev.setConverter(new StringConverter<Device>() {
             //since the combobox is filled with objects, they should be converted to strings.
             @Override
             public String toString(Device object) { return object.getTstl(); }
             @Override
-            public Device fromString(String string) { return null; }
+            public Device fromString(String string) { return null; } //no need for this
         });
 
-        Session.listPeriods.forEach(period -> {
-            cbxPer.getItems().add(period.getPer());
-        });
+        PeriodsController.alPeriods.forEach(period -> cbxPer.getItems().add(period.getPer()));
         cbxPer.getSelectionModel().selectFirst();
 
         btn.setOnAction(event -> {
             try {
-                Lesson lesson = new Lesson();
-                lesson.setStu(Session.currentStudent.getUserNm());
-                lesson.setDtm(dpDate.getValue());
-                lesson.setPer(cbxPer.getSelectionModel().getSelectedItem());
-                lesson.setProg((cbxProg.getSelectionModel().getSelectedItem()));
-                lesson.setIsFin(0);
-                lesson.setTstl(cbxDev.getValue().getTstl());
-                String sqlAdd = "INSERT INTO lessen (stu, dtm, periode_per, programma_prognm, isFin, tstl) " +
-                        "VALUES (UPPER('"+lesson.getStu()+"'), to_date('"+lesson.getDtm()+"', 'yyyy/mm/dd')" +
-                        ", '"+lesson.getPer()+"', '"+lesson.getProg()+"', "+lesson.getIsFin()+", '"+lesson.getTstl()+"')";
-                Session.oblLessons.add(lesson);
-                int result = conn.executeDML(sqlAdd);
-                if (result == 0) {
-                    Statics.alert("Oeps!", "Er is iets fout gegaan met de invoer", Alert.AlertType.INFORMATION);
-                    Session.oblLessons.remove(lesson); //removes the lesson
-                } else {
-                    tabPane.getSelectionModel().select(0); //Return to first tab
-                }
+                LessonsController.addNewLesson(dpDate.getValue(),
+                        cbxPer.getSelectionModel().getSelectedItem(),
+                        cbxProg.getSelectionModel().getSelectedItem(),
+                        cbxDev.getValue().getTstl(),
+                        tabPane);
             } catch (Exception e){
-                Statics.alert("Oeps!", "Er is iets fout gegaan met de invoer", Alert.AlertType.INFORMATION);
+                BaseController.alert("Oeps!", "Er is iets fout gegaan met de invoer", Alert.AlertType.INFORMATION);
             }
         });
 
-        Statics.setGrid(grid);
+        BaseController.setGrid(grid);
         grid.add(title, 0, 0);
         grid.add(lblDevices, 0, 11);
         grid.add(cbxDev, 1, 11);

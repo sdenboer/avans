@@ -8,11 +8,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
-import techpal.controllers.DbConnector;
-import techpal.controllers.Statics;
+import techpal.controllers.*;
 import techpal.models.Lesson;
 import javafx.scene.layout.GridPane;
-import techpal.controllers.Session;
+
 import java.time.LocalDate;
 
 public class TtrTabAdd extends Tab {
@@ -61,14 +60,14 @@ public class TtrTabAdd extends Tab {
         colStuNiv.setCellValueFactory(new PropertyValueFactory<Lesson, String>("stuNiv"));
         colStuNiv.prefWidthProperty().bind(tblLessons.widthProperty().divide(100/12.5));
 
-        tblLessons.setItems(Session.oblAvailableLessons);
+        tblLessons.setItems(LessonsController.olAvailableLessons);
         tblLessons.getColumns().addAll(colDate, colPer, colProg, colTstl, colStuNm, colStuPc, colStuHnr, colStuNiv);
         tblLessons.setPlaceholder(new Text("Er zijn geen lessen beschikbaar voor u"));
         tblLessons.setPrefHeight(500);
         tblLessons.setPrefWidth(800);
 
         addLesson = new Button("Les Afspreken");
-        addLesson.disableProperty().bind(Bindings.size(Session.oblLessons).isEqualTo(0)); //disables button when the arraylist & tableview is empty
+        addLesson.disableProperty().bind(Bindings.size(LessonsController.olLessons).isEqualTo(0)); //disables button when the arraylist & tableview is empty
         addLesson.disableProperty().bind(Bindings.isEmpty(tblLessons.getSelectionModel().getSelectedItems()));
 
         addLesson.setOnAction(event -> {
@@ -77,32 +76,22 @@ public class TtrTabAdd extends Tab {
             alert.setHeaderText(null);
             alert.setContentText("Weet u het zeker?");
             if (alert.showAndWait().get() == ButtonType.OK) {
-                Lesson lesson = new Lesson();
-                lesson.setStu(tblLessons.getSelectionModel().getSelectedItem().getStu());
-                lesson.setDtm(tblLessons.getSelectionModel().getSelectedItem().getDtm());
-                lesson.setPer(tblLessons.getSelectionModel().getSelectedItem().getPer());
-                lesson.setProg(tblLessons.getSelectionModel().getSelectedItem().getProg());
-                lesson.setIsFin(0);
-                lesson.setTstl(tblLessons.getSelectionModel().getSelectedItem().getTstl());
-                lesson.setTtr(Session.currentTutor.getUserNm());
-                lesson.setStuHnr(tblLessons.getSelectionModel().getSelectedItem().getStuHnr());
-                lesson.setStuNm(tblLessons.getSelectionModel().getSelectedItem().getStuNm());
-                lesson.setStuNiv(tblLessons.getSelectionModel().getSelectedItem().getStuNiv());
-                lesson.setStuPc(tblLessons.getSelectionModel().getSelectedItem().getStuPc());
-                Session.oblAvailableLessons.remove(tblLessons.getSelectionModel().getSelectedIndex());
-                Session.oblLessons.add(lesson);
-                String sqlAdd = "UPDATE lessen " +
-                        "SET ttr = UPPER('" + lesson.getTtr() + "') " +
-                        "WHERE dtm = to_date('" + lesson.getDtm() + "', 'yyyy/mm/dd') " +
-                        "AND stu = '" + lesson.getStu() + "' " +
-                        "AND periode_per = '" + lesson.getPer() + "' ";
-                int result = conn.executeDML(sqlAdd);
+                LessonsController.addTutorLesson(tblLessons.getSelectionModel().getSelectedItem().getStu(),
+                        tblLessons.getSelectionModel().getSelectedItem().getDtm(),
+                        tblLessons.getSelectionModel().getSelectedItem().getPer(),
+                        tblLessons.getSelectionModel().getSelectedItem().getProg(),
+                        tblLessons.getSelectionModel().getSelectedItem().getTstl(),
+                        tblLessons.getSelectionModel().getSelectedItem().getStuHnr(),
+                        tblLessons.getSelectionModel().getSelectedItem().getStuNm(),
+                        tblLessons.getSelectionModel().getSelectedItem().getStuNiv(),
+                        tblLessons.getSelectionModel().getSelectedItem().getStuPc(),
+                        tblLessons.getSelectionModel().getSelectedIndex());
                 tabPane.getSelectionModel().select(0);
             }
         });
 
         btnLocation = new Button("Locatie");
-        btnLocation.disableProperty().bind(Bindings.size(Session.oblLessons).isEqualTo(0)); //disables button when the arraylist & tableview is empty
+        btnLocation.disableProperty().bind(Bindings.size(LessonsController.olLessons).isEqualTo(0)); //disables button when the arraylist & tableview is empty
         btnLocation.disableProperty().bind(Bindings.isEmpty(tblLessons.getSelectionModel().getSelectedItems()));
         btnLocation.setOnAction(event -> {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -112,7 +101,7 @@ public class TtrTabAdd extends Tab {
             if (alert.showAndWait().get() == ButtonType.OK) {
                 String zipcode = tblLessons.getSelectionModel().getSelectedItem().getStuPc();
                 String number = tblLessons.getSelectionModel().getSelectedItem().getStuHnr();
-                Statics.openMap(zipcode, number);
+                MapsController.openMap(zipcode, number);
             }
         });
 

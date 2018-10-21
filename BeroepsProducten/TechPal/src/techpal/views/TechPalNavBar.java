@@ -4,9 +4,9 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import techpal.controllers.*;
 import techpal.models.Person;
 import techpal.models.Student;
-import techpal.controllers.Session;
 
 public class TechPalNavBar extends GridPane {
 
@@ -25,12 +25,12 @@ public class TechPalNavBar extends GridPane {
             btnBackToLogin.setText("");
             body.getChildren().clear();
             body.getChildren().add(resetLoginView);
-            Session.currentUser = new Person(); //resets the current user
-            Session.currentStudent = new Student(); //resets the current user if he or she is a student
-            Session.oblLessons.clear(); // clear all the lessons of the previous user in the session
-            Session.hasDevices.clear();
-            Session.oblAvailableLessons.clear();
-            Session.oblPrevLessons.clear();
+            PersonsController.currentUser = new Person(); //resets the current user
+            StudentsController.currentStudent = new Student(); //resets the current user if he or she is a student
+            LessonsController.olLessons.clear(); // clear all the lessons of the previous user in the session
+            DevicesController.olHasDevices.clear();
+            LessonsController.olAvailableLessons.clear();
+            LessonsController.olPrevLessons.clear();
         });
         add(btnBackToLogin, 0, 0);
     }

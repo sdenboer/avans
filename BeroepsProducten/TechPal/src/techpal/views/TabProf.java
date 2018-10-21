@@ -3,13 +3,9 @@ package techpal.views;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
-import techpal.controllers.DbConnector;
-import techpal.models.Device;
+import techpal.controllers.*;
 import techpal.models.Person;
-import techpal.controllers.Session;
-import techpal.controllers.Statics;
 import techpal.models.Student;
-import techpal.models.Tutor;
 
 import java.util.ArrayList;
 
@@ -20,12 +16,10 @@ public class TabProf extends Tab {
     private TextField tfdName, tfdZipCode, tfdNumber;
     private ComboBox<String> cbxLevel;
     private Button btn;
-    private DbConnector conn;
     private ArrayList<CheckBox> listCheckbox;
 
     public TabProf(Person user, TabView tabPane) {
         this.setText("Mijn profiel");
-        conn = new DbConnector();
         grid = new GridPane();
         listCheckbox = new ArrayList<>();
         title = new Text("Wijzig uw gegevens");
@@ -48,20 +42,19 @@ public class TabProf extends Tab {
         btn = new Button("Wijzigen");
 
         int checkBoxRowInd; //this integer is set within the ternary statement as the location of the checkboxes depends on the role.
-        String sql;  //this sql string is set within an if statement as the sql update depends on the role of the current user
         checkBoxRowInd = user.getRol().equals("student") ? 16 : 15;
-        Statics.checkBoxPlacement(listCheckbox, checkBoxRowInd, grid); //sets the checkboxes on the pane
+        DevicesController.devicesCheckBoxPlacement(listCheckbox, checkBoxRowInd, grid); //sets the checkboxes on the pane
 
         if (user instanceof Student) {
             lblNumber = new Text("Huisnummer: ");
             lblNumber.setId("text-label");
-            tfdNumber = new TextField(Session.currentStudent.getHnr());
+            tfdNumber = new TextField(StudentsController.currentStudent.getHnr());
             lblLevel = new Text("Niveau: ");
             lblLevel.setId("text-label");
             lblDevices.setText("Toestellen: ");
             cbxLevel = new ComboBox<>(); //filling a combobox with the available lessons
-            Session.listLevels.forEach(level -> cbxLevel.getItems().add(level.getLvl()));
-            cbxLevel.setValue(Session.currentStudent.getNiveau());
+            LevelsController.alLevels.forEach(level -> cbxLevel.getItems().add(level.getLvl()));
+            cbxLevel.setValue(StudentsController.currentStudent.getNiveau());
             grid.add(lblNumber, 0, 15);
             grid.add(tfdNumber, 1, 15);
             grid.add(lblLevel, 0, checkBoxRowInd+listCheckbox.size());
@@ -77,38 +70,21 @@ public class TabProf extends Tab {
                     && tfdZipCode.getText().toUpperCase().matches("(\\d{4})\\s*([A-Z]{2})")
                     && (tfdNumber == null || !tfdNumber.getText().isEmpty()) //number is only necessary if current user is a student.
                     && tfdName.getText().matches("^[a-zA-ZàáâäãåąčćęèéêëėįìíîïńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇČŠŽ ,.'-]+$")) {
-                user.setPw(pwfPassword.getText());
-                user.setPc(tfdZipCode.getText());
-                user.setNm(tfdName.getText());
-                int resultUpdatePerson = conn.executeDML(setSQL(user));
-
-                //I apologize for the next lines of code. I don't know how to do a merge insert in Oracle DB to avoid duplicate errors.
-                //In the following nightmarish lines I delete the devices of the person, then add them again in a loop.
-                //I'm sorry...
-                String sqlDeleteHasDevice = "DELETE heeftToestellen WHERE persoon_user = UPPER('"+user.getUserNm()+"')";
-                int resultDeleteHasDevice = conn.executeDML(sqlDeleteHasDevice);
-                Session.hasDevices.clear();
-                listCheckbox.forEach(checkBox -> {
-                    if (checkBox.isSelected()) {
-                        Device device = new Device();
-                        device.setTstl(checkBox.getText());
-                        Session.hasDevices.add(device);
-                        String sqlAddHasDevice = "INSERT INTO heeftToestellen VALUES (UPPER('"+user.getUserNm()+"'), " +
-                                "'"+device.getTstl()+"')";
-                        int resultAddHasDevice = conn.executeDML(sqlAddHasDevice);
-                    }
-                });
-                if (user instanceof Tutor) {
-                    Statics.setAvailableLessons();} //resets the available lessons as the specializations might be changed
-                //It's over. You can stop crying.
-                Statics.alert("Succes!", "Uw gegevens zijn aangepast!", Alert.AlertType.INFORMATION);
+                PersonsController.setNewUser(user,
+                        user.getUserNm(),
+                        pwfPassword.getText(),
+                        tfdName.getText(),
+                        tfdZipCode.getText());
+                PersonsController.updateUser(user);
+                DevicesController.deleteAndUpdateHasDevices(user, listCheckbox);
+                BaseController.alert("Succes!", "Uw gegevens zijn aangepast!", Alert.AlertType.INFORMATION);
                 tabPane.getSelectionModel().select(0);
             } else {
-                Statics.alert("Oeps!", "Er is een probleem met de invoergegevens", Alert.AlertType.ERROR);
+                BaseController.alert("Oeps!", "Er is een probleem met de invoergegevens", Alert.AlertType.ERROR);
             }
         });
 
-        Statics.setGrid(grid);
+        BaseController.setGrid(grid);
         grid.add(title, 0, 0);
         grid.add(lblUserName, 0, 11);
         grid.add(txtUserName, 1, 11);
@@ -120,22 +96,5 @@ public class TabProf extends Tab {
         grid.add(tfdZipCode, 1, 14);
         grid.add(lblDevices, 0, checkBoxRowInd);
         this.setContent(grid);
-    }
-
-    public String setSQL(Person user) {
-        String sql;
-        if (user instanceof Student) {
-            sql = "UPDATE personen " +
-                    "SET pw = '"+user.getPw()+"', nm = '"+user.getNm()+"', " +
-                    "pc = UPPER('"+user.getPc()+"'), hnr = '"+Session.currentStudent.getHnr()+"', " +
-                    "niveau_nivOm = '"+Session.currentStudent.getNiveau()+"' " +
-                    "WHERE userNm = UPPER('"+user.getUserNm()+"')";
-        } else {
-            sql = "UPDATE personen " +
-                    "SET pw = '"+user.getPw()+"', nm = '"+user.getNm()+"', " +
-                    "pc = UPPER('"+user.getPc()+"') " +
-                    "WHERE userNm = UPPER('"+user.getUserNm()+"')";
-        }
-        return sql;
     }
 }

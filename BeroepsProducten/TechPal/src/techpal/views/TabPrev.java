@@ -6,9 +6,8 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import techpal.controllers.LessonsController;
 import techpal.models.Lesson;
-import techpal.controllers.Session;
-
 import java.time.LocalDate;
 
 public class TabPrev extends Tab{
@@ -43,7 +42,7 @@ public class TabPrev extends Tab{
         colNm.setCellValueFactory(new PropertyValueFactory<Lesson, String>(cellName));
         colNm.prefWidthProperty().bind(tblLessons.widthProperty().divide(100/20));
 
-        tblLessons.setItems(Session.oblPrevLessons);
+        tblLessons.setItems(LessonsController.olPrevLessons);
         tblLessons.getColumns().addAll(colDate, colPer, colProg, colTstl, colNm);
         tblLessons.setPlaceholder(new Text("U heeft nog geen lessen"));
         tblLessons.setPrefHeight(500);
