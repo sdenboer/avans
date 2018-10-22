@@ -38,8 +38,10 @@ public class MapsController {
             conn.setRequestMethod("GET");  //We're GETting information
             conn.setRequestProperty("x-api-key", apiKey); //apiKey is coming from the config file
             conn.connect(); //connecting to the api service
-            int result = conn.getResponseCode();
-            if (result == 200) { //200 means everything went fine and we got a result
+            int apiResponse = conn.getResponseCode();
+            System.out.print("API postcodeapi.nu RESPONSE: ");
+            System.out.println(apiResponse); //429 will likely pop up if the Api Key has been used too often (only 100 per day)
+            if (apiResponse == 200) { //200 means everything went fine and we got a result
                 BufferedReader in = new BufferedReader( //reads characters from a stream
                         new InputStreamReader(conn.getInputStream()));
                 String inputLine;
@@ -60,7 +62,6 @@ public class MapsController {
                 }).start(); //starts the new thread
             } else {
                 BaseController.alert("Oeps!", "Er is iets foutgegaan met het openen van de map", Alert.AlertType.ERROR);
-                System.out.println(result); //this error will likely pop up if the Api Key has been used too often (only 100 per day)
             }
         } catch (IOException | JSONException e) {
             e.printStackTrace();

@@ -22,7 +22,6 @@ public class PersonsController {
     public static void getUser(String strUserName, String strPassword, TechPalNavBar navBar, AnchorPane body) {
         conn = new DbConnector();
         String sql = "SELECT * FROM personen WHERE userNm = '" + strUserName + "' AND pw = '" + strPassword + "'";
-        System.out.println(sql);
         ResultSet res = conn.getData(sql);
         try {
             if (res.next()) {

@@ -9,6 +9,7 @@ import javafx.scene.text.Text;
 import techpal.controllers.LessonsController;
 import techpal.models.Lesson;
 import java.time.LocalDate;
+import java.util.Arrays;
 
 public class TabPrev extends Tab{
 
@@ -26,24 +27,24 @@ public class TabPrev extends Tab{
         title.setId("text-title");
 
         tblLessons = new TableView<>();
-        TableColumn colDate = new TableColumn("datum");
-        colDate.setCellValueFactory(new PropertyValueFactory<Lesson, LocalDate>("dtm"));
+        TableColumn<Lesson, LocalDate> colDate = new TableColumn<>("datum");
+        colDate.setCellValueFactory(new PropertyValueFactory<>("dtm"));
         colDate.prefWidthProperty().bind(tblLessons.widthProperty().divide(100/20));
-        TableColumn colPer = new TableColumn("tijd");
-        colPer.setCellValueFactory(new PropertyValueFactory<Lesson, String>("per"));
+        TableColumn<Lesson, String> colPer = new TableColumn<>("tijd");
+        colPer.setCellValueFactory(new PropertyValueFactory<>("per"));
         colPer.prefWidthProperty().bind(tblLessons.widthProperty().divide(100/20));
-        TableColumn colProg = new TableColumn("onderwerp");
-        colProg.setCellValueFactory(new PropertyValueFactory<Lesson, String>("prog"));
+        TableColumn<Lesson, String> colProg = new TableColumn<>("onderwerp");
+        colProg.setCellValueFactory(new PropertyValueFactory<>("prog"));
         colProg.prefWidthProperty().bind(tblLessons.widthProperty().divide(100/20));
-        TableColumn colTstl = new TableColumn("toestel");
-        colTstl.setCellValueFactory(new PropertyValueFactory<Lesson, String>("tstl"));
+        TableColumn<Lesson, String> colTstl = new TableColumn<>("toestel");
+        colTstl.setCellValueFactory(new PropertyValueFactory<>("tstl"));
         colTstl.prefWidthProperty().bind(tblLessons.widthProperty().divide(100/20));
-        TableColumn colNm = new TableColumn(columnName);
-        colNm.setCellValueFactory(new PropertyValueFactory<Lesson, String>(cellName));
+        TableColumn<Lesson, String> colNm = new TableColumn<>(columnName);
+        colNm.setCellValueFactory(new PropertyValueFactory<>(cellName));
         colNm.prefWidthProperty().bind(tblLessons.widthProperty().divide(100/20));
 
         tblLessons.setItems(LessonsController.olPrevLessons);
-        tblLessons.getColumns().addAll(colDate, colPer, colProg, colTstl, colNm);
+        tblLessons.getColumns().addAll(Arrays.asList(colDate, colPer, colProg, colTstl, colNm));
         tblLessons.setPlaceholder(new Text("U heeft nog geen lessen"));
         tblLessons.setPrefHeight(500);
         tblLessons.setPrefWidth(800);

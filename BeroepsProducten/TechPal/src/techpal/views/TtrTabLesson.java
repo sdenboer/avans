@@ -12,6 +12,7 @@ import techpal.controllers.*;
 import techpal.models.Lesson;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 
 public class TtrTabLesson extends Tab {
     private TableView<Lesson> tblLessons;
@@ -19,11 +20,9 @@ public class TtrTabLesson extends Tab {
     private VBox vbox;
     private GridPane grid;
     private Button delete, isFin, btnLocation;
-    private DbConnector conn;
 
     public TtrTabLesson() {
         this.setText("Mijn planning");
-        conn = new DbConnector();
         vbox = new VBox();
         vbox.setSpacing(5);
         vbox.setPadding(new Insets(10, 10, 10, 10));
@@ -59,7 +58,7 @@ public class TtrTabLesson extends Tab {
         colStuNiv.prefWidthProperty().bind(tblLessons.widthProperty().divide(100/12.5));
 
         tblLessons.setItems(LessonsController.olLessons);
-        tblLessons.getColumns().addAll(colDate, colPer, colProg, colTstl, colStuNm, colStuPc, colStuHnr, colStuNiv);
+        tblLessons.getColumns().addAll(Arrays.asList(colDate, colPer, colProg, colTstl, colStuNm, colStuPc, colStuHnr, colStuNiv));
         tblLessons.setPlaceholder(new Text("U heeft nog geen geplande lessen"));
         tblLessons.setPrefHeight(500);
         tblLessons.setPrefWidth(800);
@@ -107,9 +106,9 @@ public class TtrTabLesson extends Tab {
             alert.setHeaderText(null);
             alert.setContentText("U opent nu Google Maps via uw standaard browser");
             if (alert.showAndWait().get() == ButtonType.OK) {
-                String zipcode = tblLessons.getSelectionModel().getSelectedItem().getStuPc();
+                String zipCode = tblLessons.getSelectionModel().getSelectedItem().getStuPc();
                 String number = tblLessons.getSelectionModel().getSelectedItem().getStuHnr();
-                MapsController.openMap(zipcode, number);
+                MapsController.openMap(zipCode, number);
             }
         });
 

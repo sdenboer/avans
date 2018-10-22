@@ -167,20 +167,20 @@ public class LessonsController {
                 "WHERE tstl IN ("+strjDev+")" +
                 "AND ttr IS NULL " +
                 "AND l.isFin = 0";
-        ResultSet resAv = conn.getData(sql);
+        ResultSet res = conn.getData(sql);
         try {
-            while (resAv.next()) {
+            while (res.next()) {
                 Lesson lesson = new Lesson();
-                lesson.setStu(resAv.getString("stu"));
-                lesson.setStuNm(resAv.getString("nm"));
-                lesson.setStuPc(resAv.getString("pc"));
-                lesson.setStuHnr(resAv.getString("hnr"));
-                lesson.setStuNiv(resAv.getString("niveau_nivom"));
-                lesson.setDtm(resAv.getDate("dtm").toLocalDate());
-                lesson.setPer(resAv.getString("periode_per"));
-                lesson.setProg(resAv.getString("programma_progNm"));
-                lesson.setIsFin(resAv.getInt("isFin"));
-                lesson.setTstl(resAv.getString("tstl"));
+                lesson.setStu(res.getString("stu"));
+                lesson.setStuNm(res.getString("nm"));
+                lesson.setStuPc(res.getString("pc"));
+                lesson.setStuHnr(res.getString("hnr"));
+                lesson.setStuNiv(res.getString("niveau_nivom"));
+                lesson.setDtm(res.getDate("dtm").toLocalDate());
+                lesson.setPer(res.getString("periode_per"));
+                lesson.setProg(res.getString("programma_progNm"));
+                lesson.setIsFin(res.getInt("isFin"));
+                lesson.setTstl(res.getString("tstl"));
                 LessonsController.olAvailableLessons.add(lesson);
             }
         } catch (Exception e) {
