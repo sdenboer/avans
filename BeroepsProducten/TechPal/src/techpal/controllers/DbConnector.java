@@ -1,5 +1,7 @@
 package techpal.controllers;
 
+import javafx.scene.control.Alert;
+
 import java.sql.*;
 
 public class DbConnector {
@@ -15,6 +17,8 @@ public class DbConnector {
             conn = DriverManager.getConnection(strConnString,"bp_1","ssvveenn");
         }catch(Exception e){
             System.err.println(e.getMessage());
+            BaseController.alert("TechPal heeft een probleem", "Er kan geen contact gemaakt worden met de server. Probeer het later nog eens", Alert.AlertType.ERROR);
+            System.exit(0); //stopt de app als er geen verbinding is met de database
         }
         return conn;
     }
