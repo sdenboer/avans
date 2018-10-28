@@ -21,7 +21,7 @@ public class TechPal extends Application {
         Scene scene = new Scene(root, 850, 850);
         scene.getStylesheets().add("techpal/style/style.css"); //ID"s are set throughout the application.
         scene.getStylesheets().add("https://fonts.googleapis.com/css?family=Montserrat"); //nicer font than default
-        PeriodsController.setPeriods(); //the unfortunately named PeriodsController class sets all static values from the database.
+        PeriodsController.setPeriods(); //setting the static values.
         LevelsController.setLevels();
         ProgramsController.setPrograms();
         DevicesController.setDevices();
