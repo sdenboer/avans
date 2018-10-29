@@ -73,8 +73,8 @@ public class TtrTabLesson extends Tab {
             alert.setContentText("Weet u het zeker?");
             if (alert.showAndWait().get() == ButtonType.OK) {
                 LessonsController.cancelLesson(tblLessons.getSelectionModel().getSelectedItem().getDtm(),
-                        PersonsController.currentUser.getUserNm(),
                         tblLessons.getSelectionModel().getSelectedItem().getStu(),
+                        tblLessons.getSelectionModel().getSelectedItem().getPer(),
                         tblLessons.getSelectionModel().getSelectedItem(),
                         tblLessons.getSelectionModel().getSelectedIndex());
             }
@@ -90,8 +90,8 @@ public class TtrTabLesson extends Tab {
             alert.setContentText("U bevestigt hiermee dat de les is afgerond");
             if (alert.showAndWait().get() == ButtonType.OK) {
                 LessonsController.finishLesson(tblLessons.getSelectionModel().getSelectedItem().getDtm(),
-                        PersonsController.currentUser.getUserNm(),
                         tblLessons.getSelectionModel().getSelectedItem().getStu(),
+                        tblLessons.getSelectionModel().getSelectedItem().getPer(),
                         tblLessons.getSelectionModel().getSelectedItem(),
                         tblLessons.getSelectionModel().getSelectedIndex());
                 }

@@ -130,26 +130,28 @@ public class LessonsController {
     public static void cancelLesson(LocalDate dtm, String stu, String per, Lesson lesson, int index) {
         conn = new DbConnector();
         LessonsController.olAvailableLessons.add(lesson);
-        LessonsController.olLessons.remove(index);
         String sql = "UPDATE lessen " +
                 "SET ttr = NULL " +
                 "WHERE dtm = to_date('" + dtm + "', 'yyyy/mm/dd') " +
                 "AND stu = '" + stu + "' " +
-                "AND ttr = UPPER('" + PersonsController.currentUser.getUserNm() + "') " +
+                "AND ttr = UPPER('" + TutorsController.currentTutor.getUserNm() + "') " +
                 "AND periode_per = '" + per + "' ";
+        System.out.println(sql);
+        LessonsController.olLessons.remove(index);
         int result = conn.executeDML(sql);
     }
 
     public static void finishLesson(LocalDate dtm, String stu, String per, Lesson lesson, int index) {
         conn = new DbConnector();
         LessonsController.olPrevLessons.add(lesson);
-        LessonsController.olLessons.remove(index);
         String sql = "UPDATE lessen " +
-                "SET isFin = 1" +
+                "SET isFin = 1 " +
                 "WHERE dtm = to_date('"+dtm+"', 'yyyy/mm/dd') " +
                 "AND stu = '"+stu+"' "+
-                "AND ttr = UPPER('" +PersonsController.currentUser.getUserNm()+"') " +
+                "AND ttr = UPPER('" +TutorsController.currentTutor.getUserNm()+"') " +
                 "AND periode_per = '" +per+ "' ";
+        System.out.println(sql);
+        LessonsController.olLessons.remove(index);
         int result = conn.executeDML(sql);
     }
 
