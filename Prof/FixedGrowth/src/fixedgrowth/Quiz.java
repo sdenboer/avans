@@ -113,7 +113,7 @@ public class Quiz {
         p.getChildren().add(q9R);
             
        //Q10
-        p.getChildren().add(new Text("\n\n  Dweck is een\n  voorstander van:    "));
+        p.getChildren().add(new Text("\n\n  Docenten zijn\n  voorstanders van:    "));
         p.getChildren().add(q10R);
         p.getChildren().add(q10W);
         
