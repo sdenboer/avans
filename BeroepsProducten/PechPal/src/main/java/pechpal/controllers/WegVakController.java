@@ -1,31 +1,23 @@
 package pechpal.controllers;
 
-import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import pechpal.AbstractParseJsonBestand;
 import pechpal.models.Ongeval;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.StreamSupport;
 
 public class WegVakController extends AbstractParseJsonBestand {
-    private JsonArray jsonArray;
 
     public WegVakController() {
-        super.fileName = "wegvakken";
-        try {
-            super.filterBestand();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        super.filterBestand();
     }
 
     @Override
-    public void parseJson(JsonObject jsonObject) {
-        this.jsonArray = jsonObject.get(fileName).getAsJsonArray();
+    public String fileName() {
+        return "wegvakken";
     }
 
     public void findWegVakByVKL(Ongeval ongeval) {

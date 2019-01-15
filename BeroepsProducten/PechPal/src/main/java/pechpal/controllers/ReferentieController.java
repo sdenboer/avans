@@ -5,30 +5,33 @@ import pechpal.AbstractParseJsonBestand;
 import pechpal.models.Referentie;
 import pechpal.ReferentieBestandCollectie;
 
-import java.io.*;
 import java.util.*;
 
 public class ReferentieController extends AbstractParseJsonBestand {
     private String referentieBestandKey, value;
-    private HashMap refHash;
+    private HashMap<String, String> refHash;
     private String[] chosenValueColumn = {
             "OMS",
             "LNG"
     };
 
-    public ReferentieController() throws IOException {
-        super.fileName = "Referentie";
+    public ReferentieController() {
         super.filterBestand();
+    }
+
+    @Override
+    public String fileName() {
+        return "Referentie";
     }
 
     @Override
     public void parseJson(JsonObject jsonObject) {
         String entryKey = jsonObject.keySet().toString().replaceAll("[\\[\\]']", "");
-        JsonArray jsonArray = jsonObject.getAsJsonArray(entryKey);
-        String[] stringArray = jsonArray.get(0).getAsJsonObject().keySet().toString().replaceAll("[\\[\\]']", "").split(", ");
+        super.jsonArray = jsonObject.getAsJsonArray(entryKey);
+        String[] stringArray = super.jsonArray.get(0).getAsJsonObject().keySet().toString().replaceAll("[\\[\\]']", "").split(", ");
         referentieBestandKey = stringArray[0];
         setChosenValueColumn(stringArray);
-        refHash = jsonToRefHash(jsonArray);
+        refHash = jsonToRefHash(super.jsonArray);
         ReferentieBestandCollectie.referentieBestanden.put(referentieBestandKey, refHash);
     }
 

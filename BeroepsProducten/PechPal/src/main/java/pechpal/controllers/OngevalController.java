@@ -1,6 +1,5 @@
 package pechpal.controllers;
 
-import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import pechpal.*;
@@ -12,21 +11,15 @@ import java.util.*;
 import java.util.stream.StreamSupport;
 
 public class OngevalController extends AbstractParseJsonBestand {
-    private JsonArray jsonArray;
     private HmApi hmApi;
 
     public OngevalController() {
-        super.fileName = "ongevallen";
-        try {
-            super.filterBestand();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        super.filterBestand();
     }
 
     @Override
-    public void parseJson(JsonObject jsonObject) {
-        this.jsonArray = jsonObject.get(fileName).getAsJsonArray();
+    public String fileName() {
+        return "ongevallen";
     }
 
     public Ongeval findOngevalByVKL(String vklNummer) {
@@ -94,7 +87,9 @@ public class OngevalController extends AbstractParseJsonBestand {
         try {
             jePuntLocaties = new HectoPuntController().connectWvkIdToPuntlocatie(jePuntLocaties);
         } catch (NullPointerException e) {
-            jePuntLocaties = HectoPuntDocumentMissing(jePuntLocaties);
+            jePuntLocaties = hectoPuntDocumentMissing(jePuntLocaties);
+        } catch (Exception e) {
+            e.printStackTrace();
         } finally {
             JsonElement correctPuntLocatie = new WegVakController().narrowDownPuntLocaties(jePuntLocaties, toevoeging, richting);
             puntLocatie.setFkVeld5(correctPuntLocatie.getAsJsonObject().get("FK_VELD5").getAsString());
@@ -111,7 +106,7 @@ public class OngevalController extends AbstractParseJsonBestand {
         return this.hmApi.wgs84();
     }
 
-    private List<JsonElement> HectoPuntDocumentMissing(List<JsonElement> jePuntLocaties) {
+    private List<JsonElement> hectoPuntDocumentMissing(List<JsonElement> jePuntLocaties) {
         for (JsonElement je : jePuntLocaties) {
             String value = je.getAsJsonObject().get("FK_VELD5").getAsString();
             value = value.replaceAll("HTT0+", "").replaceAll("\\d{4}$", "");

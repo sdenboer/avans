@@ -9,7 +9,6 @@ public class WegVak{
     public WegVak(){
     }
 
-
     public String getRichting() {
         return richting;
     }

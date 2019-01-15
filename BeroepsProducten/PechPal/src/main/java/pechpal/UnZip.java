@@ -44,7 +44,7 @@ public class UnZip {
         if (!ze.isDirectory()
                 && ze.getName().endsWith(".txt")
                 && containsNecessaryFiles(ze)) {
-            unzipFiles(zis, filePath);
+            this.unzipFilesWrite(zis, filePath);
         } else if (ze.isDirectory()) {
             Files.createDirectories(filePath);
         }
@@ -54,7 +54,7 @@ public class UnZip {
         return Arrays.stream(this.necessaryFiles).anyMatch(entry.getName()::contains);
     }
 
-    private static void unzipFiles(final ZipInputStream zipInputStream, final Path unzipFilePath) throws IOException {
+    private void unzipFilesWrite(final ZipInputStream zipInputStream, final Path unzipFilePath) throws IOException {
         try (BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(unzipFilePath.toAbsolutePath().toString()))) {
             byte[] bytesIn = new byte[1024];
             int read;

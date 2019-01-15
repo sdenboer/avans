@@ -1,33 +1,25 @@
 package pechpal.controllers;
 
-import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import pechpal.AbstractParseJsonBestand;
 import pechpal.models.Partij;
 import pechpal.ReferentieBestandCollectie;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.stream.StreamSupport;
 
 public class PartijController extends AbstractParseJsonBestand {
-    private JsonArray jsonArray;
 
     public PartijController() {
-        super.fileName = "partijen";
-        try {
-            super.filterBestand();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        super.filterBestand();
     }
 
     @Override
-    public void parseJson(JsonObject jsonObject) {
-        this.jsonArray = jsonObject.get(fileName).getAsJsonArray();
+    public String fileName() {
+        return "partijen";
     }
 
     public Partij findPartijByVKL(String nummer) {

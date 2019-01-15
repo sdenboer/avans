@@ -2,22 +2,12 @@ package pechpal.models;
 
 import java.util.HashMap;
 
-public class Ongeval extends WegVak{
+public class Ongeval extends WegVak {
     private HashMap<String, String> ongevalKenmerken;
     private String hectoMeter;
     private String vklNummer;
-    private String wegNummer;
-
 
     public Ongeval() {
-    }
-
-    public String getWegNummer() {
-        return wegNummer;
-    }
-
-    public void setWegNummer(String wegNummer) {
-        this.wegNummer = wegNummer;
     }
 
     public String getVklNummer() {
