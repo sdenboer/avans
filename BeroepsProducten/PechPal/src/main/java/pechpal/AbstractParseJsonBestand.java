@@ -7,9 +7,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 
 public abstract class AbstractParseJsonBestand extends AbstractParseJson {
-    public String fileName;
+    protected String fileName;
 
-    public void filterBestand() throws IOException {
+    protected void filterBestand() throws IOException {
         Files.walk(StartUpView.pthTempDir)
             .filter(path -> path.toString().contains("/"+fileName) && path.toString().endsWith(".json"))
             .forEach(bestand -> {
