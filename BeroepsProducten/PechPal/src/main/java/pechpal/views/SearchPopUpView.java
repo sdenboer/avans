@@ -17,59 +17,9 @@ public class SearchPopUpView extends GridPane {
 
     public void search(String s, SideView sv, CenterView cv) {
         if (s.equals("HECTOMETERPAAL")) {
-            this.hmPane();
-            this.setId("popup-hm");
-            button.setOnAction(event -> {
-                OngevalController ongC = new OngevalController();
-                String richting = cbxRichting.getValue();
-                String hm = tfdHecometer.getText().replace(",", "");
-                if (!richting.equals("")) {
-                    richting = richting.replaceAll("([ei])", "");
-                }
-                try {
-                    sv.loadOngeval(ongC,
-                            tfdWeg.getText(),
-                            hm,
-                            tfdLetter.getText(),
-                            richting);
-                    sv.searchByVKL.query.setText("-");
-                    setMap(ongC, cv);
-                } catch (IndexOutOfBoundsException ioe) {
-                    Alert noInput = new Alert(Alert.AlertType.ERROR);
-                    noInput.setTitle("Geen input");
-                    noInput.setContentText("Voer gegevens in");
-                    noInput.show();
-                } catch (NullPointerException | NoSuchElementException ne) {
-                    Alert notFound = new Alert(Alert.AlertType.ERROR);
-                    notFound.setTitle("Verkeerde input");
-                    notFound.setContentText("Deze hectometerpaal bestaat niet");
-                    notFound.show();
-                }
-                catch (Exception e) {
-                    e.printStackTrace();
-                }
-            });
+            this.searchByHectometer(sv, cv);
         } else if (s.equals("ONGEVALNUMMER"))  {
-            this.ongPane();
-            this.setId("popup-ong");
-            button.setOnAction(event -> {
-                OngevalController ongC = new OngevalController();
-                try {
-                    sv.loadOngevalVKL(ongC, tfdNummer.getText());
-                    this.setMap(ongC, cv);
-                } catch (NullPointerException npe) {
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("GEEN VERBINDING");
-                    alert.setContentText("Kaart niet beschikbaar");
-                    alert.show();
-                    npe.printStackTrace();
-                } catch (IndexOutOfBoundsException | NoSuchElementException ioe ) {
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.setTitle("Foutieve invoer!");
-                    alert.setContentText("Dit ongevalnummer bestaat niet of heeft niet plaatsgevonden bij een hectometerpaaltje");
-                    alert.show();
-                }
-            });
+            this.searchByVkl(sv, cv);
         }
     }
 
@@ -113,6 +63,64 @@ public class SearchPopUpView extends GridPane {
         this.add(tfdLetter, 1, 2);
         this.add(cbxRichting, 1, 3);
         this.add(button, 1, 4);
+    }
+
+    private void searchByHectometer(SideView sv, CenterView cv) {
+        this.hmPane();
+        this.setId("popup-hm");
+        button.setOnAction(event -> {
+            OngevalController ongC = new OngevalController();
+            String richting = cbxRichting.getValue();
+            String hm = tfdHecometer.getText().replace(",", "");
+            if (!richting.equals("")) {
+                richting = richting.replaceAll("([ei])", "");
+            }
+            try {
+                sv.loadOngeval(ongC,
+                        tfdWeg.getText(),
+                        hm,
+                        tfdLetter.getText(),
+                        richting);
+                sv.searchByVKL.query.setText("-");
+                setMap(ongC, cv);
+            } catch (IndexOutOfBoundsException ioe) {
+                Alert noInput = new Alert(Alert.AlertType.ERROR);
+                noInput.setTitle("Geen input");
+                noInput.setContentText("Voer gegevens in");
+                noInput.show();
+            } catch (NullPointerException | NoSuchElementException ne) {
+                Alert notFound = new Alert(Alert.AlertType.ERROR);
+                notFound.setTitle("Verkeerde input");
+                notFound.setContentText("Deze hectometerpaal bestaat niet");
+                notFound.show();
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+    private void searchByVkl(SideView sv, CenterView cv) {
+        this.ongPane();
+        this.setId("popup-ong");
+        button.setOnAction(event -> {
+            OngevalController ongC = new OngevalController();
+            try {
+                sv.loadOngevalVKL(ongC, tfdNummer.getText());
+                this.setMap(ongC, cv);
+            } catch (NullPointerException npe) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("GEEN VERBINDING");
+                alert.setContentText("Kaart niet beschikbaar");
+                alert.show();
+                npe.printStackTrace();
+            } catch (IndexOutOfBoundsException | NoSuchElementException ioe) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Foutieve invoer!");
+                alert.setContentText("Dit ongevalnummer bestaat niet of heeft niet plaatsgevonden bij een hectometerpaaltje");
+                alert.show();
+            }
+        });
     }
 }
 

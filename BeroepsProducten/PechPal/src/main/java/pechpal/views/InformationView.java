@@ -243,6 +243,21 @@ public class InformationView extends StackPane {
                 case "dienstnaam":
                     setRowContent("dienst", value, p);
                     break;
+                //these are to be ignored:
+                case "dienstcode" :
+                case "fk_veld5" :
+                case "distrnaam" :
+                case "kdd_naam" :
+                case "distrcode" :
+                case "pve_code" :
+                case "vkl_nummer" :
+                case "wvk_id" :
+                case "gme_id" :
+                    break;
+                default:
+                    //mocht het bestand vernieuwen
+                    setRowContent(key, value, p);
+                    break;
             }
         });
     }
@@ -467,6 +482,13 @@ public class InformationView extends StackPane {
                 case "tdt_id_3" :
                 case "tdt_an" :
                     setRowContent("toedracht", value, p);
+                    break;
+                    //these are to be ignored:
+                case "vkl_nummer" :
+                    break;
+                default:
+                    //mocht het bestand vernieuwen
+                    setRowContent(key, value, p);
                     break;
             }
         });

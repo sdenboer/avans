@@ -8,7 +8,6 @@ public class Partij {
     public Partij() {
     }
 
-
     public HashMap<String, String> getPartijKenmerken() {
         return partijKenmerken;
     }

@@ -25,7 +25,9 @@ public class OngevalController extends AbstractParseJsonBestand {
     public Ongeval findOngevalByVKL(String vklNummer) {
         Ongeval ongeval = new Ongeval();
         HashMap<String, String> hmOngeval = new HashMap<>();
-        JsonElement jsonElement = StreamSupport.stream(this.jsonArray.spliterator(), false).map(value -> (JsonObject) value)
+        JsonElement jsonElement = StreamSupport
+                .stream(this.jsonArray.spliterator(), false)
+                .map(value -> (JsonObject) value)
                 .filter(value -> value.get("VKL_NUMMER").getAsString().equals(vklNummer)
                         && value.get("FK_VELD5").getAsString().contains("HTT"))
                 .findFirst()

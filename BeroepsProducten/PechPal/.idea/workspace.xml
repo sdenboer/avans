@@ -3,24 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pechpal/AbstractParseJsonBestand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pechpal/AbstractParseJsonBestand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pechpal/UnZip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pechpal/UnZip.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pechpal/controllers/HectoPuntController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pechpal/controllers/HectoPuntController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pechpal/controllers/OngevalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pechpal/controllers/OngevalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pechpal/controllers/PartijController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pechpal/controllers/PartijController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pechpal/controllers/PuntLocatieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pechpal/controllers/PuntLocatieController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pechpal/controllers/ReferentieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pechpal/controllers/ReferentieController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pechpal/controllers/WegVakController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pechpal/controllers/WegVakController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pechpal/models/Ongeval.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pechpal/models/Ongeval.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pechpal/models/WegVak.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pechpal/models/WegVak.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pechpal/AbstractParseJsonBestand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pechpal/AbstractParseJsonBestand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pechpal/controllers/HectoPuntController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pechpal/controllers/HectoPuntController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pechpal/controllers/OngevalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pechpal/controllers/OngevalController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pechpal/controllers/PartijController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pechpal/controllers/PartijController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pechpal/controllers/PuntLocatieController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pechpal/controllers/PuntLocatieController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pechpal/controllers/ReferentieController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pechpal/controllers/ReferentieController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pechpal/controllers/WegVakController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pechpal/controllers/WegVakController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pechpal/models/Partij.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pechpal/models/Partij.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pechpal/views/InformationView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pechpal/views/InformationView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pechpal/views/SearchPopUpView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pechpal/views/SearchPopUpView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pechpal/UnZip.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pechpal/UnZip.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pechpal/models/Ongeval.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pechpal/models/Ongeval.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pechpal/views/InformationView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TechPal/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TechPal/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -222,33 +213,36 @@
     <session id="-2129670890">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.7" value="2" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="JAVA/pechpal" value="3" />
+          <entry key="JAVA/" value="1" />
+          <entry key="JAVA/pechpal" value="4" />
+          <entry key="JavaScript-modules-diagram//home/sven/code/avans/BeroepsProducten/PechPal/src/main" value="1" />
           <entry key="html" value="1" />
-          <entry key="java" value="28" />
+          <entry key="java" value="53" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="HTML" value="1" />
-          <entry key="JAVA" value="28" />
-          <entry key="UML" value="3" />
+          <entry key="JAVA" value="53" />
+          <entry key="UML" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="449" />
+          <entry key="java" value="1429" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="449" />
+          <entry key="JAVA" value="1429" />
         </counts>
       </usages-collector>
     </session>
@@ -259,16 +253,48 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/controllers/HectoPuntController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/views/SideView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-132">
-              <caret line="15" column="4" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="17" selection-end-column="5" />
+            <state relative-caret-position="111">
+              <caret line="43" column="16" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#308#309#0" expanded="true" />
-                <element signature="e#345#346#0" expanded="true" />
-                <element signature="e#399#400#0" expanded="true" />
-                <element signature="e#435#436#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/views/OngevallenBijHmView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="111">
+              <caret line="49" column="16" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/views/InformationView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="106">
+              <caret line="513" column="16" selection-start-line="513" selection-start-column="16" selection-end-line="513" selection-end-column="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/AbstractParseJsonBestand.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="10" column="34" lean-forward="true" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -277,8 +303,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/controllers/OngevalController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="111" column="37" lean-forward="true" selection-start-line="111" selection-start-column="37" selection-end-line="111" selection-end-column="37" />
+            <state relative-caret-position="198">
+              <caret line="21" column="28" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#397#398#0" expanded="true" />
@@ -289,419 +315,33 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/views/SearchPopUpView.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/controllers/WegVakController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1936">
-              <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+            <state relative-caret-position="801">
+              <caret line="53" column="44" selection-start-line="53" selection-start-column="44" selection-end-line="53" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#355#356#0" expanded="true" />
+                <element signature="e#392#393#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/models/Partij.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/models/Referentie.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/UnZip.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="625">
-              <caret line="65" column="1" lean-forward="true" selection-start-line="65" selection-start-column="1" selection-end-line="65" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/kaart.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="726">
-              <caret line="311" column="96" selection-start-line="311" selection-start-column="57" selection-end-line="311" selection-end-column="96" />
+            <state relative-caret-position="-22">
+              <caret line="8" column="28" lean-forward="true" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
               <folding>
-                <element signature="e#413#4764#0" />
-                <element signature="e#431#701#0" />
-                <element signature="e#5088#9439#0" />
+                <element signature="e#169#170#0" expanded="true" />
+                <element signature="e#207#208#0" expanded="true" />
+                <element signature="e#237#238#0" expanded="true" />
+                <element signature="e#269#270#0" expanded="true" />
+                <element signature="e#297#298#0" expanded="true" />
+                <element signature="e#339#340#0" expanded="true" />
+                <element signature="e#373#374#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="uml://JAVA/pechpal">
-          <provider selected="true" editor-type-id="UmlEditorProvider">
-            <state>
-              <ID>JAVA</ID>
-              <OriginalElement>pechpal</OriginalElement>
-              <nodes>
-                <node x="1078.2411213252567" y="2659.0">pechpal.controllers.ReferentieController</node>
-                <node x="0.0" y="3549.0">pechpal.RDToWGS</node>
-                <node x="4323.607787991923" y="1231.0">pechpal.views.InformationView</node>
-                <node x="3197.107787991923" y="623.5">pechpal.controllers.WegVakController</node>
-                <node x="2277.2179675025804" y="165.5">pechpal.AbstractParseJson</node>
-                <node x="2277.2179675025804" y="0.0">pechpal.IParseJson</node>
-                <node x="593.2411213252567" y="2695.0">pechpal.UnZip</node>
-                <node x="1490.1077879919235" y="1955.0">pechpal.views.SearchPopUpView</node>
-                <node x="3959.607787991923" y="1008.5">pechpal.models.Partij</node>
-                <node x="2269.6077879919235" y="1608.0">pechpal.views.SideView</node>
-                <node x="1815.1077879919235" y="1339.5">pechpal.views.SearchView</node>
-                <node x="2344.1077879919235" y="1291.0">pechpal.views.OngevallenBijHmView</node>
-                <node x="1278.2411213252567" y="2468.5">pechpal.models.Referentie</node>
-                <node x="3983.257787991923" y="331.0">pechpal.models.Ongeval</node>
-                <node x="2687.107787991923" y="635.5">pechpal.controllers.PuntLocatieController</node>
-                <node x="2514.1554675025804" y="331.0">pechpal.AbstractParseJsonBestand</node>
-                <node x="4070.257787991923" y="129.0">pechpal.models.WegVak</node>
-                <node x="1707.6077879919235" y="2432.0">pechpal.views.CenterView</node>
-                <node x="1117.1077879919235" y="660.0">pechpal.ReferentieBestandCollectie</node>
-                <node x="694.7411213252567" y="3377.0">pechpal.PechPal</node>
-                <node x="664.7411213252567" y="2958.0">pechpal.views.StartUpView</node>
-                <node x="1654.1077879919235" y="647.5">pechpal.models.PuntLocatie</node>
-                <node x="3266.8875" y="1315.5">pechpal.controllers.PartijController</node>
-                <node x="1839.1077879919235" y="539.0">pechpal.HmApi</node>
-                <node x="0.0" y="2719.5">pechpal.CsvToJson</node>
-                <node x="2516.77445465859" y="2756.0">pechpal.views.MainView</node>
-                <node x="2112.75486111111" y="936.0">pechpal.controllers.OngevalController</node>
-                <node x="2129.1077879919235" y="635.5">pechpal.controllers.HectoPuntController</node>
-              </nodes>
-              <notes />
-              <edges>
-                <edge source="pechpal.controllers.OngevalController" target="pechpal.controllers.HectoPuntController">
-                  <point x="59.0" y="-112.5" />
-                  <point x="2496.25486111111" y="856.0" />
-                  <point x="2398.1077879919235" y="856.0" />
-                  <point x="0.0" y="52.0" />
-                </edge>
-                <edge source="pechpal.views.SearchView" target="pechpal.views.SideView">
-                  <point x="190.5" y="40.0" />
-                  <point x="2259.6077879919235" y="1568.0" />
-                  <point x="2370.3770187611544" y="1568.0" />
-                  <point x="-161.23076923076906" y="-148.5" />
-                </edge>
-                <edge source="pechpal.AbstractParseJsonBestand" target="pechpal.views.StartUpView">
-                  <point x="-114.625" y="64.0" />
-                  <point x="2530.5304675025804" y="489.0" />
-                  <point x="405.5" y="489.0" />
-                  <point x="405.5" y="2928.0" />
-                  <point x="761.3411213252566" y="2928.0" />
-                  <point x="-64.40000000000009" y="-184.5" />
-                </edge>
-                <edge source="pechpal.views.SearchPopUpView" target="pechpal.controllers.OngevalController">
-                  <point x="0.0" y="-208.5" />
-                  <point x="1679.1077879919235" y="1211.0" />
-                  <point x="2307.45486111111" y="1211.0" />
-                  <point x="-129.80000000000018" y="112.5" />
-                </edge>
-                <edge source="pechpal.PechPal" target="pechpal.views.StartUpView">
-                  <point x="65.5" y="-63.5" />
-                  <point x="891.2411213252567" y="3352.0" />
-                  <point x="906.2411213252567" y="3352.0" />
-                  <point x="80.5" y="184.5" />
-                </edge>
-                <edge source="pechpal.views.StartUpView" target="pechpal.views.MainView">
-                  <point x="128.80000000000018" y="-184.5" />
-                  <point x="954.5411213252569" y="2938.0" />
-                  <point x="2591.77445465859" y="2938.0" />
-                  <point x="0.0" y="27.5" />
-                </edge>
-                <edge source="pechpal.controllers.PartijController" target="pechpal.models.Partij">
-                  <point x="70.375" y="-64.0" />
-                  <point x="3618.7625" y="1201.0" />
-                  <point x="4002.482787991923" y="1201.0" />
-                  <point x="-128.625" y="40.0" />
-                </edge>
-                <edge source="pechpal.controllers.WegVakController" target="pechpal.models.Ongeval">
-                  <point x="194.0" y="-64.0" />
-                  <point x="3682.107787991923" y="499.0" />
-                  <point x="4019.357787991923" y="499.0" />
-                  <point x="-144.4000000000001" y="64.0" />
-                </edge>
-                <edge source="pechpal.HmApi" target="pechpal.AbstractParseJson">
-                  <point x="0.0" y="-148.5" />
-                  <point x="1973.6077879919235" y="479.0" />
-                  <point x="1522.1999999999998" y="479.0" />
-                  <point x="1522.1999999999998" y="306.0" />
-                  <point x="2350.9679675025804" y="306.0" />
-                  <point x="-73.75" y="39.5" />
-                </edge>
-                <edge source="pechpal.controllers.PartijController" target="pechpal.ReferentieBestandCollectie">
-                  <point x="-211.125" y="-64.0" />
-                  <point x="3337.2625" y="1181.0" />
-                  <point x="1294.9411213252567" y="1181.0" />
-                  <point x="1294.9411213252567" y="916.0" />
-                  <point x="1375.6077879919235" y="916.0" />
-                  <point x="0.0" y="27.5" />
-                </edge>
-                <edge source="pechpal.views.SideView" target="pechpal.views.SearchView">
-                  <point x="-241.8461538461538" y="-148.5" />
-                  <point x="2289.7616341457697" y="1588.0" />
-                  <point x="2005.6077879919235" y="1588.0" />
-                  <point x="-63.5" y="40.0" />
-                </edge>
-                <edge source="pechpal.controllers.ReferentieController" target="pechpal.ReferentieBestandCollectie">
-                  <point x="-53.5" y="-124.5" />
-                  <point x="1238.7411213252567" y="2629.0" />
-                  <point x="1015.6511141636136" y="2629.0" />
-                  <point x="1015.6511141636136" y="916.0" />
-                  <point x="1203.2744546585902" y="916.0" />
-                  <point x="-172.33333333333326" y="27.5" />
-                </edge>
-                <edge source="pechpal.views.SideView" target="pechpal.views.CenterView">
-                  <point x="-43.666666666666515" y="148.5" />
-                  <point x="2487.941121325257" y="1925.0" />
-                  <point x="2564.27445465859" y="1925.0" />
-                  <point x="2564.27445465859" y="2402.0" />
-                  <point x="1976.3220737062093" y="2402.0" />
-                  <point x="97.71428571428578" y="-88.5" />
-                </edge>
-                <edge source="pechpal.views.SideView" target="pechpal.views.OngevallenBijHmView">
-                  <point x="-40.30769230769238" y="-148.5" />
-                  <point x="2491.300095684231" y="1588.0" />
-                  <point x="2456.6077879919235" y="1588.0" />
-                  <point x="-37.5" y="88.5" />
-                </edge>
-                <edge source="pechpal.views.StartUpView" target="pechpal.controllers.ReferentieController">
-                  <point x="64.40000000000009" y="-184.5" />
-                  <point x="890.1411213252568" y="2928.0" />
-                  <point x="1292.2411213252567" y="2928.0" />
-                  <point x="0.0" y="124.5" />
-                </edge>
-                <edge source="pechpal.controllers.OngevalController" target="pechpal.models.PuntLocatie">
-                  <point x="-177.0" y="-112.5" />
-                  <point x="2260.25486111111" y="896.0" />
-                  <point x="1777.8577879919235" y="896.0" />
-                  <point x="41.25" y="40.0" />
-                </edge>
-                <edge source="pechpal.views.InformationView" target="pechpal.models.Ongeval">
-                  <point x="95.5" y="-148.5" />
-                  <point x="4610.107787991923" y="509.0" />
-                  <point x="4308.157787991923" y="509.0" />
-                  <point x="144.4000000000001" y="64.0" />
-                </edge>
-                <edge source="pechpal.views.SideView" target="pechpal.controllers.PartijController">
-                  <point x="80.61538461538476" y="-148.5" />
-                  <point x="2612.2231726073082" y="1548.0" />
-                  <point x="3548.3875" y="1548.0" />
-                  <point x="0.0" y="64.0" />
-                </edge>
-                <edge source="pechpal.views.StartUpView" target="pechpal.CsvToJson">
-                  <point x="-128.80000000000018" y="-184.5" />
-                  <point x="696.9411213252565" y="2938.0" />
-                  <point x="197.5" y="2938.0" />
-                  <point x="0.0" y="64.0" />
-                </edge>
-                <edge source="pechpal.controllers.OngevalController" target="pechpal.controllers.PuntLocatieController">
-                  <point x="118.0" y="-112.5" />
-                  <point x="2555.25486111111" y="886.0" />
-                  <point x="2932.107787991923" y="886.0" />
-                  <point x="0.0" y="52.0" />
-                </edge>
-                <edge source="pechpal.controllers.OngevalController" target="pechpal.models.Ongeval">
-                  <point x="295.0" y="-112.5" />
-                  <point x="2732.25486111111" y="916.0" />
-                  <point x="3800.607787991923" y="916.0" />
-                  <point x="3800.607787991923" y="519.0" />
-                  <point x="4163.757787991923" y="519.0" />
-                  <point x="0.0" y="64.0" />
-                </edge>
-                <edge source="pechpal.views.SideView" target="pechpal.models.Partij">
-                  <point x="120.92307692307713" y="-148.5" />
-                  <point x="2652.5308649150006" y="1558.0" />
-                  <point x="4173.982787991923" y="1558.0" />
-                  <point x="42.875" y="40.0" />
-                </edge>
-                <edge source="pechpal.controllers.HectoPuntController" target="pechpal.AbstractParseJsonBestand">
-                  <point x="0.0" y="-52.0" />
-                  <point x="2398.1077879919235" y="519.0" />
-                  <point x="2628.7804675025804" y="519.0" />
-                  <point x="-16.375" y="64.0" />
-                </edge>
-                <edge source="pechpal.controllers.OngevalController" target="pechpal.HmApi">
-                  <point x="-118.0" y="-112.5" />
-                  <point x="2319.25486111111" y="886.0" />
-                  <point x="1906.3577879919235" y="886.0" />
-                  <point x="-67.25" y="148.5" />
-                </edge>
-                <edge source="pechpal.controllers.WegVakController" target="pechpal.AbstractParseJsonBestand">
-                  <point x="-194.0" y="-64.0" />
-                  <point x="3294.107787991923" y="509.0" />
-                  <point x="2694.2804675025804" y="509.0" />
-                  <point x="49.125" y="64.0" />
-                </edge>
-                <edge source="pechpal.views.MainView" target="pechpal.views.CenterView">
-                  <point x="-62.5" y="-27.5" />
-                  <point x="2529.27445465859" y="2639.0" />
-                  <point x="1793.1077879919235" y="2639.0" />
-                  <point x="-85.5" y="88.5" />
-                </edge>
-                <edge source="pechpal.controllers.PuntLocatieController" target="pechpal.AbstractParseJsonBestand">
-                  <point x="0.0" y="-52.0" />
-                  <point x="2932.107787991923" y="519.0" />
-                  <point x="2661.5304675025804" y="519.0" />
-                  <point x="16.375" y="64.0" />
-                </edge>
-                <edge source="pechpal.controllers.OngevalController" target="pechpal.ReferentieBestandCollectie">
-                  <point x="-295.0" y="-112.5" />
-                  <point x="2142.25486111111" y="916.0" />
-                  <point x="1547.9411213252567" y="916.0" />
-                  <point x="172.33333333333326" y="27.5" />
-                </edge>
-                <edge source="pechpal.views.SearchPopUpView" target="pechpal.views.SideView">
-                  <point x="126.0" y="-208.5" />
-                  <point x="1805.1077879919235" y="1935.0" />
-                  <point x="2313.27445465859" y="1935.0" />
-                  <point x="-218.33333333333348" y="148.5" />
-                </edge>
-                <edge source="pechpal.views.SideView" target="pechpal.models.Ongeval">
-                  <point x="161.23076923076906" y="-148.5" />
-                  <point x="2692.8385572226925" y="1568.0" />
-                  <point x="4313.107787991923" y="1568.0" />
-                  <point x="4313.107787991923" y="519.0" />
-                  <point x="4235.957787991923" y="519.0" />
-                  <point x="72.20000000000005" y="64.0" />
-                </edge>
-                <edge source="pechpal.views.CenterView" target="pechpal.views.SideView">
-                  <point x="146.57142857142844" y="-88.5" />
-                  <point x="2025.179216563352" y="2412.0" />
-                  <point x="2575.27445465859" y="2412.0" />
-                  <point x="43.666666666666515" y="148.5" />
-                </edge>
-                <edge source="pechpal.AbstractParseJsonBestand" target="pechpal.AbstractParseJson">
-                  <point x="0.0" y="-64.0" />
-                  <point x="2645.1554675025804" y="306.0" />
-                  <point x="2498.4679675025804" y="306.0" />
-                  <point x="73.75" y="39.5" />
-                </edge>
-                <edge source="pechpal.controllers.OngevalController" target="pechpal.controllers.WegVakController">
-                  <point x="177.0" y="-112.5" />
-                  <point x="2614.25486111111" y="896.0" />
-                  <point x="3488.107787991923" y="896.0" />
-                  <point x="0.0" y="64.0" />
-                </edge>
-                <edge source="pechpal.views.InformationView" target="pechpal.models.Partij">
-                  <point x="-95.5" y="-148.5" />
-                  <point x="4419.107787991923" y="1211.0" />
-                  <point x="4259.732787991923" y="1211.0" />
-                  <point x="128.625" y="40.0" />
-                </edge>
-                <edge source="pechpal.controllers.ReferentieController" target="pechpal.models.Referentie">
-                  <point x="53.5" y="-124.5" />
-                  <point x="1345.7411213252567" y="2639.0" />
-                  <point x="1316.7411213252567" y="2639.0" />
-                  <point x="-38.5" y="52.0" />
-                </edge>
-                <edge source="pechpal.views.MainView" target="pechpal.views.InformationView">
-                  <point x="62.5" y="-27.5" />
-                  <point x="2654.27445465859" y="2639.0" />
-                  <point x="4615.607787991923" y="2639.0" />
-                  <point x="4615.607787991923" y="1588.0" />
-                  <point x="4657.857787991923" y="1588.0" />
-                  <point x="143.25" y="148.5" />
-                </edge>
-                <edge source="pechpal.views.StartUpView" target="pechpal.UnZip">
-                  <point x="0.0" y="-184.5" />
-                  <point x="0.0" y="88.5" />
-                </edge>
-                <edge source="pechpal.views.MainView" target="pechpal.views.SideView">
-                  <point x="-12.5" y="-27.5" />
-                  <point x="2579.27445465859" y="2639.0" />
-                  <point x="2586.27445465859" y="2639.0" />
-                  <point x="2586.27445465859" y="1925.0" />
-                  <point x="2662.6077879919235" y="1925.0" />
-                  <point x="131.0" y="148.5" />
-                </edge>
-                <edge source="pechpal.controllers.OngevalController" target="pechpal.AbstractParseJsonBestand">
-                  <point x="0.0" y="-112.5" />
-                  <point x="2437.25486111111" y="866.0" />
-                  <point x="2118.6077879919235" y="866.0" />
-                  <point x="2118.6077879919235" y="509.0" />
-                  <point x="2596.0304675025804" y="509.0" />
-                  <point x="-49.125" y="64.0" />
-                </edge>
-                <edge source="pechpal.views.OngevallenBijHmView" target="pechpal.controllers.OngevalController">
-                  <point x="-75.0" y="-88.5" />
-                  <point x="2419.1077879919235" y="1201.0" />
-                  <point x="2567.0548611111103" y="1201.0" />
-                  <point x="129.80000000000018" y="112.5" />
-                </edge>
-                <edge source="pechpal.views.SearchPopUpView" target="pechpal.views.CenterView">
-                  <point x="126.0" y="208.5" />
-                  <point x="1805.1077879919235" y="2412.0" />
-                  <point x="1829.7506451347804" y="2412.0" />
-                  <point x="-48.85714285714312" y="-88.5" />
-                </edge>
-                <edge source="pechpal.views.SideView" target="pechpal.controllers.OngevalController">
-                  <point x="-120.92307692307713" y="-148.5" />
-                  <point x="2410.6847110688464" y="1558.0" />
-                  <point x="2333.6077879919235" y="1558.0" />
-                  <point x="2333.6077879919235" y="1191.0" />
-                  <point x="2437.25486111111" y="1191.0" />
-                  <point x="0.0" y="112.5" />
-                </edge>
-                <edge source="pechpal.views.CenterView" target="pechpal.views.SearchPopUpView">
-                  <point x="-97.71428571428578" y="-88.5" />
-                  <point x="1780.8935022776377" y="2402.0" />
-                  <point x="1679.1077879919235" y="2402.0" />
-                  <point x="0.0" y="208.5" />
-                </edge>
-                <edge source="pechpal.views.OngevallenBijHmView" target="pechpal.views.SideView">
-                  <point x="112.5" y="88.5" />
-                  <point x="2606.6077879919235" y="1588.0" />
-                  <point x="2571.915480299616" y="1588.0" />
-                  <point x="40.30769230769238" y="-148.5" />
-                </edge>
-                <edge source="pechpal.views.SideView" target="pechpal.views.InformationView">
-                  <point x="241.8461538461538" y="-148.5" />
-                  <point x="2773.4539418380773" y="1588.0" />
-                  <point x="4466.857787991923" y="1588.0" />
-                  <point x="-47.75" y="148.5" />
-                </edge>
-                <edge source="pechpal.controllers.PartijController" target="pechpal.AbstractParseJsonBestand">
-                  <point x="-70.375" y="-64.0" />
-                  <point x="3478.0125" y="1191.0" />
-                  <point x="3811.607787991923" y="1191.0" />
-                  <point x="3811.607787991923" y="489.0" />
-                  <point x="2759.7804675025804" y="489.0" />
-                  <point x="114.625" y="64.0" />
-                </edge>
-                <edge source="pechpal.models.Ongeval" target="pechpal.models.WegVak">
-                  <point x="0.0" y="-64.0" />
-                  <point x="0.0" y="76.0" />
-                </edge>
-                <edge source="pechpal.controllers.ReferentieController" target="pechpal.AbstractParseJsonBestand">
-                  <point x="-160.5" y="-124.5" />
-                  <point x="1131.7411213252567" y="2639.0" />
-                  <point x="721.4893086080572" y="2639.0" />
-                  <point x="721.4893086080572" y="499.0" />
-                  <point x="2563.2804675025804" y="499.0" />
-                  <point x="-81.875" y="64.0" />
-                </edge>
-                <edge source="pechpal.views.SearchView" target="pechpal.views.CenterView">
-                  <point x="-190.5" y="40.0" />
-                  <point x="0.0" y="-88.5" />
-                </edge>
-                <edge source="pechpal.AbstractParseJson" target="pechpal.IParseJson">
-                  <point x="0.0" y="-39.5" />
-                  <point x="0.0" y="39.5" />
-                </edge>
-              </edges>
-              <settings layout="Hierarchic Group" zoom="0.613953488372093" x="1879.909090909091" y="539.909090909091" />
-              <SelectedNodes>
-                <node>pechpal.RDToWGS</node>
-              </SelectedNodes>
-              <Categories>
-                <Category>Fields</Category>
-                <Category>Constructors</Category>
-                <Category>Methods</Category>
-                <Category>Properties</Category>
-                <Category>Inner Classes</Category>
-              </Categories>
-              <SCOPE>All</SCOPE>
-              <VISIBILITY>private</VISIBILITY>
             </state>
           </provider>
         </entry>
@@ -721,10 +361,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>findPartij</find>
-      <find>showOngeval</find>
-      <find>updateQuery</find>
-      <find>showAllO</find>
       <find>image</find>
       <find>throw new</find>
       <find>narrowD</find>
@@ -751,6 +387,10 @@
       <find>ongeval</find>
       <find>HectoPuntD</find>
       <find>unzipFiles</find>
+      <find>newMarker</find>
+      <find>setRichting</find>
+      <find>setOngeval</find>
+      <find>hmOngeval</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src/main/java/pechpal/Panes</dir>
@@ -767,7 +407,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/pechpal/MainPane.java" />
         <option value="$PROJECT_DIR$/src/main/java/pechpal/Style/style/style.css" />
         <option value="$PROJECT_DIR$/src/main/java/pechpal/Panes/MapPane.java" />
         <option value="$PROJECT_DIR$/src/main/java/pechpal/Panes/SearchPane.java" />
@@ -798,14 +437,12 @@
         <option value="$PROJECT_DIR$/src/main/java/pechpal/Ongeval.java" />
         <option value="$PROJECT_DIR$/src/main/java/pechpal/Views/CenterView.java" />
         <option value="$PROJECT_DIR$/src/main/java/pechpal/Views/InformationView.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pechpal/views/InformationView.java" />
         <option value="$PROJECT_DIR$/src/main/java/pechpal/views/OngevallenBijHmView.java" />
         <option value="$PROJECT_DIR$/src/main/java/pechpal/views/SideView.java" />
         <option value="$PROJECT_DIR$/src/main/java/pechpal/HmApi.java" />
         <option value="$PROJECT_DIR$/src/main/java/pechpal/RDToWGS.java" />
         <option value="$PROJECT_DIR$/src/main/resources/kaart.html" />
         <option value="$PROJECT_DIR$/src/main/java/pechpal/PechPal.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pechpal/views/SearchPopUpView.java" />
         <option value="$PROJECT_DIR$/src/main/java/pechpal/AbstractParseJson.java" />
         <option value="$PROJECT_DIR$/src/main/java/pechpal/IParseJson.java" />
         <option value="$PROJECT_DIR$/src/main/java/pechpal/controllers/HectoPuntController.java" />
@@ -814,10 +451,13 @@
         <option value="$PROJECT_DIR$/src/main/java/pechpal/controllers/WegVakController.java" />
         <option value="$PROJECT_DIR$/src/main/java/pechpal/controllers/PuntLocatieController.java" />
         <option value="$PROJECT_DIR$/src/main/java/pechpal/AbstractParseJsonBestand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pechpal/models/Ongeval.java" />
         <option value="$PROJECT_DIR$/src/main/java/pechpal/models/WegVak.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pechpal/controllers/OngevalController.java" />
         <option value="$PROJECT_DIR$/src/main/java/pechpal/UnZip.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pechpal/models/Ongeval.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pechpal/views/InformationView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pechpal/controllers/OngevalController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pechpal/models/Partij.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pechpal/views/SearchPopUpView.java" />
       </list>
     </option>
   </component>
@@ -846,7 +486,7 @@
     </treeState>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="y" value="27" />
     <option name="width" value="1612" />
     <option name="height" value="876" />
@@ -880,9 +520,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -958,6 +595,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -971,7 +611,7 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547569318233" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547766355692" />
     <property name="dynamic.classpath" value="false" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Package pechpal.png" />
@@ -1181,6 +821,8 @@
       <workItem from="1546786678665" duration="3430000" />
       <workItem from="1546859757972" duration="2628000" />
       <workItem from="1547552254137" duration="11887000" />
+      <workItem from="1547634308228" duration="2402000" />
+      <workItem from="1547638054918" duration="17786000" />
     </task>
     <servers />
   </component>
@@ -1194,9 +836,12 @@
     <history-entry file="All_Features_in__pechpal - 2019.01.07 at 12h 57m 51s.xml">
       <configuration name="All Features in: pechpal" configurationId="CucumberJavaRunConfigurationType" />
     </history-entry>
+    <history-entry file="All_Features_in__pechpal - 2019.01.16 at 12h 35m 15s.xml">
+      <configuration name="All Features in: pechpal" configurationId="CucumberJavaRunConfigurationType" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="443536000" />
+    <option name="totallyTimeSpent" value="463724000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1211,7 +856,7 @@
     <frame x="0" y="27" width="1920" height="986" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.29775882" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.30416223" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -1235,7 +880,7 @@
       <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="15" weight="0.29043683" />
       <window_info anchor="bottom" id="Terminal" order="16" weight="0.3293979" />
-      <window_info anchor="bottom" id="Sequence" order="17" weight="1.0" />
+      <window_info anchor="bottom" id="Sequence" order="17" weight="0.5253837" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.2497332" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -1263,8 +908,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/Show.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/RdToLatLon.java" />
     <entry file="jar:///usr/lib/jvm/java-8-oracle/javafx-src.zip!/com/sun/glass/ui/gtk/GtkApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
@@ -1396,48 +1039,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/views/SearchView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/models/HectoPunt.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/models/Referentie.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/views/OngevallenBijHmView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="42" column="55" selection-start-line="42" selection-start-column="55" selection-end-line="42" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/RDToWGS.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
           <caret line="7" column="29" lean-forward="true" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/views/SideView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1459,23 +1065,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/views/CenterView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/models/PuntLocatie.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/IParseJson.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -1487,34 +1076,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="18" column="68" selection-start-line="18" selection-start-column="57" selection-end-line="18" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/controllers/WegVakController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#355#356#0" expanded="true" />
-            <element signature="e#392#393#0" expanded="true" />
-            <element signature="e#446#447#0" expanded="true" />
-            <element signature="e#480#481#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/controllers/ReferentieController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#480#481#0" expanded="true" />
-            <element signature="e#517#518#0" expanded="true" />
-            <element signature="e#602#603#0" expanded="true" />
-            <element signature="e#629#630#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1536,71 +1097,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#385#386#0" expanded="true" />
-            <element signature="e#422#423#0" expanded="true" />
-            <element signature="e#474#475#0" expanded="true" />
-            <element signature="e#511#512#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/AbstractParseJsonBestand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="12" column="4" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/models/Ongeval.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/models/WegVak.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-          <folding>
-            <element signature="e#196#197#0" expanded="true" />
-            <element signature="e#227#228#0" expanded="true" />
-            <element signature="e#505#506#0" expanded="true" />
-            <element signature="e#537#538#0" expanded="true" />
-            <element signature="e#587#588#0" expanded="true" />
-            <element signature="e#629#630#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/controllers/HectoPuntController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-132">
-          <caret line="15" column="4" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="17" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#308#309#0" expanded="true" />
-            <element signature="e#345#346#0" expanded="true" />
-            <element signature="e#399#400#0" expanded="true" />
-            <element signature="e#435#436#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/kaart.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="726">
-          <caret line="311" column="96" selection-start-line="311" selection-start-column="57" selection-end-line="311" selection-end-column="96" />
-          <folding>
-            <element signature="e#413#4764#0" />
-            <element signature="e#431#701#0" />
-            <element signature="e#5088#9439#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1611,366 +1107,332 @@
         </state>
       </provider>
     </entry>
-    <entry file="uml://JAVA/pechpal">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/controllers/HectoPuntController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="17" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#308#309#0" expanded="true" />
+            <element signature="e#345#346#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/UnZip.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="70">
+          <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/controllers/ReferentieController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-134">
+          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#480#481#0" expanded="true" />
+            <element signature="e#517#518#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/kaart.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="158" column="38" lean-forward="true" selection-start-line="158" selection-start-column="38" selection-end-line="158" selection-end-column="38" />
+          <folding>
+            <element signature="e#413#4764#0" />
+            <element signature="e#431#701#0" />
+            <element signature="e#5088#9439#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/views/SearchView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/models/PuntLocatie.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="16" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/models/Partij.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#331#332#0" expanded="true" />
+            <element signature="e#385#386#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/models/Ongeval.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="34" column="54" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="54" />
+          <folding>
+            <element signature="e#935#936#0" expanded="true" />
+            <element signature="e#974#975#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/models/WegVak.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="40" column="22" lean-forward="true" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
+          <folding>
+            <element signature="e#195#196#0" expanded="true" />
+            <element signature="e#226#227#0" expanded="true" />
+            <element signature="e#274#275#0" expanded="true" />
+            <element signature="e#314#315#0" expanded="true" />
+            <element signature="e#349#350#0" expanded="true" />
+            <element signature="e#380#381#0" expanded="true" />
+            <element signature="e#428#429#0" expanded="true" />
+            <element signature="e#468#469#0" expanded="true" />
+            <element signature="e#504#505#0" expanded="true" />
+            <element signature="e#536#537#0" expanded="true" />
+            <element signature="e#586#587#0" expanded="true" />
+            <element signature="e#628#629#0" expanded="true" />
+            <element signature="e#666#667#0" expanded="true" />
+            <element signature="e#700#701#0" expanded="true" />
+            <element signature="e#754#755#0" expanded="true" />
+            <element signature="e#800#801#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/controllers/WegVakController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="801">
+          <caret line="53" column="44" selection-start-line="53" selection-start-column="44" selection-end-line="53" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#355#356#0" expanded="true" />
+            <element signature="e#392#393#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/models/Referentie.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-22">
+          <caret line="8" column="28" lean-forward="true" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+          <folding>
+            <element signature="e#169#170#0" expanded="true" />
+            <element signature="e#207#208#0" expanded="true" />
+            <element signature="e#237#238#0" expanded="true" />
+            <element signature="e#269#270#0" expanded="true" />
+            <element signature="e#297#298#0" expanded="true" />
+            <element signature="e#339#340#0" expanded="true" />
+            <element signature="e#373#374#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/controllers/OngevalController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="21" column="28" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#397#398#0" expanded="true" />
+            <element signature="e#434#435#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/views/SideView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="43" column="16" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/views/OngevallenBijHmView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="49" column="16" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/views/SearchPopUpView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/views/CenterView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="39" column="42" lean-forward="true" selection-start-line="39" selection-start-column="42" selection-end-line="39" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/views/InformationView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="513" column="16" selection-start-line="513" selection-start-column="16" selection-end-line="513" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JavaScript-modules-diagram//home/sven/code/avans/BeroepsProducten/PechPal/src/main">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
-          <ID>JAVA</ID>
-          <OriginalElement>pechpal</OriginalElement>
+          <ID>JavaScript-modules-diagram</ID>
+          <OriginalElement>$PROJECT_DIR$/src/main</OriginalElement>
           <nodes>
-            <node x="1078.2411213252567" y="2659.0">pechpal.controllers.ReferentieController</node>
-            <node x="0.0" y="3549.0">pechpal.RDToWGS</node>
-            <node x="4323.607787991923" y="1231.0">pechpal.views.InformationView</node>
-            <node x="3197.107787991923" y="623.5">pechpal.controllers.WegVakController</node>
-            <node x="2277.2179675025804" y="165.5">pechpal.AbstractParseJson</node>
-            <node x="2277.2179675025804" y="0.0">pechpal.IParseJson</node>
-            <node x="593.2411213252567" y="2695.0">pechpal.UnZip</node>
-            <node x="1490.1077879919235" y="1955.0">pechpal.views.SearchPopUpView</node>
-            <node x="3959.607787991923" y="1008.5">pechpal.models.Partij</node>
-            <node x="2269.6077879919235" y="1608.0">pechpal.views.SideView</node>
-            <node x="1815.1077879919235" y="1339.5">pechpal.views.SearchView</node>
-            <node x="2344.1077879919235" y="1291.0">pechpal.views.OngevallenBijHmView</node>
-            <node x="1278.2411213252567" y="2468.5">pechpal.models.Referentie</node>
-            <node x="3983.257787991923" y="331.0">pechpal.models.Ongeval</node>
-            <node x="2687.107787991923" y="635.5">pechpal.controllers.PuntLocatieController</node>
-            <node x="2514.1554675025804" y="331.0">pechpal.AbstractParseJsonBestand</node>
-            <node x="4070.257787991923" y="129.0">pechpal.models.WegVak</node>
-            <node x="1707.6077879919235" y="2432.0">pechpal.views.CenterView</node>
-            <node x="1117.1077879919235" y="660.0">pechpal.ReferentieBestandCollectie</node>
-            <node x="694.7411213252567" y="3377.0">pechpal.PechPal</node>
-            <node x="664.7411213252567" y="2958.0">pechpal.views.StartUpView</node>
-            <node x="1654.1077879919235" y="647.5">pechpal.models.PuntLocatie</node>
-            <node x="3266.8875" y="1315.5">pechpal.controllers.PartijController</node>
-            <node x="1839.1077879919235" y="539.0">pechpal.HmApi</node>
-            <node x="0.0" y="2719.5">pechpal.CsvToJson</node>
-            <node x="2516.77445465859" y="2756.0">pechpal.views.MainView</node>
-            <node x="2112.75486111111" y="936.0">pechpal.controllers.OngevalController</node>
-            <node x="2129.1077879919235" y="635.5">pechpal.controllers.HectoPuntController</node>
+            <node x="217.0" y="222.0">$PROJECT_DIR$/src/main/resources/kaart.html</node>
+            <node x="0.0" y="0.0">https://maps.googleapis.com/maps/api/js?key=AIzaSyB7J1zsErb9_7jxNu5KU5kIENFObAQEbl0&amp;callback=initMap</node>
           </nodes>
           <notes />
           <edges>
-            <edge source="pechpal.controllers.OngevalController" target="pechpal.controllers.HectoPuntController">
-              <point x="59.0" y="-112.5" />
-              <point x="2496.25486111111" y="856.0" />
-              <point x="2398.1077879919235" y="856.0" />
-              <point x="0.0" y="52.0" />
-            </edge>
-            <edge source="pechpal.views.SearchView" target="pechpal.views.SideView">
-              <point x="190.5" y="40.0" />
-              <point x="2259.6077879919235" y="1568.0" />
-              <point x="2370.3770187611544" y="1568.0" />
-              <point x="-161.23076923076906" y="-148.5" />
-            </edge>
-            <edge source="pechpal.AbstractParseJsonBestand" target="pechpal.views.StartUpView">
-              <point x="-114.625" y="64.0" />
-              <point x="2530.5304675025804" y="489.0" />
-              <point x="405.5" y="489.0" />
-              <point x="405.5" y="2928.0" />
-              <point x="761.3411213252566" y="2928.0" />
-              <point x="-64.40000000000009" y="-184.5" />
-            </edge>
-            <edge source="pechpal.views.SearchPopUpView" target="pechpal.controllers.OngevalController">
-              <point x="0.0" y="-208.5" />
-              <point x="1679.1077879919235" y="1211.0" />
-              <point x="2307.45486111111" y="1211.0" />
-              <point x="-129.80000000000018" y="112.5" />
-            </edge>
-            <edge source="pechpal.PechPal" target="pechpal.views.StartUpView">
-              <point x="65.5" y="-63.5" />
-              <point x="891.2411213252567" y="3352.0" />
-              <point x="906.2411213252567" y="3352.0" />
-              <point x="80.5" y="184.5" />
-            </edge>
-            <edge source="pechpal.views.StartUpView" target="pechpal.views.MainView">
-              <point x="128.80000000000018" y="-184.5" />
-              <point x="954.5411213252569" y="2938.0" />
-              <point x="2591.77445465859" y="2938.0" />
-              <point x="0.0" y="27.5" />
-            </edge>
-            <edge source="pechpal.controllers.PartijController" target="pechpal.models.Partij">
-              <point x="70.375" y="-64.0" />
-              <point x="3618.7625" y="1201.0" />
-              <point x="4002.482787991923" y="1201.0" />
-              <point x="-128.625" y="40.0" />
-            </edge>
-            <edge source="pechpal.controllers.WegVakController" target="pechpal.models.Ongeval">
-              <point x="194.0" y="-64.0" />
-              <point x="3682.107787991923" y="499.0" />
-              <point x="4019.357787991923" y="499.0" />
-              <point x="-144.4000000000001" y="64.0" />
-            </edge>
-            <edge source="pechpal.HmApi" target="pechpal.AbstractParseJson">
-              <point x="0.0" y="-148.5" />
-              <point x="1973.6077879919235" y="479.0" />
-              <point x="1522.1999999999998" y="479.0" />
-              <point x="1522.1999999999998" y="306.0" />
-              <point x="2350.9679675025804" y="306.0" />
-              <point x="-73.75" y="39.5" />
-            </edge>
-            <edge source="pechpal.controllers.PartijController" target="pechpal.ReferentieBestandCollectie">
-              <point x="-211.125" y="-64.0" />
-              <point x="3337.2625" y="1181.0" />
-              <point x="1294.9411213252567" y="1181.0" />
-              <point x="1294.9411213252567" y="916.0" />
-              <point x="1375.6077879919235" y="916.0" />
-              <point x="0.0" y="27.5" />
-            </edge>
-            <edge source="pechpal.views.SideView" target="pechpal.views.SearchView">
-              <point x="-241.8461538461538" y="-148.5" />
-              <point x="2289.7616341457697" y="1588.0" />
-              <point x="2005.6077879919235" y="1588.0" />
-              <point x="-63.5" y="40.0" />
-            </edge>
-            <edge source="pechpal.controllers.ReferentieController" target="pechpal.ReferentieBestandCollectie">
-              <point x="-53.5" y="-124.5" />
-              <point x="1238.7411213252567" y="2629.0" />
-              <point x="1015.6511141636136" y="2629.0" />
-              <point x="1015.6511141636136" y="916.0" />
-              <point x="1203.2744546585902" y="916.0" />
-              <point x="-172.33333333333326" y="27.5" />
-            </edge>
-            <edge source="pechpal.views.SideView" target="pechpal.views.CenterView">
-              <point x="-43.666666666666515" y="148.5" />
-              <point x="2487.941121325257" y="1925.0" />
-              <point x="2564.27445465859" y="1925.0" />
-              <point x="2564.27445465859" y="2402.0" />
-              <point x="1976.3220737062093" y="2402.0" />
-              <point x="97.71428571428578" y="-88.5" />
-            </edge>
-            <edge source="pechpal.views.SideView" target="pechpal.views.OngevallenBijHmView">
-              <point x="-40.30769230769238" y="-148.5" />
-              <point x="2491.300095684231" y="1588.0" />
-              <point x="2456.6077879919235" y="1588.0" />
-              <point x="-37.5" y="88.5" />
-            </edge>
-            <edge source="pechpal.views.StartUpView" target="pechpal.controllers.ReferentieController">
-              <point x="64.40000000000009" y="-184.5" />
-              <point x="890.1411213252568" y="2928.0" />
-              <point x="1292.2411213252567" y="2928.0" />
-              <point x="0.0" y="124.5" />
-            </edge>
-            <edge source="pechpal.controllers.OngevalController" target="pechpal.models.PuntLocatie">
-              <point x="-177.0" y="-112.5" />
-              <point x="2260.25486111111" y="896.0" />
-              <point x="1777.8577879919235" y="896.0" />
-              <point x="41.25" y="40.0" />
-            </edge>
-            <edge source="pechpal.views.InformationView" target="pechpal.models.Ongeval">
-              <point x="95.5" y="-148.5" />
-              <point x="4610.107787991923" y="509.0" />
-              <point x="4308.157787991923" y="509.0" />
-              <point x="144.4000000000001" y="64.0" />
-            </edge>
-            <edge source="pechpal.views.SideView" target="pechpal.controllers.PartijController">
-              <point x="80.61538461538476" y="-148.5" />
-              <point x="2612.2231726073082" y="1548.0" />
-              <point x="3548.3875" y="1548.0" />
-              <point x="0.0" y="64.0" />
-            </edge>
-            <edge source="pechpal.views.StartUpView" target="pechpal.CsvToJson">
-              <point x="-128.80000000000018" y="-184.5" />
-              <point x="696.9411213252565" y="2938.0" />
-              <point x="197.5" y="2938.0" />
-              <point x="0.0" y="64.0" />
-            </edge>
-            <edge source="pechpal.controllers.OngevalController" target="pechpal.controllers.PuntLocatieController">
-              <point x="118.0" y="-112.5" />
-              <point x="2555.25486111111" y="886.0" />
-              <point x="2932.107787991923" y="886.0" />
-              <point x="0.0" y="52.0" />
-            </edge>
-            <edge source="pechpal.controllers.OngevalController" target="pechpal.models.Ongeval">
-              <point x="295.0" y="-112.5" />
-              <point x="2732.25486111111" y="916.0" />
-              <point x="3800.607787991923" y="916.0" />
-              <point x="3800.607787991923" y="519.0" />
-              <point x="4163.757787991923" y="519.0" />
-              <point x="0.0" y="64.0" />
-            </edge>
-            <edge source="pechpal.views.SideView" target="pechpal.models.Partij">
-              <point x="120.92307692307713" y="-148.5" />
-              <point x="2652.5308649150006" y="1558.0" />
-              <point x="4173.982787991923" y="1558.0" />
-              <point x="42.875" y="40.0" />
-            </edge>
-            <edge source="pechpal.controllers.HectoPuntController" target="pechpal.AbstractParseJsonBestand">
-              <point x="0.0" y="-52.0" />
-              <point x="2398.1077879919235" y="519.0" />
-              <point x="2628.7804675025804" y="519.0" />
-              <point x="-16.375" y="64.0" />
-            </edge>
-            <edge source="pechpal.controllers.OngevalController" target="pechpal.HmApi">
-              <point x="-118.0" y="-112.5" />
-              <point x="2319.25486111111" y="886.0" />
-              <point x="1906.3577879919235" y="886.0" />
-              <point x="-67.25" y="148.5" />
-            </edge>
-            <edge source="pechpal.controllers.WegVakController" target="pechpal.AbstractParseJsonBestand">
-              <point x="-194.0" y="-64.0" />
-              <point x="3294.107787991923" y="509.0" />
-              <point x="2694.2804675025804" y="509.0" />
-              <point x="49.125" y="64.0" />
-            </edge>
-            <edge source="pechpal.views.MainView" target="pechpal.views.CenterView">
-              <point x="-62.5" y="-27.5" />
-              <point x="2529.27445465859" y="2639.0" />
-              <point x="1793.1077879919235" y="2639.0" />
-              <point x="-85.5" y="88.5" />
-            </edge>
-            <edge source="pechpal.controllers.PuntLocatieController" target="pechpal.AbstractParseJsonBestand">
-              <point x="0.0" y="-52.0" />
-              <point x="2932.107787991923" y="519.0" />
-              <point x="2661.5304675025804" y="519.0" />
-              <point x="16.375" y="64.0" />
-            </edge>
-            <edge source="pechpal.controllers.OngevalController" target="pechpal.ReferentieBestandCollectie">
-              <point x="-295.0" y="-112.5" />
-              <point x="2142.25486111111" y="916.0" />
-              <point x="1547.9411213252567" y="916.0" />
-              <point x="172.33333333333326" y="27.5" />
-            </edge>
-            <edge source="pechpal.views.SearchPopUpView" target="pechpal.views.SideView">
-              <point x="126.0" y="-208.5" />
-              <point x="1805.1077879919235" y="1935.0" />
-              <point x="2313.27445465859" y="1935.0" />
-              <point x="-218.33333333333348" y="148.5" />
-            </edge>
-            <edge source="pechpal.views.SideView" target="pechpal.models.Ongeval">
-              <point x="161.23076923076906" y="-148.5" />
-              <point x="2692.8385572226925" y="1568.0" />
-              <point x="4313.107787991923" y="1568.0" />
-              <point x="4313.107787991923" y="519.0" />
-              <point x="4235.957787991923" y="519.0" />
-              <point x="72.20000000000005" y="64.0" />
-            </edge>
-            <edge source="pechpal.views.CenterView" target="pechpal.views.SideView">
-              <point x="146.57142857142844" y="-88.5" />
-              <point x="2025.179216563352" y="2412.0" />
-              <point x="2575.27445465859" y="2412.0" />
-              <point x="43.666666666666515" y="148.5" />
-            </edge>
-            <edge source="pechpal.AbstractParseJsonBestand" target="pechpal.AbstractParseJson">
-              <point x="0.0" y="-64.0" />
-              <point x="2645.1554675025804" y="306.0" />
-              <point x="2498.4679675025804" y="306.0" />
-              <point x="73.75" y="39.5" />
-            </edge>
-            <edge source="pechpal.controllers.OngevalController" target="pechpal.controllers.WegVakController">
-              <point x="177.0" y="-112.5" />
-              <point x="2614.25486111111" y="896.0" />
-              <point x="3488.107787991923" y="896.0" />
-              <point x="0.0" y="64.0" />
-            </edge>
-            <edge source="pechpal.views.InformationView" target="pechpal.models.Partij">
-              <point x="-95.5" y="-148.5" />
-              <point x="4419.107787991923" y="1211.0" />
-              <point x="4259.732787991923" y="1211.0" />
-              <point x="128.625" y="40.0" />
-            </edge>
-            <edge source="pechpal.controllers.ReferentieController" target="pechpal.models.Referentie">
-              <point x="53.5" y="-124.5" />
-              <point x="1345.7411213252567" y="2639.0" />
-              <point x="1316.7411213252567" y="2639.0" />
-              <point x="-38.5" y="52.0" />
-            </edge>
-            <edge source="pechpal.views.MainView" target="pechpal.views.InformationView">
-              <point x="62.5" y="-27.5" />
-              <point x="2654.27445465859" y="2639.0" />
-              <point x="4615.607787991923" y="2639.0" />
-              <point x="4615.607787991923" y="1588.0" />
-              <point x="4657.857787991923" y="1588.0" />
-              <point x="143.25" y="148.5" />
-            </edge>
-            <edge source="pechpal.views.StartUpView" target="pechpal.UnZip">
-              <point x="0.0" y="-184.5" />
-              <point x="0.0" y="88.5" />
-            </edge>
-            <edge source="pechpal.views.MainView" target="pechpal.views.SideView">
-              <point x="-12.5" y="-27.5" />
-              <point x="2579.27445465859" y="2639.0" />
-              <point x="2586.27445465859" y="2639.0" />
-              <point x="2586.27445465859" y="1925.0" />
-              <point x="2662.6077879919235" y="1925.0" />
-              <point x="131.0" y="148.5" />
-            </edge>
-            <edge source="pechpal.controllers.OngevalController" target="pechpal.AbstractParseJsonBestand">
-              <point x="0.0" y="-112.5" />
-              <point x="2437.25486111111" y="866.0" />
-              <point x="2118.6077879919235" y="866.0" />
-              <point x="2118.6077879919235" y="509.0" />
-              <point x="2596.0304675025804" y="509.0" />
-              <point x="-49.125" y="64.0" />
-            </edge>
-            <edge source="pechpal.views.OngevallenBijHmView" target="pechpal.controllers.OngevalController">
-              <point x="-75.0" y="-88.5" />
-              <point x="2419.1077879919235" y="1201.0" />
-              <point x="2567.0548611111103" y="1201.0" />
-              <point x="129.80000000000018" y="112.5" />
-            </edge>
-            <edge source="pechpal.views.SearchPopUpView" target="pechpal.views.CenterView">
-              <point x="126.0" y="208.5" />
-              <point x="1805.1077879919235" y="2412.0" />
-              <point x="1829.7506451347804" y="2412.0" />
-              <point x="-48.85714285714312" y="-88.5" />
-            </edge>
-            <edge source="pechpal.views.SideView" target="pechpal.controllers.OngevalController">
-              <point x="-120.92307692307713" y="-148.5" />
-              <point x="2410.6847110688464" y="1558.0" />
-              <point x="2333.6077879919235" y="1558.0" />
-              <point x="2333.6077879919235" y="1191.0" />
-              <point x="2437.25486111111" y="1191.0" />
-              <point x="0.0" y="112.5" />
-            </edge>
-            <edge source="pechpal.views.CenterView" target="pechpal.views.SearchPopUpView">
-              <point x="-97.71428571428578" y="-88.5" />
-              <point x="1780.8935022776377" y="2402.0" />
-              <point x="1679.1077879919235" y="2402.0" />
-              <point x="0.0" y="208.5" />
-            </edge>
-            <edge source="pechpal.views.OngevallenBijHmView" target="pechpal.views.SideView">
-              <point x="112.5" y="88.5" />
-              <point x="2606.6077879919235" y="1588.0" />
-              <point x="2571.915480299616" y="1588.0" />
-              <point x="40.30769230769238" y="-148.5" />
-            </edge>
-            <edge source="pechpal.views.SideView" target="pechpal.views.InformationView">
-              <point x="241.8461538461538" y="-148.5" />
-              <point x="2773.4539418380773" y="1588.0" />
-              <point x="4466.857787991923" y="1588.0" />
-              <point x="-47.75" y="148.5" />
-            </edge>
-            <edge source="pechpal.controllers.PartijController" target="pechpal.AbstractParseJsonBestand">
-              <point x="-70.375" y="-64.0" />
-              <point x="3478.0125" y="1191.0" />
-              <point x="3811.607787991923" y="1191.0" />
-              <point x="3811.607787991923" y="489.0" />
-              <point x="2759.7804675025804" y="489.0" />
-              <point x="114.625" y="64.0" />
-            </edge>
-            <edge source="pechpal.models.Ongeval" target="pechpal.models.WegVak">
-              <point x="0.0" y="-64.0" />
-              <point x="0.0" y="76.0" />
-            </edge>
-            <edge source="pechpal.controllers.ReferentieController" target="pechpal.AbstractParseJsonBestand">
-              <point x="-160.5" y="-124.5" />
-              <point x="1131.7411213252567" y="2639.0" />
-              <point x="721.4893086080572" y="2639.0" />
-              <point x="721.4893086080572" y="499.0" />
-              <point x="2563.2804675025804" y="499.0" />
-              <point x="-81.875" y="64.0" />
-            </edge>
-            <edge source="pechpal.views.SearchView" target="pechpal.views.CenterView">
-              <point x="-190.5" y="40.0" />
-              <point x="0.0" y="-88.5" />
-            </edge>
-            <edge source="pechpal.AbstractParseJson" target="pechpal.IParseJson">
-              <point x="0.0" y="-39.5" />
-              <point x="0.0" y="39.5" />
+            <edge source="$PROJECT_DIR$/src/main/resources/kaart.html" target="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7J1zsErb9_7jxNu5KU5kIENFObAQEbl0&amp;callback=initMap">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
             </edge>
           </edges>
-          <settings layout="Hierarchic Group" zoom="0.613953488372093" x="1879.909090909091" y="539.909090909091" />
-          <SelectedNodes>
-            <node>pechpal.RDToWGS</node>
-          </SelectedNodes>
+          <settings layout="Hierarchic Group" zoom="0.8" x="-257.0277777777777" y="197.5" />
+          <SelectedNodes />
+          <Categories>
+            <Category>All</Category>
+          </Categories>
+          <VISIBILITY>Details</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement />
+          <nodes>
+            <node x="1559.0" y="2414.0">com</node>
+            <node x="453.0" y="2414.0">netscape</node>
+            <node x="1588.25" y="0.0">groovyjarjarcommonscli.CommandLineParser</node>
+            <node x="652.0" y="0.0">groovyjarjarcommonscli.Option</node>
+            <node x="629.25" y="2087.0">groovyjarjarcommonscli.ParseException</node>
+            <node x="1890.0" y="2414.0">sun</node>
+            <node x="0.0" y="0.0">groovyjarjarcommonscli.HelpFormatter</node>
+            <node x="0.0" y="2414.0">groovyjarjarasm</node>
+            <node x="1725.0" y="2414.0">java</node>
+            <node x="1386.0" y="2414.0">javax</node>
+            <node x="343.0" y="2216.0">groovyjarjarcommonscli.UnrecognizedOptionException</node>
+            <node x="2199.0" y="596.0">groovyjarjarcommonscli.PosixParser</node>
+            <node x="779.0" y="1313.0">groovyjarjarcommonscli.Options</node>
+            <node x="1207.0" y="2414.0">javafx</node>
+            <node x="394.0" y="1313.0">groovyjarjarcommonscli.CommandLine</node>
+            <node x="1868.0" y="2087.0">groovyjarjarcommonscli.OptionValidator</node>
+            <node x="1410.0" y="704.5">groovyjarjarcommonscli.BasicParser</node>
+            <node x="1240.0" y="1313.0">groovyjarjarcommonscli.PatternOptionBuilder</node>
+            <node x="1518.0" y="2087.0">groovyjarjarcommonscli.TypeHandler</node>
+            <node x="1028.0" y="2414.0">oracle</node>
+            <node x="1789.0" y="596.0">groovyjarjarcommonscli.GroovyInternalPosixParser</node>
+            <node x="2052.0" y="2414.0">org</node>
+            <node x="1178.0" y="2203.5">groovyjarjarcommonscli.MissingOptionException</node>
+            <node x="249.0" y="2414.0">META-INF</node>
+            <node x="2213.0" y="2414.0">jdk</node>
+            <node x="173.5" y="1188.0">groovyjarjarcommonscli.HelpFormatter.OptionComparator</node>
+            <node x="843.0" y="2414.0">groovy</node>
+            <node x="1548.75" y="129.0">groovyjarjarcommonscli.Parser</node>
+            <node x="0.0" y="1313.0">groovyjarjarcommonscli.OptionBuilder</node>
+            <node x="1555.0" y="1313.0">groovyjarjarcommonscli.OptionGroup</node>
+            <node x="652.0" y="2414.0">pechpal</node>
+            <node x="749.0" y="2192.0">groovyjarjarcommonscli.AlreadySelectedException</node>
+            <node x="2171.0" y="2087.0">groovyjarjarcommonscli.Util</node>
+            <node x="1031.0" y="704.5">groovyjarjarcommonscli.GnuParser</node>
+            <node x="2600.0" y="2087.0">groovyjarjarantlr</node>
+            <node x="0.0" y="2216.0">groovyjarjarcommonscli.MissingArgumentException</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="groovyjarjarcommonscli.Parser" target="groovyjarjarcommonscli.CommandLineParser">
+              <point x="0.0" y="-208.5" />
+              <point x="0.0" y="39.5" />
+            </edge>
+            <edge source="groovyjarjarcommonscli.MissingOptionException" target="groovyjarjarcommonscli.ParseException">
+              <point x="0.0" y="-77.0" />
+              <point x="1325.5" y="2162.0" />
+              <point x="831.375" y="2162.0" />
+              <point x="86.625" y="27.5" />
+            </edge>
+            <edge source="groovyjarjarcommonscli.GroovyInternalPosixParser" target="groovyjarjarcommonscli.Parser">
+              <point x="0.0" y="-148.5" />
+              <point x="1984.0" y="576.0" />
+              <point x="1846.25" y="576.0" />
+              <point x="59.5" y="208.5" />
+            </edge>
+            <edge source="groovyjarjarcommonscli.BasicParser" target="groovyjarjarcommonscli.Parser">
+              <point x="0.0" y="-40.0" />
+              <point x="1589.5" y="576.0" />
+              <point x="1727.25" y="576.0" />
+              <point x="-59.5" y="208.5" />
+            </edge>
+            <edge source="groovyjarjarcommonscli.HelpFormatter.OptionComparator" target="groovyjarjarcommonscli.HelpFormatter">
+              <point x="0.0" y="-40.0" />
+              <point x="0.0" y="569.0" />
+            </edge>
+            <edge source="groovyjarjarcommonscli.AlreadySelectedException" target="groovyjarjarcommonscli.ParseException">
+              <point x="0.0" y="-88.5" />
+              <point x="953.5" y="2172.0" />
+              <point x="773.625" y="2172.0" />
+              <point x="28.875" y="27.5" />
+            </edge>
+            <edge source="groovyjarjarcommonscli.UnrecognizedOptionException" target="groovyjarjarcommonscli.ParseException">
+              <point x="0.0" y="-64.5" />
+              <point x="536.0" y="2172.0" />
+              <point x="715.875" y="2172.0" />
+              <point x="-28.875" y="27.5" />
+            </edge>
+            <edge source="groovyjarjarcommonscli.GnuParser" target="groovyjarjarcommonscli.Parser">
+              <point x="0.0" y="-40.0" />
+              <point x="1210.5" y="566.0" />
+              <point x="1608.25" y="566.0" />
+              <point x="-178.5" y="208.5" />
+            </edge>
+            <edge source="groovyjarjarcommonscli.MissingArgumentException" target="groovyjarjarcommonscli.ParseException">
+              <point x="0.0" y="-64.5" />
+              <point x="161.5" y="2162.0" />
+              <point x="658.125" y="2162.0" />
+              <point x="-86.625" y="27.5" />
+            </edge>
+            <edge source="groovyjarjarcommonscli.PosixParser" target="groovyjarjarcommonscli.Parser">
+              <point x="0.0" y="-148.5" />
+              <point x="2394.0" y="566.0" />
+              <point x="1965.25" y="566.0" />
+              <point x="178.5" y="208.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.15680473372781076" x="-1502.934184220056" y="575.5660377358481" />
+          <SelectedNodes />
           <Categories>
             <Category>Fields</Category>
             <Category>Constructors</Category>
@@ -1983,50 +1445,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/controllers/OngevalController.java">
+    <entry file="uml://JAVA/pechpal">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>pechpal</OriginalElement>
+          <nodes>
+            <node x="" y="">pechpal.controllers.ReferentieController</node>
+            <node x="" y="">pechpal.RDToWGS</node>
+            <node x="" y="">pechpal.views.InformationView</node>
+            <node x="" y="">pechpal.controllers.WegVakController</node>
+            <node x="" y="">pechpal.AbstractParseJson</node>
+            <node x="" y="">pechpal.UnZip</node>
+            <node x="" y="">pechpal.IParseJson</node>
+            <node x="" y="">pechpal.models.Partij</node>
+            <node x="" y="">pechpal.views.SearchPopUpView</node>
+            <node x="" y="">pechpal.views.SideView</node>
+            <node x="" y="">pechpal.views.SearchView</node>
+            <node x="" y="">pechpal.models.Referentie</node>
+            <node x="" y="">pechpal.views.OngevallenBijHmView</node>
+            <node x="" y="">pechpal.models.Ongeval</node>
+            <node x="" y="">pechpal.controllers.PuntLocatieController</node>
+            <node x="" y="">pechpal.AbstractParseJsonBestand</node>
+            <node x="" y="">pechpal.models.WegVak</node>
+            <node x="" y="">pechpal.views.CenterView</node>
+            <node x="" y="">pechpal.PechPal</node>
+            <node x="" y="">pechpal.ReferentieBestandCollectie</node>
+            <node x="" y="">pechpal.models.PuntLocatie</node>
+            <node x="" y="">pechpal.views.StartUpView</node>
+            <node x="" y="">pechpal.controllers.PartijController</node>
+            <node x="" y="">pechpal.HmApi</node>
+            <node x="" y="">pechpal.CsvToJson</node>
+            <node x="" y="">pechpal.controllers.OngevalController</node>
+            <node x="" y="">pechpal.views.MainView</node>
+            <node x="" y="">pechpal.controllers.HectoPuntController</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.20000000000000015" x="3315.2821166660547" y="2468.4999999999995" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+            <Category>Properties</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/AbstractParseJsonBestand.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
-          <caret line="111" column="37" lean-forward="true" selection-start-line="111" selection-start-column="37" selection-end-line="111" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#397#398#0" expanded="true" />
-            <element signature="e#434#435#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/views/InformationView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="445" column="21" lean-forward="true" selection-start-line="445" selection-start-column="21" selection-end-line="445" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#tutorial#0;class#InformationView#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/views/SearchPopUpView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1936">
-          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+          <caret line="10" column="34" lean-forward="true" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/models/Partij.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pechpal/UnZip.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="65" column="1" lean-forward="true" selection-start-line="65" selection-start-column="1" selection-end-line="65" selection-end-column="1" />
         </state>
       </provider>
     </entry>
