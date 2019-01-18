@@ -5,16 +5,32 @@ import javafx.scene.layout.GridPane;
 import pechpal.controllers.OngevalController;
 import java.util.NoSuchElementException;
 
+
+/**
+ * Deze class is ontwikkeld om een popup te weergeven zodra de gebruiker op de knop Verander klikt
+ * In deze popup kunnen de zoekparameters worden ingevuld.
+ */
 public class SearchPopUpView extends GridPane {
     private Button button;
     private TextField tfdWeg, tfdHecometer, tfdLetter, tfdNummer;
     private ComboBox<String> cbxRichting;
     private Label nummer, weg, hectometer, richting, letter;
 
+    /*
+    De popupview is initiated
+     */
     public SearchPopUpView(){
         button = new Button("VERANDER");
     }
 
+    /**
+     *  Checkt op welke knop er is geklikt.
+     * @param s is de String die uit de sidepane komt
+     * @param sv is de sideview
+     * @param cv is de centerview
+     * @see SideView
+     * @see CenterView
+     */
     public void search(String s, SideView sv, CenterView cv) {
         if (s.equals("HECTOMETERPAAL")) {
             this.searchByHectometer(sv, cv);
@@ -23,11 +39,22 @@ public class SearchPopUpView extends GridPane {
         }
     }
 
+    /**
+     * De setMap functie centered de kaart rondom het hectometerpaaltje en plaatst de marker op de locatie van de paal
+     * via een JavaScript functie
+     * @param ongC is de controller die de ongevallen regelt en heeft de loadmap functie
+     * @param cv is de centerview
+     * @see OngevalController
+     * @see CenterView
+     */
     private void setMap(OngevalController ongC, CenterView cv) {
         double coord[] = ongC.loadMap();
         cv.webEngine.executeScript(String.format("newMarker(%s,%s);", coord[0], coord[1]));
     }
 
+    /*
+    Dit zijn de individuele panes mbt de zoekfunctie
+     */
     private void ongPane() {
         button.setId("popup-btn-ong");
         nummer = new Label("VKL Nummer   ");
@@ -65,6 +92,16 @@ public class SearchPopUpView extends GridPane {
         this.add(button, 1, 4);
     }
 
+    /**
+     * In deze functie worden de JSON bestanden doorzocht voor een hmpaal locatie.
+     * @param sv is de sideview
+     * @param cv is de centerview
+     * @exception IndexOutOfBoundsException komt voor als er geen gegevens zijn ingevoerd en roept een alert aan
+     * @exception NullPointerException wordt aangeroepen als er geen hectometerpaaltje bestaat met de ingevoerde parameters
+     * en roept een alert aan
+     * @exception NoSuchElementException wordt aangeroepen als er geen hectometerpaaltje bestaat met de ingevoerde parameters
+     *      * en roept een alert aan
+     */
     private void searchByHectometer(SideView sv, CenterView cv) {
         this.hmPane();
         this.setId("popup-hm");
@@ -100,6 +137,14 @@ public class SearchPopUpView extends GridPane {
         });
     }
 
+    /**
+     * In deze functie wordt het ongevallen json bestand doorzocht voor ongevallen met de parameters.
+     * @param sv is de sideview
+     * @param cv is de centerview
+     * @exception NullPointerException komt voor als er geen verbinding is en roept een alert aan
+     * @exception IndexOutOfBoundsException wordt aangeroepen als er geen ongeval is gevonden met de ingevoerde parameters
+     * @exception NoSuchElementException is identiek aan de IndexOutOfBoundException
+     */
     private void searchByVkl(SideView sv, CenterView cv) {
         this.ongPane();
         this.setId("popup-ong");

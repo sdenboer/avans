@@ -496,9 +496,9 @@ public class InformationView extends StackPane {
 
     /**
      * Deze methode plaatst de informatie op de informationView.
-     * @param strLabel is
-     * @param value
-     * @param p
+     * @param strLabel is de Key van de kenmerken die een label is
+     * @param value is de value die bij de key van strLabel hoort.
+     * @param p is de gridpane waar de informatie geplaatst wordt
      */
     private void setRowContent(String strLabel, String value, GridPane p) {
         Label label = new Label(strLabel.toUpperCase());
