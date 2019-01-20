@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/PechPal.iml" filepath="$PROJECT_DIR$/.idea/PechPal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RAAS.iml" filepath="$PROJECT_DIR$/RAAS.iml" />
     </modules>
   </component>
 </project>
