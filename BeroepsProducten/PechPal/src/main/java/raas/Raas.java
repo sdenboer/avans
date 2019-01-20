@@ -1,11 +1,11 @@
-package pechpal;
+package raas;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import pechpal.views.StartUpView;
+import raas.views.StartUpView;
 
 import java.io.IOException;
 import java.net.URL;
@@ -20,7 +20,7 @@ import java.net.UnknownHostException;
  * @version 1.0.0
  * @see StartUpView voor de startup View
  */
-public class PechPal extends Application {
+public class Raas extends Application {
 
     /**
      * Eerst wordt de verbinding gecheckt, daarna eventueel de error geladen en vervolgens laadt de
@@ -40,7 +40,7 @@ public class PechPal extends Application {
             scene.getStylesheets().add("style.css");
             primaryStage.getIcons().add(new Image("cone.png"));
             primaryStage.setScene(scene);
-            primaryStage.setTitle("PechPal");
+            primaryStage.setTitle("Road Accident Analysis Software");
             primaryStage.show();
         }
     }

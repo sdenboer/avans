@@ -1,4 +1,4 @@
-package pechpal.views;
+package raas.views;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;

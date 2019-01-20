@@ -1,11 +1,9 @@
-package pechpal;
+package raas;
 
 import com.google.gson.JsonObject;
-import javafx.scene.control.Alert;
 
 import java.io.*;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class HmApi extends AbstractParseJson{

@@ -1,10 +1,10 @@
-package pechpal.controllers;
+package raas.controllers;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import pechpal.AbstractParseJsonBestand;
-import pechpal.models.Partij;
-import pechpal.ReferentieBestandCollectie;
+import raas.AbstractParseJsonBestand;
+import raas.models.Partij;
+import raas.ReferentieBestandCollectie;
 
 import java.util.HashMap;
 import java.util.Map;

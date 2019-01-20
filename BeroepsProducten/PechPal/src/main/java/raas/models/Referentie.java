@@ -1,4 +1,4 @@
-package pechpal.models;
+package raas.models;
 
 public class Referentie {
     private String key, value;

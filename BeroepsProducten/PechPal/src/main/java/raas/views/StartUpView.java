@@ -1,4 +1,4 @@
-package pechpal.views;
+package raas.views;
 
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -10,9 +10,9 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import org.apache.commons.io.FileUtils;
-import pechpal.CsvToJson;
-import pechpal.controllers.ReferentieController;
-import pechpal.UnZip;
+import raas.CsvToJson;
+import raas.controllers.ReferentieController;
+import raas.UnZip;
 
 import java.io.IOException;
 import java.nio.file.Files;

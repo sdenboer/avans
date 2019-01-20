@@ -1,11 +1,11 @@
-package pechpal.views;
+package raas.views;
 
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
-import pechpal.models.Ongeval;
-import pechpal.controllers.OngevalController;
-import pechpal.models.Partij;
-import pechpal.controllers.PartijController;
+import raas.models.Ongeval;
+import raas.controllers.OngevalController;
+import raas.models.Partij;
+import raas.controllers.PartijController;
 
 import java.io.IOException;
 import java.net.UnknownHostException;
@@ -20,7 +20,7 @@ public class SideView extends VBox {
     public SideView(CenterView cp, InformationView ip) {
         this.ip = ip;
         this.cp = cp;
-        appTitle = new Label("PECHPAL");
+        appTitle = new Label("RAAS");
         appTitle.setId("app-title");
         searchByHM = new SearchView("HECTOMETERPAAL", "-", "Verander HmPaal", cp, this, "paal.png");
         searchByVKL = new SearchView("ONGEVALNUMMER", "-", "Verander nummer", cp, this, "number.png");

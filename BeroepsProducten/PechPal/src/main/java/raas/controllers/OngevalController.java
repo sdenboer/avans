@@ -1,10 +1,10 @@
-package pechpal.controllers;
+package raas.controllers;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import pechpal.*;
-import pechpal.models.Ongeval;
-import pechpal.models.PuntLocatie;
+import raas.*;
+import raas.models.Ongeval;
+import raas.models.PuntLocatie;
 
 import java.io.IOException;
 import java.util.*;

@@ -1,8 +1,8 @@
-package pechpal;
+package raas;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import pechpal.views.StartUpView;
+import raas.views.StartUpView;
 
 import java.io.IOException;
 import java.nio.file.Files;

@@ -1,11 +1,11 @@
-package pechpal.views;
+package raas.views;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.*;
-import pechpal.models.Ongeval;
-import pechpal.models.Partij;
+import raas.models.Ongeval;
+import raas.models.Partij;
 
 import java.util.Arrays;
 import java.util.List;

@@ -16,11 +16,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="PechPal" />
+        <module name="RAAS" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="PechPal" target="8" />
+      <module name="RAAS" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

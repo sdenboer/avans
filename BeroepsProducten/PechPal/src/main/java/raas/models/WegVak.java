@@ -1,4 +1,4 @@
-package pechpal.models;
+package raas.models;
 
 public class WegVak{
     String wegVakId;

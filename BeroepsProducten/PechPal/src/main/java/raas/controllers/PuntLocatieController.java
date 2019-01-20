@@ -1,8 +1,8 @@
-package pechpal.controllers;
+package raas.controllers;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import pechpal.AbstractParseJsonBestand;
+import raas.AbstractParseJsonBestand;
 
 import java.util.List;
 import java.util.stream.Collectors;

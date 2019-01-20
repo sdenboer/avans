@@ -1,9 +1,9 @@
-package pechpal.controllers;
+package raas.controllers;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import pechpal.AbstractParseJsonBestand;
-import pechpal.models.Ongeval;
+import raas.AbstractParseJsonBestand;
+import raas.models.Ongeval;
 
 import java.util.List;
 import java.util.Map;

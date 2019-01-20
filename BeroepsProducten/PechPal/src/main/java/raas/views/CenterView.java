@@ -1,4 +1,4 @@
-package pechpal.views;
+package raas.views;
 
 import javafx.scene.layout.StackPane;
 import javafx.scene.web.WebEngine;

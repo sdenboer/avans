@@ -1,9 +1,9 @@
-package pechpal.controllers;
+package raas.controllers;
 
 import com.google.gson.*;
-import pechpal.AbstractParseJsonBestand;
-import pechpal.models.Referentie;
-import pechpal.ReferentieBestandCollectie;
+import raas.AbstractParseJsonBestand;
+import raas.models.Referentie;
+import raas.ReferentieBestandCollectie;
 
 import java.util.*;
 

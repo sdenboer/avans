@@ -1,4 +1,4 @@
-package pechpal.models;
+package raas.models;
 
 import java.util.HashMap;
 

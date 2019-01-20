@@ -1,4 +1,4 @@
-package pechpal;
+package raas;
 
 /**
  * Deze class kan gebruikt worden als de API service niet meer beschikbaar wordt. De RD coordinaten uit het BRON bestand
